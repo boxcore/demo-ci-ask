@@ -1,0 +1,1 @@
+<div id="footer">Copyright &copy; 2013 <a href="demo_page2.html" target="dialog">7808技术团队</a></div>

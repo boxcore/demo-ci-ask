@@ -10,6 +10,7 @@ class Index extends CI_Controller {
     function __construct()
     {
         parent::__construct();
+        $this->load->helper('url');
     }
 
     function index()
@@ -20,5 +21,10 @@ class Index extends CI_Controller {
 
         //print_r($GLOBALS['app']['test']);
         //echo '<hr>'.site_url().'<hr>';
+    }
+
+    function main()
+    {
+        $this->load->view('main');
     }
 }

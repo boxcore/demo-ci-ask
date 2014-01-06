@@ -8,34 +8,18 @@
 	"buffers":
 	[
 		{
-			"file": "/D/wamp/www/demo/ci_dwz/application/controllers/welcome.php",
+			"file": "/D/wamp/www/boxcore/sucai/后台/dwz_jui/main.html",
 			"settings":
 			{
-				"buffer_size": 770,
+				"buffer_size": 1971,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/D/wamp/www/demo/ci_dwz/application/controllers/html.php",
+			"file": "/D/wamp/www/mysql - 副本/config.inc.php",
 			"settings":
 			{
-				"buffer_size": 1354,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/D/wamp/www/demo/ci_dwz/application/controllers/ci.php",
-			"settings":
-			{
-				"buffer_size": 238,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/D/wamp/www/demo/ci_dwz/application/config/database.php",
-			"settings":
-			{
-				"buffer_size": 3230,
+				"buffer_size": 4441,
 				"line_ending": "Unix"
 			}
 		}
@@ -72,6 +56,15 @@
 	},
 	"file_history":
 	[
+		"/Z/xinwenda/ask_admin/views/common/header.php",
+		"/Z/xinwenda/ask_admin/views/index.php",
+		"/Z/xinwenda/ask_admin/views/common/menu.php",
+		"/Z/xinwenda/ask_admin/views/common/foot.php",
+		"/Z/xinwenda/ask_admin/views.bak/demo_page1.php",
+		"/D/wamp/www/demo/ci_dwz/application/controllers/welcome.php",
+		"/D/wamp/www/demo/ci_dwz/application/controllers/html.php",
+		"/D/wamp/www/demo/ci_dwz/application/controllers/ci.php",
+		"/D/wamp/www/demo/ci_dwz/application/config/database.php",
 		"/Z/xinwenda/ask_admin/config/autoload.php",
 		"/Z/xinwenda/ask_admin/core/MY_Base.php",
 		"/Z/xinwenda/ask_admin/controllers/index.php",
@@ -79,7 +72,6 @@
 		"/Z/xinwenda/system/helpers/url_helper.php",
 		"/Z/xinwenda/ask_admin/controllers/_base.php",
 		"/Z/xinwenda/ask_admin/controllers/base.php",
-		"/D/wamp/www/demo/ci_dwz/application/controllers/ci.php",
 		"/Z/xinwenda/system/helpers/array_helper.php",
 		"/Z/xinwenda/system/helpers/app_helper.php",
 		"/D/wamp/www/boxcore/sucai/后台/dwz_jui/index.html",
@@ -119,7 +111,6 @@
 		"/C/Users/Core/Downloads/wecenter.sql",
 		"/D/wamp/www/xinwenda/index.php",
 		"/D/wamp/www/xinwenda/admin/index.php",
-		"/D/wamp/www/demo/ci_dwz/application/config/database.php",
 		"/D/wamp/www/demo/ci_dwz/ci_dwz.sql",
 		"/D/wamp/www/xinwenda/admin/static/css/style.css",
 		"/D/wamp/www/xinwenda/sample/dede-admin/test.txt",
@@ -192,7 +183,7 @@
 	],
 	"find":
 	{
-		"height": 23.0
+		"height": 34.0
 	},
 	"find_in_files":
 	{
@@ -207,6 +198,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"\">\n",
 			"MyISAM",
 			"ask_",
 			"AUTO\\_INCREMENT\\=\\d{1,2}\\s;",
@@ -271,111 +263,53 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "/D/wamp/www/demo/ci_dwz/application/controllers/welcome.php",
+					"file": "/D/wamp/www/boxcore/sucai/后台/dwz_jui/main.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 770,
+						"buffer_size": 1971,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								763,
+								763
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"syntax": "Packages/HTML/HTML.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "/D/wamp/www/demo/ci_dwz/application/controllers/html.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1354,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								230,
-								230
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "/D/wamp/www/demo/ci_dwz/application/controllers/ci.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 238,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								198,
-								198
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 270.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "/D/wamp/www/demo/ci_dwz/application/config/database.php",
+					"buffer": 1,
+					"file": "/D/wamp/www/mysql - 副本/config.inc.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3230,
+						"buffer_size": 4441,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2736,
-								2736
+								1007,
+								1007
 							]
 						],
 						"settings":
@@ -383,7 +317,7 @@
 							"syntax": "Packages/PHP/PHP.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 765.0,
+						"translation.y": 390.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
