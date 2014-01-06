@@ -1,0 +1,476 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/D/wamp/www/demo/ci_dwz/application/controllers/welcome.php",
+			"settings":
+			{
+				"buffer_size": 770,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/D/wamp/www/demo/ci_dwz/application/controllers/html.php",
+			"settings":
+			{
+				"buffer_size": 1354,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/D/wamp/www/demo/ci_dwz/application/controllers/ci.php",
+			"settings":
+			{
+				"buffer_size": 238,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/D/wamp/www/demo/ci_dwz/application/config/database.php",
+			"settings":
+			{
+				"buffer_size": 3230,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 212.0,
+		"selected_items":
+		[
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 400.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Z/xinwenda/ask_admin/config/autoload.php",
+		"/Z/xinwenda/ask_admin/core/MY_Base.php",
+		"/Z/xinwenda/ask_admin/controllers/index.php",
+		"/Z/xinwenda/ask_admin/controllers/_Base.php",
+		"/Z/xinwenda/system/helpers/url_helper.php",
+		"/Z/xinwenda/ask_admin/controllers/_base.php",
+		"/Z/xinwenda/ask_admin/controllers/base.php",
+		"/D/wamp/www/demo/ci_dwz/application/controllers/ci.php",
+		"/Z/xinwenda/system/helpers/array_helper.php",
+		"/Z/xinwenda/system/helpers/app_helper.php",
+		"/D/wamp/www/boxcore/sucai/后台/dwz_jui/index.html",
+		"/Z/xinwenda/ask_admin/index.php",
+		"/Z/xinwenda/index.php",
+		"/C/Users/Core/Downloads/cocksucker.sql",
+		"/C/Users/Core/Desktop/7808问答站数据库设计.sql",
+		"/Z/xinwenda/ask_admin/controllers/ci.php",
+		"/Z/xinwenda/ask_admin/config/routes.php",
+		"/Z/xinwenda/ask_admin/views/ci_view.php",
+		"/D/wamp/www/demo/ci_dwz/index.php",
+		"/Z/xinwenda/_files/readme.txt",
+		"/C/Users/Core/Downloads/tipask.sql",
+		"/C/Users/Core/Downloads/tipask (1).sql",
+		"/Z/xinwenda/test.txt",
+		"/Z/xinwenda/robots.txt",
+		"/C/Users/Core/Desktop/7808问答站数据库设计.txt",
+		"/D/wamp/www/boxcore/syn/cn-server/nginx.conf",
+		"/D/wamp/www/boxcore/syn/cn-server/52milan.com.conf",
+		"/D/wamp/www/boxcore/syn/note/bash文件格式问题.txt",
+		"/D/wamp/www/boxcore/syn/note/修改计算机名.txt",
+		"/D/wamp/www/boxcore/syn/note/关闭ipv64.txt",
+		"/D/wamp/www/boxcore/syn/work/库项目/建材装饰/防水材料/防水广告语.txt",
+		"/D/wamp/www/boxcore/syn/note/硬盘分区.txt",
+		"/D/wamp/www/boxcore/syn/cn-server/shell/clean.sh",
+		"/F/软件/系统工具/输入法/微软拼音安装.txt",
+		"/C/Users/Core/AppData/Local/Temp/Rar$DIa0.321/storage_upyun.php",
+		"/C/Users/Core/AppData/Local/Temp/Rar$DIa0.921/rsf.php",
+		"/D/wamp/www/boxcore/syn/note/配置linux主机.txt",
+		"/C/Users/Core/Desktop/帐号.txt",
+		"/C/Users/Core/AppData/Local/Temp/Rar$DIa0.971/discuz_ftp_ext.php",
+		"/C/Users/Core/AppData/Local/Temp/Rar$DIa0.603/如果种子无法下载请看这里.txt",
+		"/C/Users/Core/AppData/Local/Temp/Rar$DIa0.645/花野真衣.txt",
+		"/C/Users/Core/AppData/Local/Temp/Rar$DIa0.388/★点进搜搜就能看到片★.txt",
+		"/D/wamp/www/demo/ci_dwz/application/index.html",
+		"/D/wamp/www/boxcore/sucai/后台/dwz_jui/dwz.frag.xml",
+		"/C/Users/Core/Downloads/wecenter.sql",
+		"/D/wamp/www/xinwenda/index.php",
+		"/D/wamp/www/xinwenda/admin/index.php",
+		"/D/wamp/www/demo/ci_dwz/application/config/database.php",
+		"/D/wamp/www/demo/ci_dwz/ci_dwz.sql",
+		"/D/wamp/www/xinwenda/admin/static/css/style.css",
+		"/D/wamp/www/xinwenda/sample/dede-admin/test.txt",
+		"/D/wamp/www/xinwenda/admin/.htaccess",
+		"/C/Users/Core/Desktop/文艺/歌词.txt",
+		"/D/wamp/www/xinwenda/robots.txt",
+		"/D/wamp/www/xinwenda/test.txt",
+		"/C/Users/Core/AppData/Local/Temp/Rar$DIa0.999/settings.php",
+		"/C/Users/Core/AppData/Local/Temp/Rar$DIa0.748/uccode.class.php",
+		"/C/Users/Core/AppData/Local/Temp/Rar$DIa0.198/test.txt",
+		"/C/Users/Core/AppData/Local/Temp/Rar$DIa0.168/readme.txt",
+		"/C/Users/Core/AppData/Local/Temp/Rar$DIa0.456/en_US.js",
+		"/C/Users/Core/AppData/Local/Temp/Rar$DIa0.160/en_US.php",
+		"/D/Soft/axure/Axure-sn.txt",
+		"/C/Users/Core/AppData/Local/Temp/Rar$DIa0.348/uri.php",
+		"/C/Users/Core/AppData/Local/Temp/Rar$DIa0.235/aws_app.inc.php",
+		"/C/Users/Core/AppData/Local/Temp/Rar$DIa0.484/config.dist.php",
+		"/C/Users/Core/AppData/Local/Temp/Rar$DIa0.800/init.php",
+		"/C/Users/Core/Desktop/fn28-item_ad-basic.sql",
+		"/D/wamp/www/boxcore/sucai/后台/metronic.bootstrap/source.txt",
+		"/C/Users/Core/AppData/Local/Temp/Rar$DIa0.271/使用更新说明.txt",
+		"/C/Users/Core/Desktop/使用说明.txt",
+		"/C/Users/Core/AppData/Local/Temp/Rar$DIa0.828/说明.txt",
+		"/D/Program Files/Axure/Axure RP Pro 7.0/DefaultSettings/Libraries/线框图.rplib",
+		"/D/Program Files/Axure/Axure RP Pro 6.5/lang/使用说明.txt",
+		"/C/Users/Core/AppData/Local/Temp/Rar$DIa0.679/使用说明.txt",
+		"/W/code/index.php",
+		"/W/code/controllers/UserController.php",
+		"/C/Users/Core/Desktop/新建文本文档.txt",
+		"/D/Portable/TeamViewerPRO/CopyRights.txt",
+		"/C/Users/Core/Downloads/cocksucker (1).sql",
+		"/C/Users/Core/Downloads/item_ad.sql",
+		"/C/Users/Core/Downloads/item_ad (1).sql",
+		"/D/Note/link/tools.txt",
+		"/C/Users/Core/Downloads/cocksucker (2).sql",
+		"/C/Users/Core/AppData/Local/Temp/item_ad.fn.php-rev1497.svn000.tmp.php",
+		"/D/Note/work/Code/批量替换正则.js",
+		"/D/Note/work/log/1227.log",
+		"/C/Users/Core/Desktop/sql-statment",
+		"/C/Users/Core/Downloads/temp_item_ad (5).sql",
+		"/C/Users/Core/Downloads/temp_item_ad (3).sql",
+		"/C/Users/Core/Downloads/temp_item_ad (2).sql",
+		"/D/Note/work/库项目/建材装饰/防水材料/1226 鲁大师防水/info.html",
+		"/D/Note/work/库项目/建材装饰/防水材料/1226 鲁大师防水/info.txt",
+		"/D/Note/work/库项目/建材装饰/防水材料/1226 鲁大师防水/tpl.html",
+		"/D/Note/configure/sublime3/Packages/User/Preferences.sublime-settings",
+		"/D/Note/phpstorm设置.js",
+		"/C/Users/Core/Downloads/fn28-item-ad-temp.sql",
+		"/C/Users/Core/Downloads/temp_item_ad.sql",
+		"/Z/fn28-old-item_ad.sql",
+		"/Z/romeo.sql",
+		"/D/Portable/SQLyog_Enterprise/sn.txt",
+		"/D/wamp/www/mysql/config.inc.php",
+		"/C/Users/Core/AppData/Local/Temp/Rar$DIa0.025/config.inc.php",
+		"/C/Users/Core/AppData/Local/Temp/Rar$DIa0.669/config.inc.php",
+		"/W/_vhost/7808.conf",
+		"/W/_vhost/src.conf",
+		"/W/_vhost/romeo.conf",
+		"/C/Windows/System32/drivers/etc/hosts",
+		"/C/Users/Core/Desktop/软件/自动安装redis/install_redis",
+		"/C/Users/Core/Desktop/tmp/7808.conf",
+		"/C/Users/Core/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/D/Note/work/log/7808.txt",
+		"/C/Users/Core/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/D/Code/Work/v2.0.3/sites/7808/funcs/app.fn.php",
+		"/Z/romeo/trunk/sites/7808/funcs/project.fn.php",
+		"/Z/romeo/trunk/sites/7808/funcs/app.fn.php",
+		"/F/hosts.txt",
+		"/F/软件/编程开发/编辑器/Sublime Text/sublime2.0.1编辑器/sublime右键快捷键/sublime3.reg"
+	],
+	"find":
+	{
+		"height": 23.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+			"D:\\Code\\Work\\v2.0.3"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"MyISAM",
+			"ask_",
+			"AUTO\\_INCREMENT\\=\\d{1,2}\\s;",
+			"AUTO\\_INCREMENT\\=\\d{2}\\s;",
+			"AUTO\\_INCREMENT\\=\\d\\s;",
+			"AUTO\\_INCREMENT\\=27 ;",
+			"AUTO\\_INCREMENT=27 ;",
+			"_user",
+			"　",
+			"118.144.86.122",
+			"192.168.15.2",
+			"118.144.86.122",
+			"192.168.15.2",
+			"temp_item_ad",
+			"118.144.86.122",
+			"192.168.15.2",
+			"118.144.86.122",
+			"192.168.15.2",
+			"192.168.56.220",
+			"118.144.86.122",
+			"192.168.15.2",
+			"118.144.86.122",
+			"192.168.15.2",
+			"118.144.86.122",
+			"192.168.15.2",
+			"getSpreadTags",
+			"top_sort"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			"InnoDB",
+			"xwd_",
+			"AUTO_INCREMENT=1 ;",
+			"",
+			"192.168.15.2",
+			"118.144.86.122",
+			"192.168.15.2",
+			"118.144.86.122",
+			"item_ad",
+			"192.168.15.2",
+			"118.144.86.122",
+			"192.168.15.2",
+			"118.144.86.122",
+			"192.168.15.2",
+			"192.168.56.220",
+			"118.144.86.122",
+			"192.168.15.2",
+			"118.144.86.122",
+			"192.168.15.2",
+			"118.144.86.122"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 3,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/D/wamp/www/demo/ci_dwz/application/controllers/welcome.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 770,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/D/wamp/www/demo/ci_dwz/application/controllers/html.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1354,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								230,
+								230
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/D/wamp/www/demo/ci_dwz/application/controllers/ci.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 238,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								198,
+								198
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 270.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/D/wamp/www/demo/ci_dwz/application/config/database.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3230,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2736,
+								2736
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 765.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "xinwenda_dev@co.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"pc",
+				"Package Control Messages"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 204.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

@@ -15,17 +15,6 @@
 |
 */
 $config['base_url']	= '';
-
-/*
-|--------------------------------------------------------------------------
-| Index File
-|--------------------------------------------------------------------------
-|
-| Typically this will be your index.php file, unless you've renamed it to
-| something else. If you are using mod_rewrite to remove the page set this
-| variable so that it is blank.
-|
-*/
 $config['index_page'] = 'index.php';
 
 /*
@@ -70,16 +59,6 @@ $config['url_suffix'] = '';
 |
 */
 $config['language']	= 'english';
-
-/*
-|--------------------------------------------------------------------------
-| Default Character Set
-|--------------------------------------------------------------------------
-|
-| This determines which character set is used by default in various methods
-| that require a character set to be provided.
-|
-*/
 $config['charset'] = 'UTF-8';
 
 /*
