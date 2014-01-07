@@ -5,7 +5,8 @@
  * User: chunze.huang
  * Date: 14-1-6 上午10:49
  */
-class Index extends CI_Controller {
+class Index extends MY_Controller
+{
 
     function __construct()
     {
@@ -13,7 +14,7 @@ class Index extends CI_Controller {
         $this->load->helper('url');
     }
 
-    function index()
+    public function index()
     {
         $this->load->view('index');
 
@@ -23,7 +24,7 @@ class Index extends CI_Controller {
         //echo '<hr>'.site_url().'<hr>';
     }
 
-    function main()
+    public function main()
     {
         $this->load->view('main');
     }

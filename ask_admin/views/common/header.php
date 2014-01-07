@@ -1,6 +1,6 @@
 <div id="header">
     <div class="headerNav">
-        <a href="http://www.7808.com/ask_admin/" style="font-size: 30px; color: #fff; font-weight: bold; line-height: 30px; display: inline-block; height: 50px; padding: 8px 20px; text-decoration: none; ">7808问答管理系统</a>
+        <a href="http://www.7808.com/ask_admin/" style="font-size: 30px; color: #fff; font-weight: bold; line-height: 30px; display: inline-block; height: 50px; padding: 8px 20px; text-decoration: none; "><?php echo $GLOBALS['configs']['site_name']; ?>管理系统</a>
         <ul class="nav">
             <li id="switchEnvBox"><a href="javascript:">（<span>北京</span>）切换城市</a>
                 <ul>

@@ -8,19 +8,11 @@
 	"buffers":
 	[
 		{
-			"file": "/D/wamp/www/boxcore/sucai/后台/dwz_jui/main.html",
+			"file": "/D/wamp/www/demo/tp_ateam/Adnn/Lib/Action/ConfigsAction.class.php",
 			"settings":
 			{
-				"buffer_size": 1971,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/D/wamp/www/mysql - 副本/config.inc.php",
-			"settings":
-			{
-				"buffer_size": 4441,
-				"line_ending": "Unix"
+				"buffer_size": 687,
+				"line_ending": "Windows"
 			}
 		}
 	],
@@ -56,6 +48,19 @@
 	},
 	"file_history":
 	[
+		"/D/wamp/www/demo/tp_ateam/Adnn/Lib/Action/TeacherAction.class.php",
+		"/C/Users/Core/Downloads/LocalSettings.php",
+		"/D/wamp/www/demo/tp_ateam/Adnn/Lib/Action/CommonAction.class.php",
+		"/Z/xinwenda/ask_admin/controllers/demo.php",
+		"/Z/xinwenda/ask_admin/core/MY_Controller.php",
+		"/Z/xinwenda/ask_admin/libraries/_Base.php",
+		"/Z/xinwenda/ask_admin/views/demo.php",
+		"/Z/xinwenda/ask_admin/controllers/configs.php",
+		"/D/wamp/www/boxcore/sucai/后台/dwz_jui/main.html",
+		"/D/wamp/www/demo/tp_ateam/Adnn/Lib/Action/ConfigsAction.class.php",
+		"/Z/xinwenda/ask_admin/controllers/system.php",
+		"/D/wamp/www/demo/tp_ateam/README.TXT",
+		"/D/wamp/www/mysql - 副本/config.inc.php",
 		"/Z/xinwenda/ask_admin/views/common/header.php",
 		"/Z/xinwenda/ask_admin/views/index.php",
 		"/Z/xinwenda/ask_admin/views/common/menu.php",
@@ -170,16 +175,7 @@
 		"/W/_vhost/src.conf",
 		"/W/_vhost/romeo.conf",
 		"/C/Windows/System32/drivers/etc/hosts",
-		"/C/Users/Core/Desktop/软件/自动安装redis/install_redis",
-		"/C/Users/Core/Desktop/tmp/7808.conf",
-		"/C/Users/Core/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
-		"/D/Note/work/log/7808.txt",
-		"/C/Users/Core/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
-		"/D/Code/Work/v2.0.3/sites/7808/funcs/app.fn.php",
-		"/Z/romeo/trunk/sites/7808/funcs/project.fn.php",
-		"/Z/romeo/trunk/sites/7808/funcs/app.fn.php",
-		"/F/hosts.txt",
-		"/F/软件/编程开发/编辑器/Sublime Text/sublime2.0.1编辑器/sublime右键快捷键/sublime3.reg"
+		"/C/Users/Core/Desktop/软件/自动安装redis/install_redis"
 	],
 	"find":
 	{
@@ -263,61 +259,34 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "/D/wamp/www/boxcore/sucai/后台/dwz_jui/main.html",
+					"file": "/D/wamp/www/demo/tp_ateam/Adnn/Lib/Action/ConfigsAction.class.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1971,
+						"buffer_size": 687,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								763,
-								763
+								273,
+								273
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "/D/wamp/www/mysql - 副本/config.inc.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4441,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1007,
-								1007
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 390.0,
+						"translation.y": 45.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
