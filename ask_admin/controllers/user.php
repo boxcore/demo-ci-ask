@@ -5,7 +5,7 @@
  * User: chunze.huang
  * Date: 14-1-6 上午10:49
  */
-class question extends MY_Controller
+class user extends MY_Controller
 {
 
     function __construct()

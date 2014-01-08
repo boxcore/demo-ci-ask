@@ -21,7 +21,7 @@ if (defined('ENVIRONMENT'))
 }
 
 $system_path = 'system';
-$application_folder = 'demo';
+$application_folder = 'home';
 
 	if (defined('STDIN'))
 	{
