@@ -4,6 +4,18 @@
         <div class="accordion" fillSpace="sidebar">
 
             <div class="accordionHeader">
+                <h2><span>Folder</span>用户管理</h2>
+            </div>
+            <div class="accordionContent">
+                <ul class="tree">
+                    <li><a href="<?php echo site_url('user/user_list'); ?>" target="navTab"
+                           rel="user_list">用户列表</a></li>
+                    <li><a href="<?php echo site_url('user/user_add'); ?>" target="navTab"
+                           rel="user_add">添加新用户</a></li>
+                </ul>
+            </div>
+
+            <div class="accordionHeader">
                 <h2><span>Folder</span>内容管理</h2>
             </div>
             <div class="accordionContent">
@@ -61,6 +73,7 @@
 
                 </ul>
             </div>
+
 
             <div class="accordionHeader">
                 <h2><span>Folder</span>系统设置</h2>
