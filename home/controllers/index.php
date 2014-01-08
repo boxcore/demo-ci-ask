@@ -1,7 +1,7 @@
 <?php
 
 /**
- * 后台首页
+ * 门户首页
  * User: chunze.huang
  * Date: 14-1-6 上午10:49
  */

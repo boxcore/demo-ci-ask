@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="<?php echo src_url('css/style.css'); ?>"/>
 </head>
 <body>
-<?php require 'common/header.php'; ?>
+<?php include '../common/header.php'; ?>
 
 <div id="content_box">
     <div class="content_inner">
@@ -161,6 +161,6 @@
     </div>
 </div>
 
-<?php include 'common/footer.php'; ?>
+<?php include '../common/footer.php'; ?>
 </body>
 </html>
