@@ -2,7 +2,7 @@
 <html lang="en-US">
 <head>
     <meta charset="UTF-8">
-    <title><?php if (isset($meta['title'])) echo $meta['title']; ?></title>
+    <title><?php if (isset($meta['title'])) echo $meta['title']; ?>中国创业指导网</title>
     <meta name="keywords" content="<?php if (isset($meta['keywords'])) echo $meta['keywords']; ?>"/>
     <meta name="description" content="<?php if (isset($meta['description'])) echo $meta['description']; ?>"/>
     <link rel="stylesheet" type="text/css" href="<?php echo src_url('css/style.css'); ?>"/>
