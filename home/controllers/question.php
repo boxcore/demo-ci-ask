@@ -17,9 +17,14 @@ class Question extends HM_Controller
         $this->cat();
     }
 
-    public function cat()
+    public function listAll()
     {
         $this->load->view('question/question_list');
+    }
+    
+	public function detail()
+    {
+        $this->load->view('question/question_detail');
     }
 
     /**
