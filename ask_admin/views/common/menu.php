@@ -82,8 +82,7 @@
                 <ul class="tree">
                     <li><a href="<?php echo site_url('configs/configs_list'); ?>" target="navTab"
                            rel="configs_list">常用设置</a></li>
-                    <li><a href="<?php echo site_url('configs/configs_add'); ?>" target="navTab"
-                           rel="configs_add">添加新配置</a></li>
+                    <li><a href="<?php echo site_url('configs/configs_add'); ?>" target="navTab" rel="configs_add">添加新配置</a></li>
                 </ul>
             </div>
 
