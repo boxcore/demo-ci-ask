@@ -2,7 +2,7 @@
 <html lang="en-US">
 <head>
     <meta charset="UTF-8">
-    <title><?php if (isset($meta['title'])) echo $meta['title']; ?></title>
+    <title><?php if (isset($meta['title'])) echo $meta['title']; ?>中国创业指导网</title>
     <meta name="keywords" content="<?php if (isset($meta['keywords'])) echo $meta['keywords']; ?>"/>
     <meta name="description" content="<?php if (isset($meta['description'])) echo $meta['description']; ?>"/>
     <link rel="stylesheet" type="text/css" href="<?php echo src_url('css/style.css'); ?>"/>
@@ -142,7 +142,8 @@
         <div class="hot_item">
             <div class="hot_item_box">
                 <h1>热门项目</h1>
-                <span><a href="#">所有项目</a></span> </div>
+                <span><a href="#">所有项目</a></span> 
+            </div>
             <ul class="hot_wrap">
                 <li><a href="#"><img src="<?php echo src_url('images/pic2.jpg'); ?>" width="155" height="112"></a>
                     <p><a href="#">投资金额：5万</a></p>
