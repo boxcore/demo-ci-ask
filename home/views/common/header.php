@@ -1,6 +1,6 @@
 <div id="top_box">
     <div class="top_inner">
-        <div class="logo"><a href="#"><img src="<?php echo src_url('images/logo.jpg'); ?>" width="242" height="41"></a></div>
+        <div class="logo"><a href="<? echo base_url(); ?>" title="<? echo $GLOBALS['configs']['site_name']; ?>"><img src="<?php echo src_url('images/logo.jpg'); ?>" width="242" height="41"></a></div>
         <div class="search_box">
             <p>
             	<strong>热门搜索 :</strong> 
@@ -18,8 +18,8 @@
     </div>
     <ul class="nav">
         <li class="sort"><a href="#">所有内容分类</a></li>
-        <li><a href="#">首页</a></li>
-        <li><a href="#">问答</a></li>
-        <li><a href="#">项目</a></li>
+        <li><a href="<? echo base_url() ?>">首页</a></li>
+        <li><a href="<? echo site_url('question') ?>">问答</a></li>
+        <li><a href="<? echo site_url('item') ?>">项目</a></li>
     </ul>
 </div>

@@ -1,10 +1,10 @@
 @charset "utf-8";
 /* CSS Document */
 body{font-size:12px; padding:0px; margin:0px;}
-p,h1,h2,h3,h4,span,strong,a,img,table,td,tr,input,from,btn,ul,li,dl,dt,dd{margin:0px; padding:0px; list-style:none; border:none;}
-a:link,a:visited{text-decoration:none;}
-a:hover{ text-decoration:underline;}
-#top_box,.search_text,.search_btn,.food,.cloth,.education,.home,.decorate,.beautify,.new{ background:url(../images/icon.png) no-repeat;}
+p,h1,h2,h3,h4,span,strong,a,img,table,td,tr,input,from,btn,ul,li,dl,dt,dd,em{margin:0px; padding:0px; list-style:none; border:none; font-style:normal;}
+a:link,a:visited{text-decoration:none; color:#333;}
+a:hover{ text-decoration:underline; color:#f74c4b;}
+#top_box,.search_text,.search_btn,.food,.cloth,.education,.home,.decorate,.beautify,.new,.ask_title,.submit_btn,.praise,.praise_inner{ background:url(../images/icon.png) no-repeat;}
 #top_box{width:100%; height:112px; background-position:0px -190px;background-repeat:repeat-x;}
 #top_box .top_inner{width:1010px; overflow:hidden; margin:0 auto; height:82px;}
 #top_box .logo{width:242px; height :41px; margin-top:25px; float:left;}
@@ -97,11 +97,72 @@ a:hover{ text-decoration:underline;}
 .foot .foot_box .foot_nav a{font-size:12px; color:#333; margin:0px 10px;}
 .foot .foot_box p{font-size:12px; color:#333;text-align:center; width:1010px; height:20px; line-height:20px;}
 /*问答列表*/
-.filter{width:1008px; border:1px solid #d1ccc7; margin:10px auto 0;}
-.filter dl{width:1008px; height:34px;line-height:34px;}
-.filter dt span{width:118px; height:34px; background:url(../images/icon.png) no-repeat; background-position:20px -415px; display:block;}
-.filter dt{float:left; background:#f7f5f5; height:34px;width:118px; text-align:center;}
-.filter dd{float:left;}
+.filter{width:1008px; border:1px solid #d1ccc7; margin:10px auto 20px;}
+.filter table{ border-collapse:collapse; color:#b0a59f;}
+.filter table span{ background:url(../images/icon.png) no-repeat; background-position:20px -425px;}
+.filter_type{background:#f7f5f5; overflow:hidden;width:118px; text-align:center; height:34px;}
+.filter_type span{width:118px; overflow:hidden;background:url(../images/icon.png) no-repeat; background-position:20px -415px; display:block;}
+.filter_inner{padding:0px 15px; width:860px; line-height:30px;}
+.filter_inner a{margin-right:30px; color:#858585;}
+.filter_inner a:hover{color:#f74c4b;}
+.add_box td{width:100px; border-bottom:1px dotted #ccc;}
+.list_content{width:1010px; overflow:hidden;border:1px solid #e2e2e2; margin:0px auto 30px;}
+.list_conL{width:717px; overflow:hidden; float:left; padding:10px 0 0 0px; background:url(../images/list_hidebg.jpg) repeat-y right top;}
+.list_conL h2{width:666px; height:30px; line-height:30px; font-size:14px; color:#333; padding-left:17px;}
+.list_conL h2 strong{float:left;}
+.list_conL h2 span{float:right;}
+.list_conL dl{width:666px; overflow:hidden; padding-top:5px; line-height:25px; font-size:14px; padding-bottom:16px; padding-left:17px;}
+.list_conL dt{ float:left; width:360px; height:25px; overflow:hidden;}
+.list_conL dd{float:right; color:#858585; widt:65px; height:25px; overflow:hidden;}
+.list_conL .interval{width:711px; background:#f9f9f9; height:5px; border-top:1px solid #f1f1f1; border-bottom:1px solid #f1f1f1; margin-bottom:10px;}
+.list_conR{width:290px; overflow:hidden; float:right;}
+.list_conR .pic{border-bottom:1px solid #ebebeb;}
+.list_conR li{padding:20px 20px 20px 10px; width:261px; overflow:hidden;}
+.list_conR .pic_two{border-top:1px solid #ebebeb; margin-top:30px; padding-bottom:0px;}
+/*回答*/
+.crumbs{width:1010px; height:32px; line-height:32px; color:#666; font-size:12px; margin:0 auto;}
+.crumbs a{color:#666;}
+.crumbs .current{color:#333;}
+.crumbs a:hover{color:#f74c4b;}
+.ask_box{width:657px; overflow:hidden; padding:0px 30px 30px;}
+.ask_list{width:657px; overflow:hidden;padding:0px 30px 20px;}
+.person_one{width:657px; overflow:hidden; border-bottom:1px dashed #ccc;padding-bottom:15px; margin-top:4px;}
+.no_border{ border-bottom:none;}
+.list_conL .ask_title{width:400px; height:36px; background-position:0px -440px; color:#333; font-size:16px; padding-left:30px; line-height:36px;}
+.ask-info{color:#666; border-bottom:1px dashed #e0e0e0; padding-bottom:10px;}
+.ask-info span{margin:0px 5px;}
+.ask-info a{color:#666;}
+.ask-info a:hover{color:#f74c4b;}
+.ask_box h2{font-size:15px;padding:18px 0;}
+.subbox{width:652px; height:30px; margin-top:15px;}
+.submit_btn{width:94px; height:30px; background-position:0px -478px; font-size:14px; color:#fff; cursor:pointer; float:right;}
+.subbox span input{margin:0px 4px 0 0; float:left;}
+.subbox span em{ float:left;color:#333;}
+.ask_list dl{ padding-left:0px; width:657px;}
+.ask_list .ask_num{color:#333;}
+.ask_list .Arrange{font-weight:normal; font-size:12px; color:#333;}
+.Arrange .current{color:#2d64b3; float:none;}
+.ask_list .Arrange a{color:#333;}
+.ask_list .Arrange a:hover{color:#2d64b3;}
+.list_conL .f_pipe{color:#ccc; margin:0px 10px; float:none;}
+.list_conL .answerer{font-size:12px;  color:#999; padding-bottom:12px;}
+.answerer a{color:#2d64b3;}
+.answer{font-size:14px; color:#333;width:652px; line-height:25px;}
+.evaluate{ color:#2d64b3;float:right; line-height:24px;}
+.praise{background-position:0px -518px; width:74px; height:24px; display:inline-block;}
+.evaluate span{display:inline-block;}
+.praise .praise_inner{background-position:0px -552px; width:74px; text-align:center; color:#db4f1f; line-height:24px; cursor:pointer;}
+.ask_list h2{padding-left:0px;}
+.relevant dt{font-size:14px; width:450px; height:25px; overflow:hidden;}
+.relevant dt a{ color:#2d64b3;}
+.relevant dd{font-size:12px;}
+.ask_list .relevant{width:657px; overflow:hidden; line-height:25px; height:25px; padding:7px 0 0 0; border-bottom:1px dotted #ccc; font-size:13px;}
+.ask_list .no_border{ border-bottom:none;}
+
+
+
+
+
 
 
 

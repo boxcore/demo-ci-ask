@@ -8,18 +8,26 @@
 	"buffers":
 	[
 		{
-			"file": "/D/wamp/www/alan/52milan.com/data/config.php",
-			"settings":
-			{
-				"buffer_size": 564,
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "/D/wamp/www/boxcore/note/正则批量/dom替换.txt",
 			"settings":
 			{
 				"buffer_size": 88,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "home/controllers/user.php",
+			"settings":
+			{
+				"buffer_size": 454,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "static/css/style.css",
+			"settings":
+			{
+				"buffer_size": 8163,
 				"line_ending": "Windows"
 			}
 		}
@@ -56,6 +64,9 @@
 	},
 	"file_history":
 	[
+		"/Z/xinwenda/home/views/user/user_register.php",
+		"/D/wamp/www/alan/52milan.com/data/config.php",
+		"/Z/romeo/trunk/sites/7808/views/main.layout.tpl.php",
 		"/D/wamp/www/boxcore/note/正则批量/生产nginx正则处理.txt",
 		"/D/wamp/www/demo/tp_ateam/Adnn/Lib/Action/ConfigsAction.class.php",
 		"/Z/xinwenda/ask_admin/views.bak/welcome_message.php",
@@ -180,10 +191,7 @@
 		"/C/Users/Core/Downloads/temp_item_ad.sql",
 		"/Z/fn28-old-item_ad.sql",
 		"/Z/romeo.sql",
-		"/D/Portable/SQLyog_Enterprise/sn.txt",
-		"/D/wamp/www/mysql/config.inc.php",
-		"/C/Users/Core/AppData/Local/Temp/Rar$DIa0.025/config.inc.php",
-		"/C/Users/Core/AppData/Local/Temp/Rar$DIa0.669/config.inc.php"
+		"/D/Portable/SQLyog_Enterprise/sn.txt"
 	],
 	"find":
 	{
@@ -267,39 +275,11 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "/D/wamp/www/alan/52milan.com/data/config.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 564,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								189,
-								189
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
 					"file": "/D/wamp/www/boxcore/note/正则批量/dom替换.txt",
 					"semi_transient": false,
 					"settings":
@@ -321,6 +301,64 @@
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "home/controllers/user.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 454,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								183,
+								183
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 96.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "static/css/style.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8163,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 2520.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
