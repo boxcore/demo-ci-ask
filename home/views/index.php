@@ -18,42 +18,42 @@
 				<div class="new_tendency">
 					<h3><a href="#">已解决问题</a></h3>
 					<dl>
-						<dt><a href="#">你好！我很想了解学生部落，希望你们可以联系我 </a></dt>
+						<dt><a href="<?php echo site_url('question/detail');?>">你好！我很想了解学生部落，希望你们可以联系我 </a></dt>
 						<dd>1个回答</dd>
-						<dt><a href="#">你好！我很想了解学生部落，希望你们可以联系我 </a></dt>
+						<dt><a href="<?php echo site_url('question/detail');?>">你好！我很想了解学生部落，希望你们可以联系我 </a></dt>
 						<dd>1个回答</dd>
-						<dt><a href="#">你好！我很想了解学生部落，希望你们可以联系我 </a></dt>
+						<dt><a href="<?php echo site_url('question/detail');?>">你好！我很想了解学生部落，希望你们可以联系我 </a></dt>
 						<dd>1个回答</dd>
-						<dt><a href="#">你好！我很想了解学生部落，希望你们可以联系我 </a></dt>
+						<dt><a href="<?php echo site_url('question/detail');?>">你好！我很想了解学生部落，希望你们可以联系我 </a></dt>
 						<dd>1个回答</dd>
-						<dt><a href="#">你好！我很想了解学生部落，希望你们可以联系我 </a></dt>
+						<dt><a href="<?php echo site_url('question/detail');?>">你好！我很想了解学生部落，希望你们可以联系我 </a></dt>
 						<dd>1个回答</dd>
-						<dt><a href="#">你好！我很想了解学生部落，希望你们可以联系我 </a></dt>
+						<dt><a href="<?php echo site_url('question/detail');?>">你好！我很想了解学生部落，希望你们可以联系我 </a></dt>
 						<dd>1个回答</dd>
-						<dt><a href="#">你好！我很想了解学生部落，希望你们可以联系我 </a></dt>
+						<dt><a href="<?php echo site_url('question/detail');?>">你好！我很想了解学生部落，希望你们可以联系我 </a></dt>
 						<dd>1个回答</dd>
 					</dl>
 				</div>
 				<div class="attention">
 					<h3><a href="#">正在关注</a></h3>
 					<dl>
-						<dt><a href="#">你好！我很想了解学生部落，希望你们可以联系我 </a><p>flower<span> 浏览42次 </span>9个回复</p></dt>
+						<dt><a href="<?php echo site_url('question/detail');?>">你好！我很想了解学生部落，希望你们可以联系我 </a><p>flower<span> 浏览42次 </span>9个回复</p></dt>
 						<dd>12月27日</dd>
 					</dl>
 					<dl>
-						<dt><a href="#">你好！我很想了解学生部落，希望你们可以联系我 </a><p>flower<span> 浏览42次 </span>9个回复</p></dt>
+						<dt><a href="<?php echo site_url('question/detail');?>">你好！我很想了解学生部落，希望你们可以联系我 </a><p>flower<span> 浏览42次 </span>9个回复</p></dt>
 						<dd>12月27日</dd>
 					</dl>
 					<dl>
-						<dt><a href="#">你好！我很想了解学生部落，希望你们可以联系我 </a><p>flower<span> 浏览42次 </span>9个回复</p></dt>
+						<dt><a href="<?php echo site_url('question/detail');?>">你好！我很想了解学生部落，希望你们可以联系我 </a><p>flower<span> 浏览42次 </span>9个回复</p></dt>
 						<dd>12月27日</dd>
 					</dl>
 					<dl>
-						<dt><a href="#">你好！我很想了解学生部落，希望你们可以联系我 </a><p>flower<span> 浏览42次 </span>9个回复</p></dt>
+						<dt><a href="<?php echo site_url('question/detail');?>">你好！我很想了解学生部落，希望你们可以联系我 </a><p>flower<span> 浏览42次 </span>9个回复</p></dt>
 						<dd>12月27日</dd>
 					</dl>
 					<dl>
-						<dt><a href="#">你好！我很想了解学生部落，希望你们可以联系我 </a>
+						<dt><a href="<?php echo site_url('question/detail');?>">你好！我很想了解学生部落，希望你们可以联系我 </a>
 						<p>flower<span> 浏览42次 </span>9个回复</p>
 						</dt>
 						<dd>12月27日</dd>
