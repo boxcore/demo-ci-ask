@@ -60,3 +60,12 @@
         </ul>
     </div>
 </div>
+<script type="text/javascript">
+	$("#sort_all_content").mouseover(function(){
+		$("#nav_all").show();
+	});
+	
+	$("#sort_all_content").mouseout(function(){
+		$("#nav_all").hide();
+	});
+</script>

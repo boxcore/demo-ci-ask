@@ -16,7 +16,8 @@ class Index extends HM_Controller
 
     public function index()
     {
-        $this->load->view('index');
+    	$this->load->library('layout');
+        $this->layout->view('index');
     }
 
     public function main()
