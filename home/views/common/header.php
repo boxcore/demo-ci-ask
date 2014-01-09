@@ -17,7 +17,7 @@
         </div>
     </div>
     <ul class="nav">
-        <li class="sort"><a href="#">所有内容分类</a></li>
+        <li class="sort"><a href="javascript:void(0);">所有内容分类</a></li>
         <li><a href="<? echo base_url() ?>">首页</a></li>
         <li><a href="<? echo site_url('question') ?>">问答</a></li>
         <li><a href="<? echo site_url('item') ?>">项目</a></li>
