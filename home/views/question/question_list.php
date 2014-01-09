@@ -65,11 +65,11 @@
     </div>
 </div>
 <script type="text/javascript">
-	$("#sort_all_content").mouseover(function(){
+$("#sort_all_content").hover(
+	function(){
 		$("#nav_all").show();
-	});
-	
-	$("#sort_all_content").mouseout(function(){
+	},function(){
 		$("#nav_all").hide();
-	});
+	}
+);
 </script>

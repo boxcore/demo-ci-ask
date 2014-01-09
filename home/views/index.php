@@ -122,7 +122,7 @@
 	</div>
 </div>
 <script type="text/javascript">
-	$(function(){
-		$("#nav_all").show();
-	});
+$(function(){
+	$("#nav_all").show();
+});
 </script>
