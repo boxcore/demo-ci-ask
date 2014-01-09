@@ -10,10 +10,11 @@ a:hover{ text-decoration:underline; color:#f74c4b;}
 #top_box .logo{width:242px; height :41px; margin-top:25px; float:left;}
 #top_box .search_box{width:545px; height:58px; margin:5px 0 0; float:right;}
 #top_box .search_box p{color:#fff; height:29px; text-align:right;}
-#top_box .search_box p span{margin:0px 10px;}
+#top_box .search_box p span{margin-right:12px;}
 #top_box .search_box p a{color:#fff;}
 #top_box .top_login{margin-right:6px;}
-#top_box .phone{ display:inline-block; width:43px; height:14px; background-position:-80px -715px; padding-left:15px;}
+#top_box .loginwrap{width:95px; display:inline-block; height:16px; background:url(../images/icon.png) no-repeat 106px -737px; padding-right:12px; margin-right:0px;}
+#top_box .phone{ display:inline-block; width:43px;background-position:-81px -715px; padding-left:15px;}
 #top_box .search_box .search_text{float:left; width:440px; height:31px; line-height:31px;background-position:0px -312px; border-radius:5px 0 0 5px; background-repeat:repeat-x; padding-left:10px;}
 #top_box .search_box .search_btn{width:95px; height:31px;background-position:0px -353px; font-size:16px; font-family:"Microsoft Yahei"; color:#fff; cursor:pointer; float:left;}
 .nav{width:1010px; margin:0 auto; height:30px;}
