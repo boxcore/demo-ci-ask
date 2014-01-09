@@ -13,18 +13,20 @@ a:hover{ text-decoration:underline; color:#f74c4b;}
 #top_box .search_box p a{color:#fff; margin-right:12px;}
 #top_box .search_box .search_text{float:left; width:440px; height:31px; line-height:31px;background-position:0px -312px; border-radius:5px 0 0 5px; background-repeat:repeat-x; padding-left:10px;}
 #top_box .search_box .search_btn{width:95px; height:31px;background-position:0px -353px; font-size:16px; font-family:"Microsoft Yahei"; color:#fff; cursor:pointer; float:left;}
-.nav{width:1010px; overflow:hidden; margin:0 auto; height:30px;}
-.nav li{float:left; height:30px; width:82px; text-align:center; line-height:30px; font-size:15px; font-family:"Microsoft Yahei"; background:url(../images/nav_line.jpg) no-repeat 80px 6px;}
-.nav .sort{width:242px; background:#329bfc;margin-top:1px;}
+.nav{width:1010px; margin:0 auto; height:30px;}
+.nav li{float:left; height:30px; width:82px; text-align:center; line-height:30px; font-size:12px; font-family:"Microsoft Yahei"; background:url(../images/nav_line.jpg) no-repeat 80px 6px;}
+.nav .sort{width:242px; background:#329bfc;position:relative;}
 .nav li a{color:#fff;}
 .nav li a:hover{ text-decoration:none; color:#fff;}
 #content_box{width:100%; overflow:hidden;background:url(../images/banner.jpg) no-repeat top center; }
 .content_inner{width:1010px;  margin:0px auto; position:relative; height:auto !important; height:658px; min-height:658px;}
-#content_box .flotage{width:254px; overflow:hidden; border-left:1px solid #e6e6e6;float:left; background:url(../images/flotage_bg.png) repeat right top; _background:none; _border-right:1px solid #e6e6e6; _width:240px; position:absolute; left:0px; top:0px;}
+.flotage{width:254px; overflow:hidden; border-left:1px solid #e6e6e6;float:left; background:url(../images/flotage_bg.png) repeat right top; _background:none; _border-right:1px solid #e6e6e6; _width:240px; position:absolute; left:0px; top:0px;}
+.nav .flotage_pages{ position:absolute; left:0px; top:30px;}
 .bottom_bor{border-bottom:1px solid #e6e6e6;}
 .sort_inner{width:241px; overflow:hidden; background:#fff;}
 .sort_inner h2{width:241px; height:30px; line-height:30px; background:#e8e8e8; font-size:12px; text-align:center;}
 .sort_inner h2 a{color:#b10000;width:241px; height:30px; display:block;}
+.sort_inner h2 a:hover{color:#b10000; text-decoration:none;}
 .sort_inner .food{background-position:74px 6px;}
 .sort_inner .cloth{background-position:74px -18px;}
 .sort_inner .education{background-position:74px -39px;}
@@ -107,7 +109,7 @@ a:hover{ text-decoration:underline; color:#f74c4b;}
 .filter_inner a{margin-right:30px; color:#858585;}
 .filter_inner a:hover{color:#f74c4b;}
 .add_box td{border-bottom:1px dotted #ccc;}
-.list_content{width:1010px; overflow:hidden;border:1px solid #e2e2e2; margin:0px auto 30px;}
+.list_content{width:1008px; overflow:hidden;border:1px solid #e2e2e2; margin:0px auto 30px;}
 .list_conL{width:717px; overflow:hidden; float:left; padding:10px 0 0 0px; background:url(../images/list_hidebg.jpg) repeat-y right top;}
 .list_conL h2{width:666px; height:30px; line-height:30px; font-size:14px; color:#333; padding-left:17px;}
 .list_conL h2 strong{float:left;}
