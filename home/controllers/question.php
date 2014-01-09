@@ -17,14 +17,24 @@ class Question extends HM_Controller
         $this->cat();
     }
 
+    /**
+     * 
+     * 显示问答列表
+     */
     public function listAll()
     {
-        $this->load->view('question/question_list');
+    	$this->load->library('layout');
+        $this->layout->view('question/question_list');
     }
     
+    /**
+     * 
+     * 显示问答详情
+     */
 	public function detail()
     {
-        $this->load->view('question/question_detail');
+    	$this->load->library('layout');
+        $this->layout->view('question/question_detail');
     }
 
     public function add()

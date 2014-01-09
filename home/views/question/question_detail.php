@@ -1,14 +1,3 @@
-<!DOCTYPE html>
-<html lang="en-US">
-<head>
-    <meta charset="UTF-8">
-    <title><?php if (isset($meta['title'])) echo $meta['title']; ?>中国创业指导网</title>
-    <meta name="keywords" content="<?php if (isset($meta['keywords'])) echo $meta['keywords']; ?>"/>
-    <meta name="description" content="<?php if (isset($meta['description'])) echo $meta['description']; ?>"/>
-    <link rel="stylesheet" type="text/css" href="<?php echo src_url('css/style.css'); ?>"/>
-</head>
-<body>
-<?php $this->load->view('common/header.php'); ?>
 <p class="crumbs"> 当前位置：<a href="#">首页</a> > <a href="#">问答列表</a> > <a href="#" class="current">回答 </a> </p>
 <div class="list_content">
     <div class="list_conL">
@@ -71,7 +60,3 @@
         </ul>
     </div>
 </div>
-
-<?php $this->load->view('common/footer.php'); ?>
-</body>
-</html>
