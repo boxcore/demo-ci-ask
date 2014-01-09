@@ -11,7 +11,7 @@
 <?php require 'common/header.php'; ?>
 <div id="content_box">
     <div class="content_inner">
-        <div class="flotage" style="display:none">
+        <div class="flotage">
             <div class="sort_inner">
                 <h2><a href="#" class="food">餐饮美食</a></h2>
                 <p><a href="#">中餐</a><a href="#">西餐</a><a href="#" class="highlight">冰淇淋</a><a href="#">烧烤</a><a href="#">卤味</a><a href="#">名酒</a><a href="#" class="highlight">小吃</a><a href="#">小吃车</a><a href="#">甜品</a><a href="#">面食</a></p>
