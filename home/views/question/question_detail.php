@@ -39,15 +39,15 @@
         <div class="ask_list">
             <h2>相关问题</h2>
             <dl class="relevant">
-                <dt><a href="#">想请教养殖兔子问题，有谁知道？</a></dt>
+                <dt><a href="<?php echo site_url('question/detail');?>">想请教养殖兔子问题，有谁知道？</a></dt>
                 <dd>2014-1-8</dd>
             </dl>
             <dl class="relevant">
-                <dt><a href="#">想请教养殖兔子问题，有谁知道？</a></dt>
+                <dt><a href="<?php echo site_url('user/login');?>">想请教养殖兔子问题，有谁知道？</a></dt>
                 <dd>2014-1-8</dd>
             </dl>
             <dl class="relevant no_border">
-                <dt><a href="#">想请教养殖兔子问题，有谁知道？</a></dt>
+                <dt><a href="<?php echo site_url('user/login');?>">想请教养殖兔子问题，有谁知道？</a></dt>
                 <dd>2014-1-8</dd>
             </dl>
         </div>
