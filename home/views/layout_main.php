@@ -11,14 +11,7 @@
 		<div class="top_inner">
 			<div class="logo"><a href="#"><img src="<?php echo src_url('images/logo.jpg');?>" width="242" height="41"></a></div>
 			<div class="search_box">
-				<p>
-					<strong>热门搜索 :</strong> 
-					<a href="#">问题</a>
-					<a href="#">服装</a>
-					<a href="#">建材</a>
-					<a href="#">美食</a>
-					<a href="#">服装</a>
-				</p>
+				<p>你好，欢迎来到中国创业指导网！<span><a href="#" class="top_login">请登录</a><a href="#">免费注册</a></span><span class="phone"><a href="#">手机版</a></span><a href="#">收藏夹</a></p>
 				<form>
 					<input name="" type="text" class="search_text">
 					<input name="" type="button" class="search_btn" value="搜索">

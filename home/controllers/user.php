@@ -12,21 +12,25 @@ class User extends HM_Controller
         parent::__construct();
     }
 
+    /**
+     * 
+     * 用户中心
+     */
     public function center()
     {
-        $this->load->view('center');
+        $this->load->view('user/user_center');
     }
 
     /**
-     * 用户登陆页
+     * 用户登陆
      */
     public function login()
     {
-        $this->load->view('user/login');
+        $this->load->view('user/user_login');
     }
 
     /**
-     * 用户注册页
+     * 用户注册
      */
     public function register()
     {

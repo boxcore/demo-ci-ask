@@ -37,8 +37,13 @@ class Question extends HM_Controller
         $this->layout->view('question/question_detail');
     }
 
+    /**
+     * 
+     * 添加
+     */
     public function add()
     {
-        $this->load->view('question/question_add');
+    	$this->load->library('layout');
+        $this->layout->view('question/question_add');
     }
 }

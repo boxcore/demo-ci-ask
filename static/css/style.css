@@ -4,17 +4,20 @@ body{font-size:12px; padding:0px; margin:0px;}
 p,h1,h2,h3,h4,span,strong,a,img,table,td,tr,input,form,btn,ul,li,dl,dt,dd,em{margin:0px; padding:0px; list-style:none; border:none; font-style:normal;}
 a{text-decoration:none; color:#333;}
 a:hover{ text-decoration:underline; color:#f74c4b;}
-#top_box,.search_text,.search_btn,.food,.cloth,.education,.home,.decorate,.beautify,.new,.ask_title,.submit_btn,.praise,.praise_inner,.question_btn{ background:url(../images/icon.png) no-repeat;}
+#top_box,.search_text,.search_btn,.food,.cloth,.education,.home,.decorate,.beautify,.new,.ask_title,.submit_btn,.praise,.praise_inner,.question_btn,.user_name,.user_mes,.phone{ background:url(../images/icon.png) no-repeat;}
 #top_box{width:100%; height:112px; background-position:0px -190px;background-repeat:repeat-x;}
 #top_box .top_inner{width:1010px; overflow:hidden; margin:0 auto; height:82px;}
 #top_box .logo{width:242px; height :41px; margin-top:25px; float:left;}
-#top_box .search_box{width:545px; height:58px; margin:10px 0 0; float:right;}
-#top_box .search_box p{color:#fff; height:25px; line-height:25px; width:545px;}
-#top_box .search_box p a{color:#fff; margin-right:12px;}
+#top_box .search_box{width:545px; height:58px; margin:5px 0 0; float:right;}
+#top_box .search_box p{color:#fff; height:29px; text-align:right;}
+#top_box .search_box p span{margin:0px 10px;}
+#top_box .search_box p a{color:#fff;}
+#top_box .top_login{margin-right:6px;}
+#top_box .phone{ display:inline-block; width:43px; height:14px; background-position:-80px -715px; padding-left:15px;}
 #top_box .search_box .search_text{float:left; width:440px; height:31px; line-height:31px;background-position:0px -312px; border-radius:5px 0 0 5px; background-repeat:repeat-x; padding-left:10px;}
 #top_box .search_box .search_btn{width:95px; height:31px;background-position:0px -353px; font-size:16px; font-family:"Microsoft Yahei"; color:#fff; cursor:pointer; float:left;}
 .nav{width:1010px; margin:0 auto; height:30px;}
-.nav li{float:left; height:30px; width:82px; text-align:center; line-height:30px; font-size:12px; font-family:"Microsoft Yahei"; background:url(../images/nav_line.jpg) no-repeat 80px 6px;}
+.nav li{float:left; height:30px; width:82px; text-align:center; line-height:30px; font-size:15px; font-family:"Microsoft Yahei"; background:url(../images/nav_line.jpg) no-repeat 80px 6px;}
 .nav .sort{width:242px; background:#329bfc;position:relative;}
 .nav li a{color:#fff;}
 .nav li a:hover{ text-decoration:none; color:#fff;}
@@ -35,7 +38,7 @@ a:hover{ text-decoration:underline; color:#f74c4b;}
 .sort_inner .beautify{background-position:74px -111px;}
 .sort_inner .new{background-position:74px -135px;}
 .sort_inner p{line-height:22px; padding:10px 20px;}
-.sort_inner p a{color:#666666; display:inline-block; width:20%; text-align:center;}
+.sort_inner p a{color:#666666; display:inline-block; width:20%; text-align:center; font-size:12px; font-family:"simsun";}
 .sort_inner p a:hover{color:#f74c4b;}
 .sort_inner p .highlight{color:#b10000;}
 .content_right{width:755px; overflow:hidden; float:right; margin-top:420px;}
@@ -170,9 +173,50 @@ a:hover{ text-decoration:underline; color:#f74c4b;}
 .selection_sort h3 span{font-weight:normal; color:#ccc;}
 .question_case input{width:690px; height:44px; border:1px solid #ccc; border-radius:5px; background:none;}
 .question_btn{width:90px; overflow:hidden; background-position:0px -620px; height:31px; float:right;margin:30px 0 50px; cursor:pointer;}
-
-
-
+/*登录注册开始*/
+/**/
+.mrbc_right { float:right; width:370px; overflow:hidden; border-left:1px dotted #dcdcdc; margin:30px 0; font-size:13px; }
+.mrbc_right .have_account{ margin:90px 0 160px 30px; overflow:hidden; line-height:26px; } 
+.mrbc_right .have_account span{color:#2D64B3;}
+.mrbc_right .have_account a { display:inline-block; width:100px; height:26px; background:#f5f5f5; border:1px solid #dcdcdc; line-height:26px; text-align:center; margin-left:10px; }
+.mrbc_right .have_account a:hover { border:1px solid #999; text-decoration:none; }
+.automatic{color:#1C89D6;}
+.login_box{width:1010px; overflow:hidden; margin:50px auto; border:1px solid #ccc; border-top:2px solid #1c89d6;}
+.login_box .loginbox_L{width:578px; overflow:hidden; float:left; padding:40px 60px;}
+.login_box .loginbox_L td{ padding-bottom:20px; color:#666; font-size:14px;}
+.login_box .loginbox_L em{width:28px; height:15px; display:block;}
+.loginbox_L .user_name{ background-position:10px -657px; background-repeat:no-repeat;}
+.loginbox_L .user_mes{background-position:10px -682px; background-repeat:no-repeat;}
+.login_box .loginbox_L input{width:190px; height:28px; line-height:28px; border:1px solid #ccc; padding-left:24px; font-size:12px; color:#A0A0A0;}
+.login_box .loginbox_L .login_btn{width:126px; height:28px; border:1px solid #75c3f9; background:#4995e1; margin:1px; font-size:14px; font-weight:bold; color:#fff; cursor:pointer; padding-left:0px;}
+.btnbg{background:#4679B0; width:128px; height:30px;}
+/*登录注册结束*/
+/*登录开始*/
+.have_bg{ background:#F2F2F2;}
+.me_box { overflow:hidden; background:#fff; margin:40px auto 0; height:338px; width:1010px; }
+.member_enter { width:950px; overflow:hidden; margin:50px auto 0;}
+.member_enter h1 a,.member_register .mr_box h1 a { display:inline-block; width:193px; height:52px; float:left; vertical-align:middle; }
+.member_enter h1 span,.member_register .mr_box h1 span { font-size:24px; font-family:Microsoft YaHei; font-weight:normal; display:inline-block; height:52px; line-height:52px; border-left:1px solid #dcdcdc; color:#555; margin-left:20px;  padding-left:20px; }
+.member_enter .me_box { overflow:hidden; background:#fff; margin-top:40px; height:338px; }
+.me_box .meb_left { width:494px; height:338px; float:left; }
+/*capacity*/
+#capacity { overflow:hidden;padding:40px 60px; float:left; }
+#capacity h1 { font-size:20px; font-family:Microsoft YaHei; font-weight:normal; color:#666; margin-bottom:20px; }
+#capacity .cap_frame { margin-bottom:16px; overflow:hidden; }
+#capacity .cap_frame label,.cap_enter label { font-size:14px; color:#666; width:60px; height:28px; line-height:28px; text-align:right; display:inline-block;*zoom:1; *display: inline;}
+#capacity .cap_frame p {display:inline-block;*zoom:1; *display: inline;  width:214px; height:28px; border:1px solid #dcdcdc; background:#fff; line-height:28px; }
+#capacity .cap_frame p em { display:inline-block; background:url(../images/icon.png) no-repeat 0 -666px; width:12px; height:12px; margin:8px 8px 0 8px; }
+#capacity .cap_frame p.cf_lock em {background:url(../images/icon.png) no-repeat 0 -690px;}
+#capacity .cap_frame p input { border-left:1px solid #ccc; padding-left:5px; color:#a0a0a0; width:174px; }
+#capacity .cap_enter { overflow:hidden; _height:32px; }
+#capacity .cap_enter p { display:inline-block; vertical-align:top; position:relative; width:214px; *zoom:1; *display: inline;}
+#capacity .cap_enter p input { vertical-align:middle; margin-right:5px; }
+#capacity .cap_enter p .forget { position:absolute; top:0; right:0; color:#4679b0; }
+#capacity .enter,.release_infor .step .step_content .sc_content .scc_frame .btn { margin-left:66px; background:#4679b0; width:128px; height:30px; display:block; }
+#capacity .enter button { width:126px; height:28px; border:1px solid #75c3f9; background:#4995e1; margin:1px; font-size:14px; font-weight:bold; color:#fff; cursor:pointer; }
+#capacity .enter button:hover { background:#0088e6; }
+#capacity .no_register { margin:12px 0 10px 66px;; }
+#capacity .no_register a { color:#4679b0; }
 
 
 

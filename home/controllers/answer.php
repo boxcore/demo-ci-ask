@@ -12,10 +12,10 @@ class Answer extends HM_Controller
         parent::__construct();
     }
 
-
     public function index()
     {
-        $this->load->view('answer/index');
+    	$this->load->library('layout');
+        $this->layout->view('answer/index');
     }
 
 }
