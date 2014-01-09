@@ -26,4 +26,9 @@ class Question extends HM_Controller
     {
         $this->load->view('question/question_detail');
     }
+
+    public function add()
+    {
+        $this->load->view('question/question_add');
+    }
 }

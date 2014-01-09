@@ -14,22 +14,6 @@
 				"buffer_size": 88,
 				"line_ending": "Windows"
 			}
-		},
-		{
-			"file": "home/controllers/user.php",
-			"settings":
-			{
-				"buffer_size": 454,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "static/css/style.css",
-			"settings":
-			{
-				"buffer_size": 8163,
-				"line_ending": "Windows"
-			}
 		}
 	],
 	"build_system": "",
@@ -64,6 +48,8 @@
 	},
 	"file_history":
 	[
+		"/Z/xinwenda/home/controllers/user.php",
+		"/Z/xinwenda/static/css/style.css",
 		"/Z/xinwenda/home/views/user/user_register.php",
 		"/D/wamp/www/alan/52milan.com/data/config.php",
 		"/Z/romeo/trunk/sites/7808/views/main.layout.tpl.php",
@@ -189,9 +175,7 @@
 		"/D/Note/phpstorm设置.js",
 		"/C/Users/Core/Downloads/fn28-item-ad-temp.sql",
 		"/C/Users/Core/Downloads/temp_item_ad.sql",
-		"/Z/fn28-old-item_ad.sql",
-		"/Z/romeo.sql",
-		"/D/Portable/SQLyog_Enterprise/sn.txt"
+		"/Z/fn28-old-item_ad.sql"
 	],
 	"find":
 	{
@@ -275,7 +259,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -301,64 +285,6 @@
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "home/controllers/user.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 454,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								183,
-								183
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 96.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "static/css/style.css",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 8163,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 2520.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
