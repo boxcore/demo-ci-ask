@@ -2,7 +2,7 @@
 <html lang="en-US">
 <head>
 <meta charset="UTF-8">
-<title>中国创业指导网</title>
+<title>中国创业指导网-用户注册</title>
 <link rel="stylesheet" type="text/css" href="<?php echo src_url('css/style.css');?>"/>
 </head>
 <body>
@@ -11,15 +11,15 @@
 			<table width="640" border="0" class="loginbox_L">
 				<tr>
 					<td width="96" align="right">用户名：</td>
-					<td width="472" class="case"><input name="" type="text" class="user_name"></td>
+					<td width="472" class="case"><input name="username" type="text" class="user_name"></td>
 				</tr>
 				<tr>
 					<td align="right">密码：</td>
-					<td class="case"><input name="" type="text" class="user_mes"></td>
+					<td class="case"><input name="password" type="password" class="user_mes"></td>
 				</tr>
 				<tr>
 					<td align="center">确认密码：</td>
-					<td class="case"><input name="" type="text" class="user_mes"></td>
+					<td class="case"><input name="repassword" type="password" class="user_mes"></td>
 				</tr>
 				<tr>
 					<td>&nbsp;</td>
