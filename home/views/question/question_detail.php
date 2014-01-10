@@ -37,7 +37,7 @@ KindEditor.ready(function(K) {
 			<h2>我来回答</h2>
 			<form name="example" method="post" action="demo.php">
 				<div class="app-and-share">
-					<textarea name="content1" style="width:668px;height:200px;visibility:hidden;"></textarea>
+					<textarea name="content1" style="width:650px;height:200px;visibility:hidden;"></textarea>
 				</div>
 				<div class="subbox">
 					<span><input name="" type="checkbox" value=""><em>匿名</em></span>
