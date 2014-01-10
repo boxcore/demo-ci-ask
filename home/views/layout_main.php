@@ -52,9 +52,9 @@
 					</div>
 				</div>
 			</li>
-			<li><a href="#">首页</a></li>
-			<li><a href="#">问答</a></li>
-			<li><a href="#">项目</a></li>
+			<li><a href="javascript:void(0);">首页</a></li>
+			<li><a href="javascript:void(0);">问答</a></li>
+			<li><a href="javascript:void(0);">项目</a></li>
 		</ul>
 	</div>
 	<?php echo $content_for_layout;?>

@@ -1,16 +1,49 @@
+<link rel="stylesheet" href="<?php echo src_url('js/kindeditor/themes/default/default.css');?>" />
+<link rel="stylesheet" href="<?php echo src_url('js/kindeditor/plugins/code/prettify.css');?>" />
+<script charset="utf-8" src="<?php echo src_url('js/kindeditor/kindeditor.js');?>"></script>
+<script charset="utf-8" src="<?php echo src_url('js/kindeditor/lang/zh_CN.js');?>"></script>
+<script charset="utf-8" src="<?php echo src_url('js/kindeditor/plugins/code/prettify.js');?>"></script>
+<script>
+KindEditor.ready(function(K) {
+	var editor1 = K.create('textarea[name="content1"]', {
+		cssPath : '<?php echo src_url('js/kindeditor/plugins/code/prettify.css');?>',
+		uploadJson : '<?php echo src_url('js/kindeditor/php/upload_json.php');?>',
+		fileManagerJson : '<?php echo src_url('js/kindeditor/php/file_manager_json.php');?>',
+		allowFileManager : true,
+		afterCreate : function() {
+			var self = this;
+			K.ctrl(document, 13, function() {
+				self.sync();
+				K('form[name=example]')[0].submit();
+			});
+			K.ctrl(self.edit.doc, 13, function() {
+				self.sync();
+				K('form[name=example]')[0].submit();
+			});
+		}
+	});
+	prettyPrint();
+});
+</script>
 <p class="crumbs"> 当前位置：<a href="#">首页</a> > <a href="#">问答列表</a> > <a href="#" class="current">回答 </a> </p>
 <div class="list_content">
     <div class="list_conL">
         <div class="ask_box">
             <h1 class="ask_title">想请教养殖兔子问题，有谁知道？</h1>
-            <div class="ask-info"><span>网友xx </span>| <span>分类：<a href="#">食品机械 </a></span>| <span>浏览0次</span> | <span>2013-12-30 10:58</span></div>
-            <h2>我来回答</h2>
-            <div class="app-and-share"> <img src="<?php echo src_url('images/edit.jpg'); ?>" width="652" height="116"></div>
-            <div class="subbox"><span>
-        <input name="" type="checkbox" value="">
-        <em>匿名</em></span>
-                <input name="" type="button" class="submit_btn" value="提交回答">
-            </div>
+            <div class="ask-info">
+				<span>网友xx </span>| 
+				<span>分类：<a href="#">食品机械 </a></span>| <span>浏览0次</span> | <span>2013-12-30 10:58</span>
+			</div>
+			<h2>我来回答</h2>
+			<form name="example" method="post" action="demo.php">
+				<div class="app-and-share">
+					<textarea name="content1" style="width:668px;height:200px;visibility:hidden;"></textarea>
+				</div>
+				<div class="subbox">
+					<span><input name="" type="checkbox" value=""><em>匿名</em></span>
+					<input name="button" type="submit" class="submit_btn" value="提交回答">
+				</div>
+			</form>
         </div>
         <div class="interval"></div>
         <div class="ask_list">
