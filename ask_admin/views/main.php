@@ -1,3 +1,4 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <div class="accountInfo">
     <div class="alertInfo">
         <h2><a href="#" target="_blank">#</a></h2>

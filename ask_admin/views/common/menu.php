@@ -1,3 +1,4 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <div id="sidebar">
         <div class="toggleCollapse"><h2>主菜单</h2><div>收缩</div></div>
 

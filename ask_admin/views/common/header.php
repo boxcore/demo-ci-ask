@@ -1,3 +1,4 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <div id="header">
     <div class="headerNav">
         <a href="http://www.7808.com/ask_admin/" style="font-size: 30px; color: #fff; font-weight: bold; line-height: 30px; display: inline-block; height: 50px; padding: 8px 20px; text-decoration: none; "><?php echo $GLOBALS['configs']['site_name']; ?>管理系统</a>
@@ -14,7 +15,7 @@
                 </ul>
             </li>
             <li><a href="#" target="_blank">##</a></li>
-            <li><a href="changepwd.html" target="dialog" width="600">设置</a></li>
+            <li><a href="<? echo site_url('user/set_password')?>" target="dialog" width="600">修改密码</a></li>
             <li><a href="#" target="_blank">##</a></li>
             <li><a href="#" target="_blank">##</a></li>
             <li><a href="<? echo site_url('user/logout') ?>">退出</a></li>

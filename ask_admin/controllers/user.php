@@ -14,8 +14,16 @@ class User extends MY_Controller
         $this->load->model('user_model');
     }
 
+    /**
+     * 登陆页面
+     */
     public function login()
     {
+        if($this->session->userdata('logined_in'))
+        {
+            redirect('index');
+        }
+
         // 初始化函数
         $this->load->helper('form');
         $this->load->library('form_validation');
@@ -39,10 +47,13 @@ class User extends MY_Controller
             $data['message'] = '您已经登陆，请返回操作面板';
             redirect('index');
         }
-
-
     }
 
+    /**
+     * 验证用户名
+     * @param $username
+     * @return bool
+     */
     public function username_check($username)
     {
         if ($this->user_model->check_username($username) )
@@ -54,6 +65,12 @@ class User extends MY_Controller
         return false;
     }
 
+
+    /**
+     * 验证密码
+     * @param $password
+     * @return bool
+     */
     public function password_check($password)
     {
         if ( $this->user_model->check_password( $this->_username, md5($password) ) )
@@ -66,6 +83,47 @@ class User extends MY_Controller
             return false;
         }
 
+    }
+
+    public function set_password()
+    {
+        $this->load->view('user/set_password');
+    }
+
+    public function set_password_save()
+    {
+        if ( $this->user_model->check_password( $this->session->userdata('username'), md5($password)) )
+        {
+            $data = array(
+                'password' = $_POST['new_password'];
+            );
+            $where = "`username` = '$this->session->userdata('username')'";
+            $flag = $this->db->update_string('xwd_user')
+        }
+
+        $cfgs = isset($_POST['cfgs']) ? $_POST['cfgs'] : array();
+        if ($cfgs){
+
+            $symbo = 0;
+            if ( count($cfgs) )
+            {
+                foreach( $_POST['cfgs'] as $key=>$value)
+                {
+                    $data = array('value' => $value);
+                    $this->db->where('key', $key);
+                    $symbo += $this->db->update('xwd_configs', $data );
+                }
+            }
+
+            if($symbo)
+            {
+                $this->success_ajax('操作成功');
+            }
+            else
+            {
+                $this->error_ajax();
+            }
+        }
     }
 
     /**
