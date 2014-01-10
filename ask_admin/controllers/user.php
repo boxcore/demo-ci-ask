@@ -92,37 +92,21 @@ class User extends MY_Controller
 
     public function set_password_save()
     {
-        if ( $this->user_model->check_password( $this->session->userdata('username'), md5($password)) )
+        $username = $this->session->userdata('username');
+        $old_password = md5( trim( $this->input->post('old_password') ) );
+        $new_password = trim($this->input->post('new_password')) ;
+        echo $old_password.'----'.$new_password;
+
+
+        if ( $this->user_model->check_password( $username, $old_password ) )
         {
-            $data = array(
-                'password' = $_POST['new_password'];
-            );
-            $where = "`username` = '$this->session->userdata('username')'";
-            $flag = $this->db->update_string('xwd_user')
+            $data = array('password' => $new_password,);
+            $this->db->where( 'username', $username );
+            if($this->db->update('xwd_user', $data)) $this->success_ajax('操作成功');
         }
-
-        $cfgs = isset($_POST['cfgs']) ? $_POST['cfgs'] : array();
-        if ($cfgs){
-
-            $symbo = 0;
-            if ( count($cfgs) )
-            {
-                foreach( $_POST['cfgs'] as $key=>$value)
-                {
-                    $data = array('value' => $value);
-                    $this->db->where('key', $key);
-                    $symbo += $this->db->update('xwd_configs', $data );
-                }
-            }
-
-            if($symbo)
-            {
-                $this->success_ajax('操作成功');
-            }
-            else
-            {
-                $this->error_ajax();
-            }
+        else
+        {
+            $this->error_ajax('密码错误');
         }
     }
 
