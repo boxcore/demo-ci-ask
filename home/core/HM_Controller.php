@@ -13,6 +13,7 @@ class HM_Controller extends CI_Controller
         $this->load->helper('url');
         $this->load->helper('app');
         $this->load->database();
+        $this->load->library('session');
         self::get_configs();
     }
 

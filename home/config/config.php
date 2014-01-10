@@ -19,7 +19,7 @@ $config['log_threshold'] = 0;
 $config['log_path'] = '';
 $config['log_date_format'] = 'Y-m-d H:i:s';
 $config['cache_path'] = '';
-$config['encryption_key'] = '';
+$config['encryption_key'] = '7808';
 
 $config['sess_cookie_name']		= 'ci_session';
 $config['sess_expiration']		= 7200;

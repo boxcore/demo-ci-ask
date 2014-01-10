@@ -2,14 +2,14 @@
 <html lang="en-US">
 <head>
 <meta charset="UTF-8">
-<title>中国创业指导网</title>
+<title>中国创业指导网-用户登录</title>
 <link rel="stylesheet" type="text/css" href="<?php echo src_url('css/style.css');?>"/>
 </head>
 <body class="have_bg">
 	<div class="me_box">
-		<div class="meb_left"> <img src="<?php echo src_url('images/enter_banner.jpg');?>" height="338" width="494"> </div>
+		<div class="meb_left"><img src="<?php echo src_url('images/enter_banner.jpg');?>" height="338" width="494"> </div>
 		<div id="capacity">
-			<form name="" action="login" method="POST" id="login">
+			<form name="login" action="<?php echo site_url('user/verify_login');?>" method="POST" id="login">
 				<h1>登录</h1>
 				<div class="notice-icons message hide" id="message"> </div>
 				<div class="cap_frame">
