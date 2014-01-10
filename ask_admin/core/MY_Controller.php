@@ -10,10 +10,22 @@ class MY_Controller extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->helper('url');
-        $this->load->helper('app');
         $this->load->database();
         self::get_configs();
+
+        $this->check_login();
+
+    }
+
+    protected function check_login()
+    {
+        if ( ! $this->session->userdata('logined_in'))
+        {
+            if(uri_string() != 'user/login'){
+                redirect('user/login');
+            }
+
+        }
     }
 
     public function get_configs()

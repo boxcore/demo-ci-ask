@@ -34,7 +34,7 @@ class User extends HM_Controller
      */
     public function register()
     {
-        $this->load->view('user/user_register');
+        $this->load->view('user/register');
     }
 
 }

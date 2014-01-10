@@ -17,7 +17,7 @@
             <li><a href="changepwd.html" target="dialog" width="600">设置</a></li>
             <li><a href="#" target="_blank">##</a></li>
             <li><a href="#" target="_blank">##</a></li>
-            <li><a href="login.html">退出</a></li>
+            <li><a href="<? echo site_url('user/logout') ?>">退出</a></li>
         </ul>
         <ul class="themeList" id="themeList">
             <li theme="default"><div class="selected">蓝色</div></li>

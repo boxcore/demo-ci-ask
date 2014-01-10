@@ -11,7 +11,7 @@
 			"file": "/D/wamp/www/boxcore/note/正则批量/dom替换.txt",
 			"settings":
 			{
-				"buffer_size": 88,
+				"buffer_size": 86,
 				"line_ending": "Windows"
 			}
 		}
@@ -48,6 +48,7 @@
 	},
 	"file_history":
 	[
+		"/Z/xinwenda/ask_admin/models/user_model.php",
 		"/Z/xinwenda/home/controllers/user.php",
 		"/Z/xinwenda/static/css/style.css",
 		"/Z/xinwenda/home/views/user/user_register.php",
@@ -174,8 +175,7 @@
 		"/D/Note/configure/sublime3/Packages/User/Preferences.sublime-settings",
 		"/D/Note/phpstorm设置.js",
 		"/C/Users/Core/Downloads/fn28-item-ad-temp.sql",
-		"/C/Users/Core/Downloads/temp_item_ad.sql",
-		"/Z/fn28-old-item_ad.sql"
+		"/C/Users/Core/Downloads/temp_item_ad.sql"
 	],
 	"find":
 	{
@@ -268,15 +268,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 88,
+						"buffer_size": 86,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								88,
-								88
+								86,
+								86
 							]
 						],
 						"settings":

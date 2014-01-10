@@ -48,3 +48,6 @@ body { margin:0; text-align:center; background:#FFF url(../default/images/login_
 .login_inner p { margin:10px 0; line-height:150%; font-size:14px; color:#666;}
 
 #login_footer { clear:both; display:block; margin-bottom:20px; padding:10px; border-top:solid 1px #e2e5e8; color:#666; text-align:center;}
+
+
+p span.error { color: red; font-size: 10px; padding-left: 10px;;}
