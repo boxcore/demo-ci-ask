@@ -49,6 +49,11 @@ class User extends MY_Controller
         }
     }
 
+    public function user_list()
+    {
+        $sql = 'select * from `xwd_user`';
+    }
+
     /**
      * 验证用户名
      * @param $username
@@ -94,9 +99,12 @@ class User extends MY_Controller
     {
         $username = $this->session->userdata('username');
         $old_password = md5( trim( $this->input->post('old_password') ) );
-        $new_password = trim($this->input->post('new_password')) ;
-        echo $old_password.'----'.$new_password;
+        $new_password = md5( trim( $this->input->post('new_password') ) ) ;
 
+        if( $old_password == $new_password )
+        {
+            $this->error_ajax('新密码不能跟原来的密码相同！');die();
+        }
 
         if ( $this->user_model->check_password( $username, $old_password ) )
         {
