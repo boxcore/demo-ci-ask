@@ -36,8 +36,8 @@ class User extends HM_Controller
     public function verify_login()
     {
     	if ($_POST){
-    		$user_name 	  = $this->input->post('user');
-    		$password = $this->input->post('password');
+    		$user_name = $this->input->post('user');
+    		$password  = $this->input->post('password');
     		
     		$this->load->model('User_model');
     		$res = $this->User_model->verify_login($user_name, $password);
@@ -60,19 +60,43 @@ class User extends HM_Controller
 	 */
     public function add_user()
     {
-    	$user = $_POST['user'];
-    	$password = md5($_POST['password']);
+    	if ($_POST) {
+    		$user 		= $this->input->post('user');
+    		$password 	= $this->input->post('password');
+    		$repassword = $this->input->post('repassword');
+    		
+    		if (!$user) {
+    			$data = array('info' => '用户名不能为空!', 'status' => '0');
+    		}
+    		
+    		if (!$password) {
+    			$data = array('info' => '密码不能为空!', 'status' => '0');
+    		}
+    		
+    		if (!$repassword) {
+    			$data = array('info' => '重复密码不能为空!', 'status' => '0');
+    		}
+    		
+    		if ($password !== $repassword) {
+    			$data = array('info' => '两次输入的密码不一致!请重新输入', 'status' => '0');
+    		}
+    		
+    		var_dump($data);
+    	}
     	
-    	$query = $this->db->query('SELECT `username`,`password` FROM `xwd_user` WHERE 1=1');
-    	$data1 = $query->result_array();
     	
-    	$data = array(
-    				'username' => $user,
-    				'password' => $password,
-    				'lastlogin' => time(),
-    				'regtime' => time()
-    			);
-    	$this->db->insert('xwd_user', $data);
+//    	$password = md5($_POST['password']);
+//    	
+//    	$query = $this->db->query('SELECT `username`,`password` FROM `xwd_user` WHERE 1=1');
+//    	$data1 = $query->result_array();
+//    	
+//    	$data = array(
+//    				'username' => $user,
+//    				'password' => $password,
+//    				'lastlogin' => time(),
+//    				'regtime' => time()
+//    			);
+//    	$this->db->insert('xwd_user', $data);
     	
     	//$this->session->set_userdata($data);
 

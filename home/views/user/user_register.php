@@ -8,25 +8,25 @@
 <body>
 <div class="login_box">
 	<div id="capacity">
-		<form name="register" action="<?php echo site_url('user/add_user');?>" method="POST" id="register">
+		<form name="register" method="POST" id="register">
 			<div class="notice-icons message hide" id="message"> </div>
 			<div class="cap_frame">
 				<label>用户名:</label>
-				<p class="cf_person"><em></em><input name="user" value="" type="text"></p>
+				<p class="cf_person"><em></em><input name="user" value="" type="text" id="user"></p>
 			</div>
 			<div class="cap_frame">
 				<label>密码:</label>
-				<p class="cf_lock"><em></em><input name="password" value="" type="password"></p>
+				<p class="cf_lock"><em></em><input name="password" value="" type="password" id="password"></p>
 			</div>
 			<div class="cap_frame">
 				<label>确认密码:</label>
-				<p class="cf_lock"><em></em><input name="repassword" value="" type="password"></p>
+				<p class="cf_lock"><em></em><input name="repassword" value="" type="password" id="repassword"></p>
 			</div>
 			<div class="cap_enter">
 				<label></label>
 				<p class="automatic"><a href="javascript:void(0);">《创业指导网用户注册协议》</a></p>
 			</div>
-			<span class="enter"><button type="submit">登 录</button></span>
+			<span class="enter"><button type="submit" onclick="checkRegister()">登 录</button></span>
 		</form>
 	</div>
 	<div class="mrbc_right">

@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <title>中国创业指导网-用户登录</title>
 <link rel="stylesheet" type="text/css" href="<?php echo src_url('css/style.css');?>"/>
+<script src="<?php echo src_url('js/jquery-1.7.1.min.js');?>"></script>
+<script src="<?php echo src_url('js/login.js');?>"></script>
 </head>
 <body class="have_bg">
 	<div class="me_box">
