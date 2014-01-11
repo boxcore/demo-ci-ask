@@ -51,7 +51,9 @@ class User extends MY_Controller
 
     public function user_list()
     {
-        $sql = 'select * from `xwd_user`';
+//        $this->input->post('username');
+//        $sql = 'select * from `xwd_user`';
+        $this->load->view('user/user_list');
     }
 
     /**
@@ -127,8 +129,5 @@ class User extends MY_Controller
         $this->session->unset_userdata($data);
         redirect('user/login');
     }
-
-
-
 
 }
