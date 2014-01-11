@@ -35,11 +35,13 @@ class User extends HM_Controller
      */
     public function verify_login()
     {
-    	var_dump($_POST);
     	if ($_POST){
-    		$user 	  = $_POST['user'];
-    		$password = $_POST['user'];
+    		$user_name 	  = $this->input->post('user');
+    		$password = $this->input->post('password');
     		
+    		$this->load->model('User_model');
+    		$res = $this->User_model->verify_login($user_name, $password);
+    		var_dump($res);
     	}
     }
     
@@ -49,14 +51,14 @@ class User extends HM_Controller
      */
     public function register()
     {
-        $this->load->view('user/register');
+        $this->load->view('user/user_register');
     }
     
 	/**
 	 * 
 	 * 添加用户
 	 */
-    public function addUser()
+    public function add_user()
     {
     	$user = $_POST['user'];
     	$password = md5($_POST['password']);
@@ -70,9 +72,9 @@ class User extends HM_Controller
     				'lastlogin' => time(),
     				'regtime' => time()
     			);
-    	//$this->db->insert('xwd_user', $data);
+    	$this->db->insert('xwd_user', $data);
     	
-    	$this->session->set_userdata($data);
+    	//$this->session->set_userdata($data);
 
     	//$temp = $this->session->all_userdata();
 //    	var_dump($this->session->all_userdata());

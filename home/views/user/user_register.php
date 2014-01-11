@@ -8,7 +8,7 @@
 <body>
 <div class="login_box">
 	<div id="capacity">
-		<form name="register" action="<?php echo site_url('user/addUser');?>" method="POST" id="register">
+		<form name="register" action="<?php echo site_url('user/add_user');?>" method="POST" id="register">
 			<div class="notice-icons message hide" id="message"> </div>
 			<div class="cap_frame">
 				<label>用户名:</label>
