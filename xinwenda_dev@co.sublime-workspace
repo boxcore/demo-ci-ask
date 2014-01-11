@@ -14,6 +14,14 @@
 				"buffer_size": 86,
 				"line_ending": "Windows"
 			}
+		},
+		{
+			"file": "/C/Users/Core/Desktop/qiniu-set.txt",
+			"settings":
+			{
+				"buffer_size": 295,
+				"line_ending": "Windows"
+			}
 		}
 	],
 	"build_system": "",
@@ -48,6 +56,12 @@
 	},
 	"file_history":
 	[
+		"/Z/xinwenda/ask_admin/controllers/user.php",
+		"/C/Users/Core/Desktop/qiniu-set.txt",
+		"/D/wamp/www/boxcore/note/codeigniter/ci数据库操作.txt",
+		"/Z/xinwenda/ask_admin/views/message.php",
+		"/D/wamp/www/boxcore/note/codeigniter/ci-db.txt",
+		"/C/Users/Core/AppData/Local/Temp/Rar$DIa0.243/使用说明.txt",
 		"/Z/xinwenda/ask_admin/models/user_model.php",
 		"/Z/xinwenda/home/controllers/user.php",
 		"/Z/xinwenda/static/css/style.css",
@@ -169,13 +183,7 @@
 		"/C/Users/Core/Downloads/temp_item_ad (5).sql",
 		"/C/Users/Core/Downloads/temp_item_ad (3).sql",
 		"/C/Users/Core/Downloads/temp_item_ad (2).sql",
-		"/D/Note/work/库项目/建材装饰/防水材料/1226 鲁大师防水/info.html",
-		"/D/Note/work/库项目/建材装饰/防水材料/1226 鲁大师防水/info.txt",
-		"/D/Note/work/库项目/建材装饰/防水材料/1226 鲁大师防水/tpl.html",
-		"/D/Note/configure/sublime3/Packages/User/Preferences.sublime-settings",
-		"/D/Note/phpstorm设置.js",
-		"/C/Users/Core/Downloads/fn28-item-ad-temp.sql",
-		"/C/Users/Core/Downloads/temp_item_ad.sql"
+		"/D/Note/work/库项目/建材装饰/防水材料/1226 鲁大师防水/info.html"
 	],
 	"find":
 	{
@@ -259,7 +267,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -277,6 +285,34 @@
 							[
 								86,
 								86
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/C/Users/Core/Desktop/qiniu-set.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 295,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								221,
+								221
 							]
 						],
 						"settings":
