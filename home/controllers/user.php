@@ -45,13 +45,12 @@ class User extends HM_Controller
     	}
     }
     
-    
     /**
      * 用户注册
      */
     public function register()
     {
-        $this->load->view('user/user_register');
+    	$this->load->view('user/user_register');
     }
     
 	/**
@@ -80,7 +79,7 @@ class User extends HM_Controller
     		if ($password !== $repassword) {
     			$data = array('info' => '两次输入的密码不一致!请重新输入', 'status' => '0');
     		}
-    		
+    	
     		var_dump($data);
     	}
     	
