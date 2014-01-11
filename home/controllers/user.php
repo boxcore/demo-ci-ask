@@ -36,12 +36,22 @@ class User extends HM_Controller
     public function verify_login()
     {
     	if ($_POST){
-    		$user_name = $this->input->post('user');
-    		$password  = $this->input->post('password');
+    		$username = $this->input->post('username');
+    		$password = $this->input->post('password');
     		
     		$this->load->model('User_model');
-    		$res = $this->User_model->verify_login($user_name, $password);
-    		var_dump($res);
+    		$res = $this->User_model->verify_login($username, $password);
+    		
+    		if ($res) {
+    			$data = $res[0];
+    			$this->session->set_userdata($data);
+    			$this->load->helper('url');
+				redirect('user/center', 'refresh');
+    		} else {
+    			$data = array('info' => '用户名或者密码错误', 'status' => 0);
+    			$this->load->helper('url');
+				redirect('user/login', 'refresh');
+    		}
     	}
     }
     
@@ -60,7 +70,7 @@ class User extends HM_Controller
     public function add_user()
     {
     	if ($_POST) {
-    		$user 		= $this->input->post('user');
+    		$user 		= $this->input->post('username');
     		$password 	= $this->input->post('password');
     		$repassword = $this->input->post('repassword');
     		
@@ -80,26 +90,20 @@ class User extends HM_Controller
     			$data = array('info' => '两次输入的密码不一致!请重新输入', 'status' => '0');
     		}
     	
-    		var_dump($data);
+    		$this->load->model('User_model');
+    		$res = $this->User_model->verify_login($user, $password);
+    		
+    		if ($res) {
+    			$data = $res[0];
+    			$this->session->set_userdata($data);
+    			$this->load->helper('url');
+				redirect('user/center', 'refresh');
+    		} else {
+				$data = $this->User_model->add_user($user, $password);
+				$this->session->set_userdata($data);
+    			$this->load->helper('url');
+				redirect('user/center', 'refresh');
+    		}
     	}
-    	
-    	
-//    	$password = md5($_POST['password']);
-//    	
-//    	$query = $this->db->query('SELECT `username`,`password` FROM `xwd_user` WHERE 1=1');
-//    	$data1 = $query->result_array();
-//    	
-//    	$data = array(
-//    				'username' => $user,
-//    				'password' => $password,
-//    				'lastlogin' => time(),
-//    				'regtime' => time()
-//    			);
-//    	$this->db->insert('xwd_user', $data);
-    	
-    	//$this->session->set_userdata($data);
-
-    	//$temp = $this->session->all_userdata();
-//    	var_dump($this->session->all_userdata());
     }
 }
