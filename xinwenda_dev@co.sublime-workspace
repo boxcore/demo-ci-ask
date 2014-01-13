@@ -16,10 +16,18 @@
 			}
 		},
 		{
-			"file": "/C/Users/Core/Desktop/qiniu-set.txt",
+			"file": "/D/wamp/www/demo/tp_ateam/Adnn/Lib/Action/TeacherAction.class.php",
 			"settings":
 			{
-				"buffer_size": 295,
+				"buffer_size": 4504,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/Z/romeo/trunk/_xxoo/core/db.fn.php",
+			"settings":
+			{
+				"buffer_size": 7957,
 				"line_ending": "Windows"
 			}
 		}
@@ -56,8 +64,15 @@
 	},
 	"file_history":
 	[
-		"/Z/xinwenda/ask_admin/controllers/user.php",
+		"/Z/xinwenda/system/helpers/db_helper.php",
+		"/D/wamp/www/demo/tp_ateam/Adnn/Tpl/Teacher/index.html",
+		"/Z/xinwenda/system/helpers/xml_helper.php",
+		"/D/wamp/www/boxcore/note/linux/设置启动.txt",
 		"/C/Users/Core/Desktop/qiniu-set.txt",
+		"/D/wamp/www/ex/index.php",
+		"/D/wamp/www/demo/tp_ateam/Adnn/Lib/Action/AdminAction.class.php",
+		"/D/wamp/www/ex/readme.txt",
+		"/Z/xinwenda/ask_admin/controllers/user.php",
 		"/D/wamp/www/boxcore/note/codeigniter/ci数据库操作.txt",
 		"/Z/xinwenda/ask_admin/views/message.php",
 		"/D/wamp/www/boxcore/note/codeigniter/ci-db.txt",
@@ -176,14 +191,7 @@
 		"/C/Users/Core/Downloads/item_ad (1).sql",
 		"/D/Note/link/tools.txt",
 		"/C/Users/Core/Downloads/cocksucker (2).sql",
-		"/C/Users/Core/AppData/Local/Temp/item_ad.fn.php-rev1497.svn000.tmp.php",
-		"/D/Note/work/Code/批量替换正则.js",
-		"/D/Note/work/log/1227.log",
-		"/C/Users/Core/Desktop/sql-statment",
-		"/C/Users/Core/Downloads/temp_item_ad (5).sql",
-		"/C/Users/Core/Downloads/temp_item_ad (3).sql",
-		"/C/Users/Core/Downloads/temp_item_ad (2).sql",
-		"/D/Note/work/库项目/建材装饰/防水材料/1226 鲁大师防水/info.html"
+		"/C/Users/Core/AppData/Local/Temp/item_ad.fn.php-rev1497.svn000.tmp.php"
 	],
 	"find":
 	{
@@ -295,35 +303,66 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "/C/Users/Core/Desktop/qiniu-set.txt",
+					"file": "/D/wamp/www/demo/tp_ateam/Adnn/Lib/Action/TeacherAction.class.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 295,
+						"buffer_size": 4504,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								221,
-								221
+								136,
+								136
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/Z/romeo/trunk/_xxoo/core/db.fn.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7957,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								7957
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
 					"type": "text"
 				}
 			]

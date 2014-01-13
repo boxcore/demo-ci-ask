@@ -46,11 +46,11 @@ class MY_Controller extends CI_Controller
      */
     protected function ajaxReturns($status,$msg){
         $result=array(
-            "statusCode"=>$status, //在dwz 中，成功200 失败300
-            "message"=>$msg,
-            "navTabId"=> isset($_GET['navTabId']) ? $_GET['navTabId'] :'',
-            "callbackType"=> isset( $_GET['callbackType'] ) ? $_GET['navTabId'] :'',
-            "forwardUrl"=> isset( $_GET['forwardUrl'] ) ? $_GET['navTabId'] :'',
+            "statusCode"   => $status, //在dwz 中，成功200 失败300
+            "message"      => $msg,
+            "navTabId"     => isset($_REQUEST['navTabId']) ? $_REQUEST['navTabId'] : '',
+            "callbackType" => isset($_REQUEST['callbackType']) ? $_REQUEST['navTabId'] : '',
+            "forwardUrl"   => isset($_REQUEST['forwardUrl']) ? $_REQUEST['navTabId'] : '',
         );
         // 返回JSON数据格式到客户端 包含状态信息
         header("Content-Type:text/html; charset=utf-8");

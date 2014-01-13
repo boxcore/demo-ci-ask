@@ -14,8 +14,7 @@
             </div>
             <div class="unit">
                 <label>重复输入新密码：</label>
-                <input type="password" name="re_new_password" size="30" equalTo="#cp_newPassword" class="required
-                alphanumeric"/>
+                <input type="password" name="re_new_password" size="30" equalTo="#cp_newPassword" class="required alphanumeric"/>
             </div>
 
         </div>

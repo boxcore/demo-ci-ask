@@ -6,6 +6,52 @@ class User_model extends CI_Model {
 		parent::__construct();
 	}
 
+    public function get_user_list($configs = array(), $limit = '')
+    {
+        $sql =  'select `a`.*,`b`.`grouptitle` from `xwd_user` as `a` '.
+                'left join `xwd_usergroup` as `b` on `a`.`groupid` =`b`.`groupid` '.
+                $this->_where($configs).
+                ' order by uid desc '.$limit;
+        $query = $this->db->query($sql);
+        return $query->result();
+    }
+
+    public function get_user_list_count($configs)
+    {
+        $sql =  'select count(*) from `xwd_user` as `a` '.$this->_where($configs);
+        $query = $this->db->query($sql);
+        return $query->result();
+    }
+
+    private function _where($configs = array())
+    {
+        if (empty($configs)) return '';
+
+        $where = array();
+        if(!empty($configs['uid']))
+        {
+            $where[] = 'a.uid = '.$configs['uid'];
+        }
+        if(!empty($configs['groupid']))
+        {
+            $where[] = 'a.groupid = '.$configs['groupid'];
+        }
+        if(!empty($configs['status']))
+        {
+            $where[] = 'a.status = '.$configs['status'];
+        }
+        if(!empty($configs['username']))
+        {
+            $where[] = "a.`username` like '{$configs['username']}%'";
+        }
+
+
+
+        return ' where '.join('and ', $where);
+    }
+
+
+
     /**
      * 添加用户session数据，设置用户在线状态
      * @param $username
@@ -34,9 +80,7 @@ class User_model extends CI_Model {
         {
             return $query->row();
         }
-
         return false;
-
     }
 
     /**
@@ -53,6 +97,23 @@ class User_model extends CI_Model {
             return ($user->password == $password) ? true : false;
         }
 
+        return false;
+    }
+
+    /**
+     * 检测邮箱是否存在
+     *
+     * @param $username
+     * @return bool
+     */
+    public function check_email($email)
+    {
+        $this->db->where('email', $email);
+        $query = $this->db->get('user');
+        if ($query->num_rows() == 1)
+        {
+            return $query->row();
+        }
         return false;
     }
 

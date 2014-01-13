@@ -42,6 +42,22 @@
 				return false;
 			}
 		}, "Please fix this field.");
+
+        $.validator.addMethod("usernamevalid", function(value, element, params) {
+            try{
+                return eval('(' + params + ')');
+            }catch(e){
+                return false;
+            }
+        }, "用户名已经存在");
+
+        $.validator.addMethod("emailvalid", function(value, element, params) {
+            try{
+                return eval('(' + params + ')');
+            }catch(e){
+                return false;
+            }
+        }, "邮箱已经存在");
 		
 		$.validator.addClassRules({
 			date: {date: true},

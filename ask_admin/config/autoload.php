@@ -5,16 +5,6 @@ $autoload['packages'] = array();
 
 $autoload['libraries'] = array('session');
 
-
-/*
-| -------------------------------------------------------------------
-|  Auto-load Helper Files
-| -------------------------------------------------------------------
-| Prototype:
-|
-|	$autoload['helper'] = array('url', 'file');
-*/
-
 $autoload['helper'] = array('url','app');
 
 
