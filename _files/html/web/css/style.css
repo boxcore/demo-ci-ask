@@ -4,13 +4,13 @@ body{font-size:12px; padding:0px; margin:0px;}
 p,h1,h2,h3,h4,span,strong,a,img,table,td,tr,input,form,btn,ul,li,dl,dt,dd,em{margin:0px; padding:0px; list-style:none; border:none; font-style:normal;}
 a{text-decoration:none; color:#333;}
 a:hover{ text-decoration:underline; color:#f74c4b;}
-#top_box,.search_text,.search_btn,.food,.cloth,.education,.home,.decorate,.beautify,.new,.ask_title,.submit_btn,.praise,.praise_inner,.question_btn,.user_name,.user_mes,.phone,.edit_eara{ background:url(../images/icon.png) no-repeat;}
+#top_box,.search_text,.search_btn,.food,.cloth,.education,.home,.decorate,.beautify,.new,.ask_title,.submit_btn,.praise,.praise_inner,.question_btn,.user_name,.user_mes,.phone{ background:url(../images/icon.png) no-repeat;}
 #top_box{width:100%; height:112px; background-position:0px -190px;background-repeat:repeat-x;}
 #top_box .top_inner{width:1010px; overflow:hidden; margin:0 auto; height:82px;}
 #top_box .logo{width:242px; height :41px; margin-top:25px; float:left;}
-#top_box .search_box{width:608px; height:62px; margin:2px 0 0; float:right;}
+#top_box .search_box{width:580px; height:66px; margin:2px 0 0; float:right;}
 #top_box .search_box form{overflow:hidden;}
-#top_box .search_box form .edit_eara{ color:#fff; text-decoration:underline; font-size:15px; margin-left:8px;height:31px; line-height:31px; background-position:0px -751px; width:70px; float:left; padding-left:25px;}
+#top_box .search_box form .edit_eara{ color:#fff; text-decoration:underline; font-size:15px; margin-left:15px;height:31px; line-height:31px; width:60px; float:left;}
 #top_box .search_box p{color:#fff; height:29px; text-align:right; margin-bottom:5px;}
 #top_box .search_box p span{margin-right:12px;}
 #top_box .search_box p a{color:#fff;}
@@ -40,8 +40,8 @@ a:hover{ text-decoration:underline; color:#f74c4b;}
 .sort_inner .decorate{background-position:74px -87px;}
 .sort_inner .beautify{background-position:74px -111px;}
 .sort_inner .new{background-position:74px -135px;}
-.sort_inner p{line-height:22px; padding:10px 20px;}
-.sort_inner p a{color:#666666; display:inline-block; width:20%; text-align:center; font-size:12px; font-family:"simsun";}
+.sort_inner p{line-height:22px; padding:10px 5px;}
+.sort_inner p a{color:#666666; display:inline-block; width:20%; text-align:center; font-size:12px; font-family:"simsun"; white-space:nowrap;margin:0px 3px;}
 .sort_inner p a:hover{color:#f74c4b; text-decoration:underline;}
 .sort_inner p .highlight{color:#b10000;}
 .content_right{width:755px; overflow:hidden; float:right; margin-top:420px;}
