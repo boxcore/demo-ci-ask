@@ -40,8 +40,9 @@ a:hover{ text-decoration:underline; color:#f74c4b;}
 .sort_inner .decorate{background-position:74px -87px;}
 .sort_inner .beautify{background-position:74px -111px;}
 .sort_inner .new{background-position:74px -135px;}
-.sort_inner p{line-height:22px; padding:10px 5px;}
-.sort_inner p a{color:#666666; display:inline-block; width:20%; text-align:center; font-size:12px; font-family:"simsun"; white-space:nowrap;margin:0px 3px;}
+.sort_inner p{line-height:22px; padding:10px 5px 10px 10px;}
+.sort_inner p .menu_text{margin-left:-5px; display:block;}
+.sort_inner p a{color:#666666; display:inline-block;font-size:12px; font-family:"simsun"; white-space:nowrap;margin:0px 10px;}
 .sort_inner p a:hover{color:#f74c4b; text-decoration:underline;}
 .sort_inner p .highlight{color:#b10000;}
 .content_right{width:755px; overflow:hidden; float:right; margin-top:420px;}
@@ -222,7 +223,7 @@ a:hover{ text-decoration:underline; color:#f74c4b;}
 .mima{width:248px; height:28px;}
 #capacity .enter button { width:126px; height:28px; border:1px solid #75c3f9; background:#4995e1; margin:1px; font-size:14px; font-weight:bold; color:#fff; cursor:pointer; }
 #capacity .enter button:hover { background:#0088e6; }
-#capacity .no_register { margin:12px 0 10px 66px;; }
+#capacity .no_register { margin:12px 0 10px 66px; }
 #capacity .no_register a { color:#4679b0; }
 
 
