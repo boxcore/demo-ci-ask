@@ -1,7 +1,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <form id="pagerForm" method="post" action="<? echo site_url('user/user_list') ?>">
     <input type="hidden" name="pageNum" value="1" />
-    <input type="hidden" name="numPerPage" value="<? echo $pagesize ?>" />
+    <input type="hidden" name="numPerPage" value="<? echo $page_info['per_page'] ?>" />
     <input type="hidden" name="orderField" value="${param.orderField}" />
     <input type="hidden" name="orderDirection" value="${param.orderDirection}" />
 </form>
@@ -63,18 +63,18 @@
 </thead>
 <tbody>
 <? foreach($user_list as $v): ?>
-<tr target="sid_user" rel="<? echo $v->uid; ?>">
+<tr target="sid_user" rel="<? echo $v['uid']; ?>">
     <td><input name="ids" value="xxx" type="checkbox"></td>
-    <td><? echo $v->uid; ?></td>
-    <td><? echo $v->username; ?></td>
-    <td><? echo $v->grouptitle; ?></td>
-    <td><? echo $v->email; ?></td>
+    <td><? echo $v['uid']; ?></td>
+    <td><? echo $v['username']; ?></td>
+    <td><? echo $v['grouptitle']; ?></td>
+    <td><? echo $v['email']; ?></td>
     <td>5级</td>
-    <td><? echo date('Y-m-d H:i:s', $v->lastlogin); ?></td>
-    <td><? echo $v->created_time; ?></td>
+    <td><? echo date('Y-m-d H:i:s', $v['lastlogin']); ?></td>
+    <td><? echo $v['created_time']; ?></td>
     <td>
-        <a title="删除" target="ajaxTodo" href="<? echo site_url('user/user_delete?uid='.$v->uid)?>" class="btnDel">删除</a>
-        <a title="编辑" target="navTab" href="demo_page4.html?id=xxx" class="btnEdit">编辑</a>
+        <a title="删除" target="ajaxTodo" href="<? echo site_url('user/user_delete?uid='.$v['uid'])?>" class="btnDel">删除</a>
+        <a title="编辑" target="navTab" href="<? echo site_url('user/user_edit?uid='.$v['uid'])?>" class="btnEdit">编辑</a>
     </td>
 </tr>
 <? endforeach; ?>
@@ -84,15 +84,16 @@
     <div class="pages">
         <span>显示</span>
         <select class="combox" name="numPerPage" onchange="navTabPageBreak({numPerPage:this.value})">
-            <option value="20">20</option>
-            <option value="50">50</option>
-            <option value="100">100</option>
-            <option value="200">200</option>
+            <option value="5" <? if($page_info['per_page'] == 5): ?>selected="selected" <? endif ?>>5</option>
+            <option value="10" <? if($page_info['per_page'] == 10): ?>selected="selected" <? endif ?>>10</option>
+            <option value="20" <? if($page_info['per_page'] == 20): ?>selected="selected" <? endif ?>>20</option>
+            <option value="50" <? if($page_info['per_page'] == 50): ?>selected="selected" <? endif ?>>50</option>
+            <option value="100" <? if($page_info['per_page'] == 100): ?>selected="selected" <? endif ?>>100</option>
         </select>
-        <span>条，共${totalCount}条</span>
+        <span>条，共<? echo $page_info['total_rows'] ?>条</span>
     </div>
 
-    <div class="pagination" targetType="navTab" totalCount="200" numPerPage="20" pageNumShown="10" currentPage="1"></div>
+    <div class="pagination" targetType="navTab" totalCount="<? echo $page_info['total_rows'] ?>" numPerPage="<? echo $page_info['per_page'] ?>" pageNumShown="10" currentPage="<? echo $page_info['pageNum'] ?>"></div>
 
 </div>
 </div>

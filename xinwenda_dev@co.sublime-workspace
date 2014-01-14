@@ -8,26 +8,18 @@
 	"buffers":
 	[
 		{
-			"file": "/D/wamp/www/boxcore/note/正则批量/dom替换.txt",
+			"file": "/D/wamp/www/demo/tp_ateam/Adnn/Tpl/Admin/index.html",
 			"settings":
 			{
-				"buffer_size": 86,
+				"buffer_size": 2315,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "/D/wamp/www/demo/tp_ateam/Adnn/Lib/Action/TeacherAction.class.php",
+			"file": "/D/wamp/www/demo/tp_ateam/Adnn/Lib/Action/AdminAction.class.php",
 			"settings":
 			{
-				"buffer_size": 4504,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/Z/romeo/trunk/_xxoo/core/db.fn.php",
-			"settings":
-			{
-				"buffer_size": 7957,
+				"buffer_size": 2876,
 				"line_ending": "Windows"
 			}
 		}
@@ -64,8 +56,14 @@
 	},
 	"file_history":
 	[
-		"/Z/xinwenda/system/helpers/db_helper.php",
+		"/D/wamp/www/boxcore/sucai/后台/dwz_jui/index.html",
+		"/Z/xinwenda/ask_admin/helpers/app_helper.php",
+		"/D/wamp/www/demo/tp_ateam/Adnn/Tpl/Teacher/add.html",
+		"/D/wamp/www/boxcore/note/正则批量/dom替换.txt",
+		"/D/wamp/www/demo/tp_ateam/Adnn/Lib/Action/TeacherAction.class.php",
 		"/D/wamp/www/demo/tp_ateam/Adnn/Tpl/Teacher/index.html",
+		"/Z/romeo/trunk/_xxoo/core/db.fn.php",
+		"/Z/xinwenda/system/helpers/db_helper.php",
 		"/Z/xinwenda/system/helpers/xml_helper.php",
 		"/D/wamp/www/boxcore/note/linux/设置启动.txt",
 		"/C/Users/Core/Desktop/qiniu-set.txt",
@@ -89,7 +87,6 @@
 		"/Z/xinwenda/ask_admin/views.bak/w_dialog.php",
 		"/Z/xinwenda/ask_admin/views.bak/showadd_view.php",
 		"/Z/xinwenda/ask_admin/views.bak/index.php",
-		"/D/wamp/www/demo/tp_ateam/Adnn/Lib/Action/TeacherAction.class.php",
 		"/C/Users/Core/Downloads/LocalSettings.php",
 		"/D/wamp/www/demo/tp_ateam/Adnn/Lib/Action/CommonAction.class.php",
 		"/Z/xinwenda/ask_admin/controllers/demo.php",
@@ -119,7 +116,6 @@
 		"/Z/xinwenda/ask_admin/controllers/base.php",
 		"/Z/xinwenda/system/helpers/array_helper.php",
 		"/Z/xinwenda/system/helpers/app_helper.php",
-		"/D/wamp/www/boxcore/sucai/后台/dwz_jui/index.html",
 		"/Z/xinwenda/ask_admin/index.php",
 		"/Z/xinwenda/index.php",
 		"/C/Users/Core/Downloads/cocksucker.sql",
@@ -187,11 +183,7 @@
 		"/C/Users/Core/Desktop/新建文本文档.txt",
 		"/D/Portable/TeamViewerPRO/CopyRights.txt",
 		"/C/Users/Core/Downloads/cocksucker (1).sql",
-		"/C/Users/Core/Downloads/item_ad.sql",
-		"/C/Users/Core/Downloads/item_ad (1).sql",
-		"/D/Note/link/tools.txt",
-		"/C/Users/Core/Downloads/cocksucker (2).sql",
-		"/C/Users/Core/AppData/Local/Temp/item_ad.fn.php-rev1497.svn000.tmp.php"
+		"/C/Users/Core/Downloads/item_ad.sql"
 	],
 	"find":
 	{
@@ -275,88 +267,58 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "/D/wamp/www/boxcore/note/正则批量/dom替换.txt",
+					"file": "/D/wamp/www/demo/tp_ateam/Adnn/Tpl/Admin/index.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 86,
+						"buffer_size": 2315,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								86,
-								86
+								2215,
+								2225
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "/D/wamp/www/demo/tp_ateam/Adnn/Lib/Action/TeacherAction.class.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4504,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								136,
-								136
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1228.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "/Z/romeo/trunk/_xxoo/core/db.fn.php",
+					"buffer": 1,
+					"file": "/D/wamp/www/demo/tp_ateam/Adnn/Lib/Action/AdminAction.class.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 7957,
+						"buffer_size": 2876,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								7957
+								276,
+								276
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/PHP/PHP.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,

@@ -51,31 +51,43 @@ class User extends MY_Controller
 
     public function user_list()
     {
-        //获取当前分页设置
-        $numPerPage = (isset($this->input->post('numPerPage')) && !empty($this->input->post('numPerPage')))
-                    ? $this->input->post('numPerPage') : 5;
+        $data = array();
+        $config=array();
 
-
-//        $_GET['page'] = $this->input->post('pageNum');
-
-
+        $this->load->library('pagination');
+        // 定义分页URL，根据参数分别显示
         $config['bash_url'] = site_url('user/user_list');
-        $config['total_rows'] = $this->db->count_all('user');
-        $config['per_page'] = 5;
+        // 每页显示多少数据
+        $config['per_page'] = $this->input->post('numPerPage') ? $this->input->post('numPerPage') :
+            $this->session->userdata('admin_page_num');
+        $config['uri_segment'] = 1;
+        // 获取分页
+        $pageNum = $this->input->post('pageNum') ? $this->input->post('pageNum') :1;
+        if ($pageNum < 1) {
+            $offset = 0;
+        } else {
+            $offset = $config['per_page']*($pageNum-1);
+        }
 
-        $data = array(
-            'currentPage' => $info['page'],
-            'totalCount'  => $totle,
-            'pagesize'    => $pagesize,
-            'user_list'   => $query->result(),
+        // 获取查询条件
+        $where = array(
+            'uid'      => $this->input->get('uid'),
+            'username' => $this->input->get('username'),
+            'groupid'  => $this->input->get('groupid'),
         );
 
-        $sql =  'select `a`.*, `b`.`grouptitle` from `xwd_user` as `a` '.
-                'left join `xwd_usergroup` as `b` on `a`.`groupid` =`b`.`groupid`';
-        $query = $this->db->query($sql);
-        $data['user_list'] = $query->result();
+        $data['user_list'] = $this->user_model->get_user_list($where, $offset,$config['per_page']);
+
+        // 总条数
+        $config['total_rows'] = $this->user_model->get_user_list_count($where);
+
+        $data['page_info'] = $config;
+        $data['page_info']['pageNum'] = $pageNum;
+        // 配置分页
+        $this->pagination->initialize($config);
 
         $this->load->view('user/user_list', $data);
+
     }
 
     /**

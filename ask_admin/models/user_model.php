@@ -6,25 +6,35 @@ class User_model extends CI_Model {
 		parent::__construct();
 	}
 
-    public function get_user_list($configs = array(), $limit = '')
+    public function get_user_list($where = array(), $offset=0, $limit = 10 )
     {
         $sql =  'select `a`.*,`b`.`grouptitle` from `xwd_user` as `a` '.
                 'left join `xwd_usergroup` as `b` on `a`.`groupid` =`b`.`groupid` '.
-                $this->_where($configs).
-                ' order by uid desc '.$limit;
-        $query = $this->db->query($sql);
-        return $query->result();
+                $this->_where($where).
+                ' order by uid desc lIMIT '.$offset.', '.$limit;
+
+        $query = $this->db->query($sql );
+        return $query->result_array();
     }
 
-    public function get_user_list_count($configs)
+    public function get_user_list_count($where)
     {
-        $sql =  'select count(*) from `xwd_user` as `a` '.$this->_where($configs);
+        $sql =  'select count(1) as total from `xwd_user` as `a` '.$this->_where($where);
         $query = $this->db->query($sql);
-        return $query->result();
+        $row = $query->row_array();
+        return $row['total'];
     }
 
+    /**
+     * 组装where条件
+     *
+     * @param array $configs
+     * @return string
+     */
     private function _where($configs = array())
     {
+        array_filter($configs);
+
         if (empty($configs)) return '';
 
         $where = array();
@@ -45,9 +55,7 @@ class User_model extends CI_Model {
             $where[] = "a.`username` like '{$configs['username']}%'";
         }
 
-
-
-        return ' where '.join('and ', $where);
+        return (!empty($where)) ? ' where '.join('AND ', $where) : '';
     }
 
 

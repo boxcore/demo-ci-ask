@@ -12,7 +12,6 @@ class MY_Controller extends CI_Controller
         parent::__construct();
         $this->load->database();
         self::get_configs();
-
         $this->check_login();
 
     }
@@ -37,6 +36,14 @@ class MY_Controller extends CI_Controller
             $GLOBALS['configs'][$row['key']] = $row['value'];
         }
 
+        // 设置后台个性选项
+        $admin_page_num =   $this->session->userdata('admin_page_num');
+        if(empty($admin_page_num)){
+            $this->session->set_userdata('admin_page_num', $GLOBALS['configs']['admin_page_num']);
+        }
+        if($this->input->post('numPerPage')){
+            $this->session->set_userdata('admin_page_num', $this->input->post('numPerPage'));
+        }
     }
 
     /**
