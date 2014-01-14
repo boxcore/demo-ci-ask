@@ -9,47 +9,44 @@
 <body>
 	<div id="top_box">
 		<div class="top_inner">
-			<div class="logo"><a href="<?php echo site_url('');?>"><img src="<?php echo src_url('images/logo.jpg');?>" width="242" height="41"></a></div>
-			<div class="search_box">
-				<p>你好，欢迎来到中国创业指导网！<span><a href="<?php echo site_url('user/login');?>" class="top_login">请登录</a><a href="<?php echo site_url('user/register');?>">免费注册</a></span><span class="phone"><a href="javascript:void(0);">手机版</a></span><a href="javascript:void(0);">收藏夹</a></p>
+		    <div class="logo"><a href="<?php echo site_url('');?>"><img src="<?php echo src_url('images/logo.jpg');?>" width="242" height="41"></a></div>
+		    <div class="search_box">
+				<p>你好，欢迎来到中国创业指导网！<span class="loginwrap"><a href="<?php echo site_url('user/login');?>" class="top_login">请登录</a><a href="<?php echo site_url('user/register');?>">免费注册</a></span><span class="phone"><a href="javascript:void(0);">手机版</a></span><a href="javascript:void(0);">收藏夹</a></p>
 				<form>
 					<input name="" type="text" class="search_text">
 					<input name="" type="button" class="search_btn" value="搜索">
+					<a href="<?php echo site_url('question/add');?>" class="edit_eara">发布信息</a>
 				</form>
-			</div>
+		    </div>
 		</div>
+		<?php $data_sort_array = array(
+					'fushixiebao' => 'cloth',
+					'canyinyule' => 'food',
+					'meirongyangsheng' => 'beautify',
+					'jixiehuanbao' => 'beautify',
+					'wangluochuangye' => 'education',
+					'muyingyongpin' => 'new',
+					'jiajijiancai' => 'home',
+					'qitaxiangmu' => 'decorate',
+					'jiaoyupeixun' => 'home',
+					'shipinwanju' => 'home',
+					'qichefuwu' => 'home'
+		);?>
 		<ul class="nav">
 			<li class="sort">
 				<a href="javascript:void(0);" id="sort_all_content">所有内容分类</a>
 				<div class="flotage flotage_pages" style="display:none;" id="nav_all">
-					<div class="sort_inner">
-						<h2><a href="#" class="food">餐饮美食</a></h2>
-						<p><a href="#">中餐</a><a href="#">西餐</a><a href="#" class="highlight">冰淇淋</a><a href="#">烧烤</a><a href="#">卤味</a><a href="#">名酒</a><a href="#" class="highlight">小吃</a><a href="#">小吃车</a><a href="#">甜品</a><a href="#">面食</a></p>
+					<?php foreach ($GLOBALS['category_info'] as $key => $value):?>
+					<div class="sort_inner <?php if (count($value) != $key+1){echo 'bottom_bor';}?>">
+						<h2><a href="<?php echo site_url('question/listAll?sort='.$value['id'].'');?>" class="<?php echo $data_sort_array[$value['mark']];?>"><?php echo $value['name'];?></a></h2>
+						<p><span class="menu_text">
+						<?php foreach ($value['sort'] as $k => $v):?>
+							<a href="<?php echo site_url('question/listAll?sort='.$value['id'].'&sub='.$v['id'].'');?>" <?php if ($v['highlight']){echo 'class="highlight"';}?>><?php echo $v['name'];?></a>
+						<?php endforeach;?>
+						</span>
+						</p>
 					</div>
-					<div class="sort_inner">
-						<h2><a href="#" class="cloth">服饰鞋包</a></h2>
-						<p><a href="#">中餐</a><a href="#">西餐</a><a href="#" class="highlight">冰淇淋</a><a href="#">烧烤</a><a href="#">卤味</a><a href="#">名酒</a><a href="#" class="highlight">小吃</a><a href="#">小吃车</a><a href="#">甜品</a><a href="#">面食</a></p>
-					</div>
-					<div class="sort_inner">
-						<h2><a href="#" class="education">网络教育</a></h2>
-						<p><a href="#">中餐</a><a href="#">西餐</a><a href="#" class="highlight">冰淇淋</a><a href="#">烧烤</a><a href="#">卤味</a><a href="#">名酒</a><a href="#" class="highlight">小吃</a><a href="#">小吃车</a><a href="#">甜品</a><a href="#">面食</a></p>
-					</div>
-					<div class="sort_inner">
-						<h2><a href="#" class="home">家居环保</a></h2>
-						<p><a href="#">中餐</a><a href="#">西餐</a><a href="#" class="highlight">冰淇淋</a><a href="#">烧烤</a><a href="#">卤味</a><a href="#">名酒</a><a href="#" class="highlight">小吃</a><a href="#">小吃车</a><a href="#">甜品</a><a href="#">面食</a></p>
-					</div>
-					<div class="sort_inner">
-						<h2><a href="#" class="decorate">建材装饰</a></h2>
-						<p><a href="#">中餐</a><a href="#">西餐</a><a href="#" class="highlight">冰淇淋</a><a href="#">烧烤</a><a href="#">卤味</a><a href="#">名酒</a><a href="#" class="highlight">小吃</a><a href="#">小吃车</a><a href="#">甜品</a><a href="#">面食</a></p>
-					</div>
-					<div class="sort_inner">
-						<h2><a href="#" class="beautify">美容养生</a></h2>
-						<p><a href="#">中餐</a><a href="#">西餐</a><a href="#" class="highlight">冰淇淋</a><a href="#">烧烤</a><a href="#">卤味</a><a href="#">名酒</a><a href="#" class="highlight">小吃</a><a href="#">小吃车</a><a href="#">甜品</a><a href="#">面食</a></p>
-					</div>
-					<div class="sort_inner bottom_bor">
-						<h2><a href="#" class="new">新奇特</a></h2>
-						<p><a href="#">中餐</a><a href="#">西餐</a><a href="#" class="highlight">冰淇淋</a><a href="#">烧烤</a><a href="#">卤味</a><a href="#">名酒</a><a href="#" class="highlight">小吃</a><a href="#">小吃车</a><a href="#">甜品</a><a href="#">面食</a></p>
-					</div>
+					<?php endforeach;?>
 				</div>
 			</li>
 			<li><a href="javascript:void(0);">首页</a></li>
