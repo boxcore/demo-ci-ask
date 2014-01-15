@@ -5,7 +5,8 @@ p,h1,h2,h3,h4,span,strong,a,img,table,td,tr,input,form,btn,ul,li,dl,dt,dd,em{mar
 a{text-decoration:none; color:#333;}
 a:hover{ text-decoration:underline; color:#f74c4b;}
 #top_box,.search_text,.search_btn,.food,.cloth,.education,.home,.decorate,.beautify,.new,.ask_title,.submit_btn,.praise,.praise_inner,.question_btn,.user_name,.user_mes,.phone{ background:url(../images/icon.png) no-repeat;}
-#top_box{width:100%; height:112px; background-position:0px -190px;background-repeat:repeat-x;}
+#top_box{background:url(../images/icon.png);}
+#top_box{width:100%; height:112px; background-position:0px -190px;background-repeat:repeat-x; }
 #top_box .top_inner{width:1010px; overflow:hidden; margin:0 auto; height:82px;}
 #top_box .logo{width:242px; height :41px; margin-top:25px; float:left;}
 #top_box .search_box{width:580px; height:66px; margin:2px 0 0; float:right;}
@@ -40,8 +41,8 @@ a:hover{ text-decoration:underline; color:#f74c4b;}
 .sort_inner .decorate{background-position:74px -87px;}
 .sort_inner .beautify{background-position:74px -111px;}
 .sort_inner .new{background-position:74px -135px;}
-.sort_inner p{line-height:22px; padding:10px 5px 10px 10px;}
-.sort_inner p .menu_text{margin-left:-5px; display:block;}
+.sort_inner p{line-height:22px; padding:3px 5px 3px 10px;}
+.sort_inner p .menu_text{margin-left:-5px; display:block; text-align:left;}
 .sort_inner p a{color:#666666; display:inline-block;font-size:12px; font-family:"simsun"; white-space:nowrap;margin:0px 10px;}
 .sort_inner p a:hover{color:#f74c4b; text-decoration:underline;}
 .sort_inner p .highlight{color:#b10000;}
