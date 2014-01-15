@@ -33,5 +33,13 @@ class Question_model extends CI_Model {
     	$this->db->insert('xwd_question', $data);
     	return 1;
     }
+    
+    public function get_question_attention()
+    {
+    	$sql = "SELECT * FROM `xwd_question` LIMIT 5";
+    	$query = $this->db->query($sql);
+    	return $query->result_array();
+    	
+    }
 }
 ?>

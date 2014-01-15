@@ -16,8 +16,10 @@ class Index extends HM_Controller
 
     public function index()
     {
+    	$this->load->model('Question_model');
+    	$data['info'] = $this->Question_model->get_question_attention();
     	$this->load->library('layout');
-        $this->layout->view('index');
+        $this->layout->view('index', $data);
     }
 
     public function main()
