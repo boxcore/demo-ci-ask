@@ -35,29 +35,15 @@
 					</dl>
 				</div>
 				<div class="attention">
-					<h3><a href="#">正在关注</a></h3>
+					<h3><a href="javascript:void(0);">正在关注</a></h3>
+					<?php if ($info):?>
+					<?php foreach ($info as $key => $value):?>
 					<dl>
-						<dt><a href="<?php echo site_url('question/detail');?>">你好！我很想了解学生部落，希望你们可以联系我 </a><p>flower<span> 浏览42次 </span>9个回复</p></dt>
-						<dd>12月27日</dd>
+						<dt><a href="<?php echo site_url('question/detail?qid='.$value['id'].'');?>"><?php echo $value['title'];?> </a><p>flower<span> 浏览<?php echo $value['preview_num'];?>次 </span><?php echo $value['answer_num'];?>个回复</p></dt>
+						<dd><?php echo date('m月d日', $value['create'])?></dd>
 					</dl>
-					<dl>
-						<dt><a href="<?php echo site_url('question/detail');?>">你好！我很想了解学生部落，希望你们可以联系我 </a><p>flower<span> 浏览42次 </span>9个回复</p></dt>
-						<dd>12月27日</dd>
-					</dl>
-					<dl>
-						<dt><a href="<?php echo site_url('question/detail');?>">你好！我很想了解学生部落，希望你们可以联系我 </a><p>flower<span> 浏览42次 </span>9个回复</p></dt>
-						<dd>12月27日</dd>
-					</dl>
-					<dl>
-						<dt><a href="<?php echo site_url('question/detail');?>">你好！我很想了解学生部落，希望你们可以联系我 </a><p>flower<span> 浏览42次 </span>9个回复</p></dt>
-						<dd>12月27日</dd>
-					</dl>
-					<dl>
-						<dt><a href="<?php echo site_url('question/detail');?>">你好！我很想了解学生部落，希望你们可以联系我 </a>
-						<p>flower<span> 浏览42次 </span>9个回复</p>
-						</dt>
-						<dd>12月27日</dd>
-					</dl>
+					<?php endforeach;?>
+					<?php endif;?>
 				</div>
 			</div>
 			<div class="right">

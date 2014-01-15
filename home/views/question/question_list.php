@@ -1,59 +1,19 @@
 <div class="list_content">
     <div class="list_conL">
-        <h2><strong>未解决问题</strong><span><a href="#">更多</a></span></h2>
+        <h2><strong>已解决问题</strong><span><a href="javascript:void(0);">更多</a></span></h2>
         <dl>
-            <dt><a href="<?php echo site_url('question/detail');?>">冰之物语怎么样？</a></dt>
-            <dd>1个回答</dd>
-            <dt><a href="<?php echo site_url('question/detail');?>">苏州金石投资的总部在哪里 </a></dt>
-            <dd>1个回答</dd>
-            <dt><a href="<?php echo site_url('question/detail');?>">我想在县城加盟顺丰快递</a></dt>
-            <dd>1个回答</dd>
-            <dt><a href="<?php echo site_url('question/detail');?>">在网上看伊屏清斑祛斑效果好的很，是不是很有效果啊？</a></dt>
-            <dd>1个回答</dd>
-            <dt><a href="<?php echo site_url('question/detail');?>">冰之物语怎么样？</a></dt>
-            <dd>1个回答</dd>
-            <dt><a href="<?php echo site_url('question/detail');?>">苏州金石投资的总部在哪里 </a></dt>
-            <dd>1个回答</dd>
-            <dt><a href="<?php echo site_url('question/detail');?>">我想在县城加盟顺丰快递</a></dt>
-            <dd>1个回答</dd>
-            <dt><a href="<?php echo site_url('question/detail');?>">在网上看伊屏清斑祛斑效果好的很，是不是很有效果啊？</a></dt>
-            <dd>1个回答</dd>
-            <dt><a href="<?php echo site_url('question/detail');?>">冰之物语怎么样？</a></dt>
-            <dd>1个回答</dd>
-            <dt><a href="<?php echo site_url('question/detail');?>">苏州金石投资的总部在哪里 </a></dt>
-            <dd>1个回答</dd>
-            <dt><a href="<?php echo site_url('question/detail');?>">我想在县城加盟顺丰快递</a></dt>
-            <dd>1个回答</dd>
-            <dt><a href="<?php echo site_url('question/detail');?>">在网上看伊屏清斑祛斑效果好的很，是不是很有效果啊？</a></dt>
-            <dd>1个回答</dd>
+        	<?php foreach ($info as $key => $value):?>
+            <dt><a href="<?php echo site_url('question/detail?qid='.$value['id'].'');?>"><?php echo $value['title'];?></a></dt>
+            <dd><?php echo $value['answer_num'];?>个回答</dd>
+            <?php endforeach;?>
         </dl>
         <div class="interval"></div>
-        <h2><strong>未解决问题</strong><span><a href="#">更多</a></span></h2>
+        <h2><strong>未解决问题</strong><span><a href="javascript:void(0);">更多</a></span></h2>
         <dl>
-            <dt><a href="<?php echo site_url('question/detail');?>">冰之物语怎么样？</a></dt>
-            <dd>1个回答</dd>
-            <dt><a href="<?php echo site_url('question/detail');?>">苏州金石投资的总部在哪里 </a></dt>
-            <dd>1个回答</dd>
-            <dt><a href="<?php echo site_url('question/detail');?>">我想在县城加盟顺丰快递</a></dt>
-            <dd>1个回答</dd>
-            <dt><a href="<?php echo site_url('question/detail');?>">在网上看伊屏清斑祛斑效果好的很，是不是很有效果啊？</a></dt>
-            <dd>1个回答</dd>
-            <dt><a href="<?php echo site_url('question/detail');?>">冰之物语怎么样？</a></dt>
-            <dd>1个回答</dd>
-            <dt><a href="<?php echo site_url('question/detail');?>">苏州金石投资的总部在哪里 </a></dt>
-            <dd>1个回答</dd>
-            <dt><a href="<?php echo site_url('question/detail');?>">我想在县城加盟顺丰快递</a></dt>
-            <dd>1个回答</dd>
-            <dt><a href="<?php echo site_url('question/detail');?>">在网上看伊屏清斑祛斑效果好的很，是不是很有效果啊？</a></dt>
-            <dd>1个回答</dd>
-            <dt><a href="<?php echo site_url('question/detail');?>">冰之物语怎么样？</a></dt>
-            <dd>1个回答</dd>
-            <dt><a href="<?php echo site_url('question/detail');?>">苏州金石投资的总部在哪里 </a></dt>
-            <dd>1个回答</dd>
-            <dt><a href="<?php echo site_url('question/detail');?>">我想在县城加盟顺丰快递</a></dt>
-            <dd>1个回答</dd>
-            <dt><a href="<?php echo site_url('question/detail');?>">在网上看伊屏清斑祛斑效果好的很，是不是很有效果啊？</a></dt>
-            <dd>1个回答</dd>
+			<?php foreach ($info as $key => $value):?>
+            <dt><a href="<?php echo site_url('question/detail?qid='.$value['id'].'');?>"><?php echo $value['title'];?></a></dt>
+            <dd><?php echo $value['answer_num'];?>个回答</dd>
+            <?php endforeach;?>
         </dl>
     </div>
     <div class="list_conR">

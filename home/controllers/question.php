@@ -23,8 +23,13 @@ class Question extends HM_Controller
      */
     public function listAll()
     {
+    	$pram['sort'] = $this->input->get('sort');
+    	$pram['sub']  = $this->input->get('sub');
+    	
+    	$this->load->model('Question_model');
+    	$data['info'] = $this->Question_model->get_list($pram);
     	$this->load->library('layout');
-        $this->layout->view('question/question_list');
+        $this->layout->view('question/question_list', $data);
     }
     
     /**
@@ -33,8 +38,14 @@ class Question extends HM_Controller
      */
 	public function detail()
     {
+    	$qid = $this->input->get('qid');
+    	$this->load->model('Question_model');
+    	$res = $this->Question_model->get_question_by_id($qid);
+    	$data['info'] 	= $res;
+    	$data['answer'] = $this->Question_model->get_answer_by_id($qid);
+    	$data['relate'] = $this->Question_model->relative_question($res);
     	$this->load->library('layout');
-        $this->layout->view('question/question_detail');
+        $this->layout->view('question/question_detail', $data);
     }
 
     /**
@@ -47,6 +58,17 @@ class Question extends HM_Controller
     	$data['sort'] = $this->Question_model->get_sort_info();
     	$this->load->library('layout');
         $this->layout->view('question/question_add', $data);
+    }
+    
+    public function answer_add() 
+    {
+    	if ($_POST) {
+    		$content = $this->input->post('content');
+    		$qid 	 = $this->input->post('qid'); 
+    		$this->load->model('Question_model');
+    		$this->Question_model->insert_answer($content, $qid);
+    		echo 1;
+    	}
     }
     
     public function check_add() 
@@ -81,7 +103,6 @@ class Question extends HM_Controller
     		$id = $this->input->post('id');
     		$this->load->model('Question_model');
     		$data['sub'] = $this->Question_model->get_sub_info($id);
-    		$data['title'] = '信息发布';
     		$this->load->view('question/question_sub', $data);
     	}
     }

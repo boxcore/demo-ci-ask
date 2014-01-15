@@ -8,7 +8,6 @@ var editor1;
 KindEditor.ready(function(K) {
 	editor1 = K.create('textarea[name="content"]');
 });
-
 </script>
 <div class="content">
     <div class="content_question">
