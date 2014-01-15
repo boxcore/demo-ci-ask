@@ -64,13 +64,18 @@ class User_model extends CI_Model {
      * 添加用户session数据，设置用户在线状态
      * @param $username
      */
-    public function login($username)
+    public function login($username = '', $password = '')
     {
-        $data = array(
-            'username'=>$username,
-            'logined_in'=>true,
-        );
-        $this->session->set_userdata($data);
+        $query = $this->db->select('uid,username,password, groupid')->from('user')->where('username', $username)->limit(1)-get();
+        $row = $query->row_array();
+        if(!empty($row) && ($row['password'] == $password) ){
+            $data = array(
+                'uid'=>$row['uid'],
+                'username'=>$username,
+                'logined_in'=>true,
+            );
+            $this->session->set_userdata($data);
+        }
     }
 
     /**

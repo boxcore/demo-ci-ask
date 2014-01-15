@@ -23,8 +23,8 @@ class MY_Controller extends CI_Controller
             if(uri_string() != 'user/login'){
                 redirect('user/login');
             }
-
         }
+
     }
 
     public function get_configs()

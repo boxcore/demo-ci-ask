@@ -26,9 +26,32 @@ class demo extends MY_Controller
             echo $row['key'];
             echo $row['value'];
         }
-//        print_r($query);
-        print_r( $query->result_object() );
 
+        print_r( $query->result_object() );
+    }
+
+    /**
+     * sql 练习
+     */
+    public function sql()
+    {
+        /** 多行结果查询 */
+//        $this->db->select('uid, groupid')->from('user')->where('username', 'admin');
+//        $query = $this->db->get();
+//        print_r($query->result_array()); //输出最后执行的sql语句
+
+         /* 单行结果查询 */
+//        $query = $this->db->select('uid, groupid')->from('user')->where('username', 'admin')->limit(1)->get();
+//        print_r($query->result_array());
+
+        /* 单结果查询 */
+        $query = $this->db->select('uid,username,groupid')->from('user')->where('username', 'admin')->limit(1)->get();
+        echo $query->num_rows();
+        $row = $query->row(); //对象类型
+        $row_array = $query->row_array(); // 数组类型
+        print_r($row_array);
+
+        echo '<hr/>'.$this->db->last_query();
     }
 
 }

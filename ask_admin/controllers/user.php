@@ -22,6 +22,7 @@ class User extends MY_Controller
         if($this->session->userdata('logined_in'))
         {
             redirect('index');
+            exit;
         }
 
         // 初始化函数
@@ -36,13 +37,14 @@ class User extends MY_Controller
         //$this->form_validation->set_rules('email', 'Email', 'required');
 
         $this->_username = $this->input->post('username');
+        $this->_password = md5(trim($this->input->post('password')));
         if ($this->form_validation->run() == FALSE)
         {
             $this->load->view('user/login');
         }
         else
         {
-            $this->user_model->login($this->_username);
+            $this->user_model->login($this->_username, $this->_password);
             $data['reffer'] = site_url().'index';
             $data['message'] = '您已经登陆，请返回操作面板';
             redirect('index');
