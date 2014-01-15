@@ -1,5 +1,6 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <div class="pageContent">
-    <form method="post" action="<? echo  site_url('user/user_add_act?navTabId=user_list&callbackType=forward')?>" class="pageForm required-validate" onsubmit="return iframeCallback(this, dialogAjaxDone)" enctype="multipart/form-data">
+    <form method="post" action="<? echo  site_url('user/user_add_act?navTabId=user_list&callbackType=closeCurrent')?>" class="pageForm required-validate" onsubmit="return iframeCallback(this, dialogAjaxDone)" enctype="multipart/form-data">
         <div class="pageFormContent" layoutH="56">
             <div class="unit">
                 <label>用户名:</label>
@@ -29,7 +30,7 @@
         </div>
         <div class="formBar">
             <ul>
-                <input type="hidden" name="forwardUrl" value="<? echo site_url('user/user_list') ?>"/>
+<!--                <input type="hidden" name="forwardUrl" value="--><?php //echo site_url('user/user_list') ?><!--"/>-->
                 <li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
                 <li>
                     <div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div>
@@ -39,7 +40,7 @@
     </form>
 </div>
 <script type="text/javascript">
-    var site_url = "<? echo site_url() ?>";
+    var site_url = "<?php echo site_url() ?>";
     function check_username(){
         var textval = $("#username").val();
         $.post(site_url+'XHR/check_username',{username:textval},

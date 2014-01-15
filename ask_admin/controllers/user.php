@@ -73,16 +73,24 @@ class User extends MY_Controller
 
         // 获取查询条件
         $where = array(
-            'uid'      => $this->input->get('uid'),
-            'username' => $this->input->get('username'),
-            'groupid'  => $this->input->get('groupid'),
+            'uid'      => $this->input->post('uid'),
+            'username' => $this->input->post('username'),
+            'groupid'  => $this->input->post('groupid'),
         );
-
-        $data['user_list'] = $this->user_model->get_user_list($where, $offset,$config['per_page']);
 
         // 总条数
         $config['total_rows'] = $this->user_model->get_user_list_count($where);
 
+        $data['user_list'] = $this->user_model->get_user_list($where, $offset,$config['per_page']);
+        foreach( $data['user_list'] as &$v ){
+            if($v['lastlogin']){
+                $v['lastlogin'] = date('Y-m-d H:i:s', $v['lastlogin']);
+            }else{
+                $v['lastlogin'] = '未登录过';
+            }
+        }
+
+        $data['param'] = $where;
         $data['page_info'] = $config;
         $data['page_info']['pageNum'] = $pageNum;
         // 配置分页
@@ -185,10 +193,41 @@ class User extends MY_Controller
         $this->error_ajax();
     }
 
+    public function user_edit ()
+    {
+        $data=array();
+        $uid = $this->input->get('uid') ? intval($this->input->get('uid')) : 0;
+        if($uid){
+            $data['user_info'] = $this->user_model->get_user_info($uid);
+            $this->load->view('user/user_edit',$data);
+        }else{
+            $this->error_ajax('不存在此用户');
+        }
+    }
+
+    public function user_edit_act ()
+    {
+//        print_r($_POST);
+        if ( !empty($_POST) )
+        {
+            $data = array(
+                'groupid' => intval($this->input->post('groupid')),
+                'email' => trim($this->input->post('email')),
+            );
+            $this->db->where('uid', $this->input->post('uid'));
+            if($this->db->update('user', $data))
+            {
+                $this->success_ajax('修改成功');
+            }
+        }
+        $this->error_ajax();
+    }
+
 
     public function user_delete()
     {
         $uid = $this->input->get('uid');
+
         if ($this->db->delete('xwd_user', array('uid' => $uid)))
         {
             $this->success_ajax( '删除成功' );
@@ -199,6 +238,23 @@ class User extends MY_Controller
         }
     }
 
+    public function ajax_delete(){
+
+        $ids = $this->input->post('ids');
+        if($ids){
+            $ids = explode(',', $ids);
+
+            $this->check_delete_ids($ids);
+
+            $this->db->where_in('uid', $ids);
+            if($this->db->delete('user')){
+                $this->success_ajax();
+            }
+        }
+
+        $this->error_ajax();
+    }
+
     /**
      * 退出登录
      */
@@ -207,6 +263,17 @@ class User extends MY_Controller
         $data = array('username' => '', 'logined_in' =>false);
         $this->session->unset_userdata($data);
         redirect('user/login');
+    }
+
+
+    private function check_delete_ids($ids){
+        $ids = is_array($ids) ? $ids :array($ids);
+        if(in_array(1,$ids)){
+            $this->error_ajax('不能删除管理员');exit;
+        }
+        if(in_array($this->session->userdata('uid'), $ids)){
+            $this->error_ajax('不能将操作用户删除');exit;
+        }
     }
 
 }

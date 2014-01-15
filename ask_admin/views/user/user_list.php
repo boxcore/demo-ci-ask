@@ -1,9 +1,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<?php //print_r($param) ?>
 <form id="pagerForm" method="post" action="<? echo site_url('user/user_list') ?>">
     <input type="hidden" name="pageNum" value="1" />
     <input type="hidden" name="numPerPage" value="<? echo $page_info['per_page'] ?>" />
-    <input type="hidden" name="orderField" value="${param.orderField}" />
-    <input type="hidden" name="orderDirection" value="${param.orderDirection}" />
+    <input type="hidden" name="groupid" value="<?php echo $param['groupid'] ?>" />
+    <input type="hidden" name="usernname" value="<?php echo $param['username'] ?>" />
 </form>
 
 <div class="pageHeader">
@@ -12,39 +13,40 @@
             <ul class="searchContent">
                 <li>
                     <label>用户名：</label>
-                    <input type="text" name="username" value=""/>
+                    <input type="text" name="username" value="<?php echo $param['username'] ?>"/>
                 </li>
                 <li>
                     <label>用户组：</label>
-                    <select class="combox" name="province">
+                    <select class="combox" name="groupid">
                         <option value="0">所有用户</option>
-                        <option value="1">管理员</option>
-                        <option value="2">编辑</option>
-                        <option value="3">vip会员</option>
-                        <option value="4">普通会员</option>
+                        <option value="1" <?php if($param['groupid']=='1'):?>selected="selected" <?php endif; ?>>管理员</option>
+                        <option value="2" <?php if($param['groupid']=='2'):?>selected="selected" <?php endif; ?>>编辑</option>
+                        <option value="3" <?php if($param['groupid']=='3'):?>selected="selected" <?php endif; ?>>vip会员</option>
+                        <option value="4" <?php if($param['groupid']=='4'):?>selected="selected" <?php endif; ?>>普通会员</option>
                     </select>
                 </li>
+                <li><div class="buttonActive"><div class="buttonContent"><button type="submit">检索</button></div></div></li>
             </ul>
 
 
-            <div class="subBar">
-                <ul>
-                    <li><div class="buttonActive"><div class="buttonContent"><button type="submit">检索</button></div></div></li>
-                    <li><a class="button" href="demo_page6.html" target="dialog" mask="true" title="查询框"><span>高级检索</span></a></li>
-                </ul>
-            </div>
+<!--            <div class="subBar">-->
+<!--                <ul>-->
+<!--                    <li><div class="buttonActive"><div class="buttonContent"><button type="submit">检索</button></div></div></li>-->
+<!--                    <li><a class="button" href="demo_page6.html" target="dialog" mask="true" title="查询框"><span>高级检索</span></a></li>-->
+<!--                </ul>-->
+<!--            </div>-->
         </div>
     </form>
 </div>
 <div class="pageContent">
 <div class="panelBar">
     <ul class="toolBar">
-        <li><a class="add" href="demo_page4.html" target="navTab"><span>添加</span></a></li>
-        <li><a title="确实要删除这些记录吗?" target="selectedTodo" rel="ids" href="demo/common/ajaxDone.html" class="delete"><span>批量删除默认方式</span></a></li>
-        <li><a title="确实要删除这些记录吗?" target="selectedTodo" rel="ids" postType="string" href="demo/common/ajaxDone.html" class="delete"><span>批量删除逗号分隔</span></a></li>
-        <li><a class="edit" href="demo_page4.html?uid={sid_user}" target="navTab" warn="请选择一个用户"><span>修改</span></a></li>
+        <li><a class="add" href="<?php echo site_url('user/user_add') ?>" target="navTab"><span>添加</span></a></li>
+<!--        <li><a title="确实要删除这些记录吗?" target="selectedTodo" rel="ids" href="--><?php //echo site_url('user/ajax_delete') ?><!--" class="delete"><span>批量删除默认方式</span></a></li>-->
+        <li><a title="确实要删除这些用户吗?" target="selectedTodo" rel="ids" postType="string" href="<?php echo site_url('user/ajax_delete?title=delete') ?>" class="delete"><span>批量删除用户</span></a></li>
+<!--        <li><a class="edit" href="demo_page4.html?uid={sid_user}" target="navTab" warn="请选择一个用户"><span>修改</span></a></li>-->
         <li class="line">line</li>
-        <li><a class="icon" href="demo/common/dwz-team.xls" target="dwzExport" targetType="navTab" title="实要导出这些记录吗?"><span>导出EXCEL</span></a></li>
+<!--        <li><a class="icon" href="demo/common/dwz-team.xls" target="dwzExport" targetType="navTab" title="实要导出这些记录吗?"><span>导出EXCEL</span></a></li>-->
     </ul>
 </div>
 <table class="table" width="1200" layoutH="138">
@@ -64,17 +66,18 @@
 <tbody>
 <? foreach($user_list as $v): ?>
 <tr target="sid_user" rel="<? echo $v['uid']; ?>">
-    <td><input name="ids" value="xxx" type="checkbox"></td>
-    <td><? echo $v['uid']; ?></td>
-    <td><? echo $v['username']; ?></td>
-    <td><? echo $v['grouptitle']; ?></td>
-    <td><? echo $v['email']; ?></td>
+    <td><input name="ids" value="<?php echo $v['uid']; ?>" type="checkbox"></td>
+    <td><?php echo $v['uid']; ?></td>
+    <td><?php echo $v['username']; ?></td>
+    <td><?php echo $v['grouptitle']; ?></td>
+    <td><?php echo $v['email']; ?></td>
     <td>5级</td>
-    <td><? echo date('Y-m-d H:i:s', $v['lastlogin']); ?></td>
-    <td><? echo $v['created_time']; ?></td>
+    <td><?php echo $v['lastlogin'] ?></td>
+    <td><?php echo $v['created_time']; ?></td>
     <td>
         <a title="删除" target="ajaxTodo" href="<? echo site_url('user/user_delete?uid='.$v['uid'])?>" class="btnDel">删除</a>
         <a title="编辑" target="navTab" href="<? echo site_url('user/user_edit?uid='.$v['uid'])?>" class="btnEdit">编辑</a>
+        <a title="修改密码" target="navTab" href="<? echo site_url('user/user_change_password?uid='.$v['uid'])?>" class="">修改密码</a>
     </td>
 </tr>
 <? endforeach; ?>

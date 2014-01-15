@@ -46,7 +46,8 @@ class demo extends MY_Controller
 
         /* 单结果查询 */
         $query = $this->db->select('uid,username,groupid')->from('user')->where('username', 'admin')->limit(1)->get();
-        echo $query->num_rows();
+        echo $query->num_rows();  // 查看由多少个结果集
+
         $row = $query->row(); //对象类型
         $row_array = $query->row_array(); // 数组类型
         print_r($row_array);

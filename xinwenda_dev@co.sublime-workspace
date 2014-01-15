@@ -16,6 +16,22 @@
 			}
 		},
 		{
+			"file": "ask_admin/views/user/user_edit.php",
+			"settings":
+			{
+				"buffer_size": 3028,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/D/wamp/www/demo/tp_ateam/Adnn/Tpl/Casecls/index.html",
+			"settings":
+			{
+				"buffer_size": 2201,
+				"line_ending": "Windows"
+			}
+		},
+		{
 			"file": "/D/wamp/www/demo/tp_ateam/Adnn/Lib/Action/AdminAction.class.php",
 			"settings":
 			{
@@ -267,7 +283,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -296,11 +312,68 @@
 						"translation.y": 1228.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
+					"file": "ask_admin/views/user/user_edit.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3028,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/D/wamp/www/demo/tp_ateam/Adnn/Tpl/Casecls/index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2201,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1054,
+								1062
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 180.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
 					"file": "/D/wamp/www/demo/tp_ateam/Adnn/Lib/Action/AdminAction.class.php",
 					"semi_transient": false,
 					"settings":
@@ -324,7 +397,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 3,
 					"type": "text"
 				}
 			]

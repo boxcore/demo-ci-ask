@@ -66,7 +66,7 @@ class User_model extends CI_Model {
      */
     public function login($username = '', $password = '')
     {
-        $query = $this->db->select('uid,username,password, groupid')->from('user')->where('username', $username)->limit(1)-get();
+        $query = $this->db->select('uid,username,password, groupid')->from('user')->where('username', $username)->limit(1)->get();
         $row = $query->row_array();
         if(!empty($row) && ($row['password'] == $password) ){
             $data = array(
@@ -128,6 +128,20 @@ class User_model extends CI_Model {
             return $query->row();
         }
         return false;
+    }
+
+    /**
+     * 返回用户基本信息
+     * @param int $uid
+     * @return array
+     */
+    public function get_user_info($uid = 0){
+        $data = array();
+        if($uid){
+            $query = $this->db->select('*')->from('user')->where('uid',$uid)->limit(1)->get();
+            $data =  $query->row_array();
+        }
+       return $data;
     }
 
 }
