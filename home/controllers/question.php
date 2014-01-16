@@ -40,10 +40,12 @@ class Question extends HM_Controller
     {
     	$qid = $this->input->get('qid');
     	$this->load->model('Question_model');
-    	$res = $this->Question_model->get_question_by_id($qid);
+    	
+    	$res = $this->Question_model->get_question_by_id($qid);          //获取详细
     	$data['info'] 	= $res;
-    	$data['answer'] = $this->Question_model->get_answer_by_id($qid);
-    	$data['relate'] = $this->Question_model->relative_question($res);
+    	$data['answer'] = $this->Question_model->get_answer_by_id($qid); //回答列表
+    	$data['relate'] = $this->Question_model->relative_question($res);//相关问题
+    	
     	$this->load->library('layout');
         $this->layout->view('question/question_detail', $data);
     }

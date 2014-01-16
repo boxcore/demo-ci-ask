@@ -10,7 +10,16 @@ KindEditor.ready(function(K) {
 });
 </script>
 <?php $info = $info[0];?>
-<p class="crumbs"> 当前位置：<a href="<?php echo site_url('');?>">首页</a> > <a href="<?php echo site_url('question/listAll');?>">问答列表</a> > <a href="javascript:void(0);" class="current">回答 </a> </p>
+<?php 
+$string = '';
+if ($info['sort_id']){
+	$string .= '?sort='.$info['sort_id'];
+}
+if ($info['sub_id']){
+	$string .= '&sub='.$info['sub_id'];
+}
+?>
+<p class="crumbs"> 当前位置：<a href="<?php echo site_url('');?>">首页</a> > <a href="<?php echo site_url('question/listAll'.$string.'');?>">问答列表</a> > <a href="javascript:void(0);" class="current">回答 </a> </p>
 <div class="list_content">
     <div class="list_conL">
         <div class="ask_box">
@@ -41,7 +50,7 @@ KindEditor.ready(function(K) {
             <div class="person_one <?php if (count($answer) == $key+1){echo 'no_border';}?>">
                 <dl class="answerer">
                     <dt><?php echo $value['author'];?></dt>
-                    <dd><?php echo date('Y年m月d日 m:i')?></dd>
+                    <dd><?php echo date('Y年m月d日  h:i')?></dd>
                 </dl>
                 <P class="answer"><?php echo $value['content'];?></P>
                 <div class="evaluate"><span>评论</span><span class="f_pipe">|</span><span class="praise"><span class="praise_inner"><?php echo $value['support'];?></span></span></div>

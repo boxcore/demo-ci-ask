@@ -16,22 +16,14 @@
 					</ul>
 				</div>
 				<div class="new_tendency">
-					<h3><a href="#">已解决问题</a></h3>
+					<h3><a href="javascript:void(0);">已解决问题</a></h3>
 					<dl>
-						<dt><a href="<?php echo site_url('question/detail');?>">你好！我很想了解学生部落，希望你们可以联系我 </a></dt>
-						<dd>1个回答</dd>
-						<dt><a href="<?php echo site_url('question/detail');?>">你好！我很想了解学生部落，希望你们可以联系我 </a></dt>
-						<dd>1个回答</dd>
-						<dt><a href="<?php echo site_url('question/detail');?>">你好！我很想了解学生部落，希望你们可以联系我 </a></dt>
-						<dd>1个回答</dd>
-						<dt><a href="<?php echo site_url('question/detail');?>">你好！我很想了解学生部落，希望你们可以联系我 </a></dt>
-						<dd>1个回答</dd>
-						<dt><a href="<?php echo site_url('question/detail');?>">你好！我很想了解学生部落，希望你们可以联系我 </a></dt>
-						<dd>1个回答</dd>
-						<dt><a href="<?php echo site_url('question/detail');?>">你好！我很想了解学生部落，希望你们可以联系我 </a></dt>
-						<dd>1个回答</dd>
-						<dt><a href="<?php echo site_url('question/detail');?>">你好！我很想了解学生部落，希望你们可以联系我 </a></dt>
-						<dd>1个回答</dd>
+						<?php if ($info):?>
+						<?php foreach ($info as $key => $value):?>
+						<dt><a href="<?php echo site_url('question/detail?qid='.$value['id'].'');?>"><?php echo $value['title'];?></a></dt>
+						<dd><?php echo $value['answer_num'];?>个回答</dd>
+						<?php endforeach;?>
+						<?php endif;?>
 					</dl>
 				</div>
 				<div class="attention">

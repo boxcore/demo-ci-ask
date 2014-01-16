@@ -60,6 +60,9 @@ class Question_model extends CI_Model {
     
     public function get_question_by_id($id)
     {
+    	$sql = "UPDATE `xwd_question` SET `preview_num` = `preview_num` + 1 WHERE `id` ={$id}";
+    	$this->db->query($sql);
+    	
     	$sql = "SELECT * FROM `xwd_question` WHERE `id`={$id}";
     	$query = $this->db->query($sql);
     	return $query->result_array();
@@ -110,6 +113,9 @@ class Question_model extends CI_Model {
     
     public function insert_answer($content, $qid)
     {
+    	$sql = "UPDATE `xwd_question` SET `answer_num` = `answer_num` + 1 WHERE `id` ={$qid}";
+    	$this->db->query($sql);
+    	
     	$data = array(
 			'qid' => $qid,
     		'content' => $content,
