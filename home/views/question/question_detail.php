@@ -26,7 +26,7 @@ if ($info['sub_id']){
             <h1 class="ask_title"><?php echo $info['title'];?></h1>
             <div class="ask-info">
 				<span>提问者: <?php echo $info['author'];?></span>| 
-				<span>分类：<a href="javascript:void(0);">食品机械 </a></span>| <span>浏览<?php echo $info['preview_num'];?>次</span> | <span><?php echo $info['create_time'];?></span>
+				<span>分类：<a href="<?php echo site_url('question/listAll?sort='.$info['sort_id'].'');?>"><?php echo $static[$info['sort_id']]["name"];?></a></span>| <span>浏览<?php echo $info['preview_num'];?>次</span> | <span><?php echo $info['create_time'];?></span>
 			</div>
 			<div class="ask_info"><?php echo $info['description'];?></div>
 			<h2>我来回答</h2>
