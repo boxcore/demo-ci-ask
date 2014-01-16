@@ -15,13 +15,13 @@ KindEditor.ready(function(K) {
         <div class="selection_sort">
             <h3>分类</h3>
 			<select name="sort" onchange="changeSub()" id="sort">
-				<option>请选择大类</option>
+				<option value="">请选择大类</option>
 				<?php foreach ($sort as $key => $value):?>
 				<option value="<?php echo $value['id'];?>"><?php echo $value['name'];?></option>
 				<?php endforeach;?>
 			</select>
 			<select name="sub" id="sub">
-				<option>请选择小类</option>
+				<option value="">请选择小类</option>
         	</select>
         </div>
         <div class="selection_sort question">
@@ -57,6 +57,11 @@ function saveQuestion(){
 	var ques = $("#question").val();
 	var cont = $("#content").val();
 
+	if (sort == '') {
+		alert('请选择分类!');
+		return false;
+	}
+	
 	if (ques == '') {
 		alert('请输入问题!');
 		("#question").focus();
