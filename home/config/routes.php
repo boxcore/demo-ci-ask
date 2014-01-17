@@ -11,6 +11,7 @@ $route['404_override'] = 'notFound';
 
 $route['ask/detail\-(\d+)\.html'] = "ask/question/detail/$1";
 $route['ask/([a-z]+)'] = "ask/question/cat/$1";
+$route['ask'] = "ask/question/listAll";
 
 $route['item/detail\-(\d+)\.html'] = "item/item/detail/$1";
 $route['item/([a-z]+)'] = "item/item/cat/$1";
