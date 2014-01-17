@@ -40,14 +40,35 @@ class Question extends HM_Controller
     {
     	$qid = $this->input->get('qid');
     	$this->load->model('Question_model');
-    	$res = $this->Question_model->get_question_by_id($qid);
+    	
+    	$res = $this->Question_model->get_question_by_id($qid);          //获取详细
     	$data['info'] 	= $res;
-    	$data['answer'] = $this->Question_model->get_answer_by_id($qid);
-    	$data['relate'] = $this->Question_model->relative_question($res);
+    	$data['answer'] = $this->Question_model->get_answer_by_id($qid); //回答列表
+    	$data['relate'] = $this->Question_model->relative_question($res);//相关问题
+    	$data['static'] = $this->sort_static();
     	$this->load->library('layout');
         $this->layout->view('question/question_detail', $data);
     }
 
+    function sort_static()
+    {
+	    $sort = array(
+			'2' => array('id'=>'2','name'=>'服饰鞋包','mark'=>'fushixiebao'),
+			'3' => array('id'=>'3','name'=>'餐饮美食','mark'=>'canyinyule'),
+			'58' => array('id'=>'58','name'=>'饰品玩具','mark'=>'shipinwanju'),
+			'10' => array('id'=>'10','name'=>'母婴用品','mark'=>'muyingyongpin'),
+			'4' => array('id'=>'4','name'=>'美容养生','mark'=>'meirongyangsheng'),
+			'56' => array('id'=>'56','name'=>'教育培训','mark'=>'jiaoyupeixun'),
+			'9' => array('id'=>'9','name'=>'网络创业','mark'=>'wangluochuangye'),
+			'12' => array('id'=>'12','name'=>'家居建材','mark'=>'jiajijiancai'),
+			'5' => array('id'=>'5','name'=>'机械环保','mark'=>'jixiehuanbao'),
+			'96' => array('id'=>'96','name'=>'汽车服务','mark'=>'qichefuwu'),
+			'15' => array('id'=>'15','name'=>'其它项目','mark'=>'qitaxiangmu')
+		);
+		
+		return $sort;
+    }
+    
     /**
      * 
      * 添加
