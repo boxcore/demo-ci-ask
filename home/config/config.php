@@ -1,7 +1,8 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-
-$config['base_url']	= '';
+//if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == "on"){$ssl_set = "s";} else{$ssl_set = "";}
+//$config['base_url'] = 'http'.$ssl_set.'://'.$_SERVER['HTTP_HOST'];
+$config['base_url'] = '';
 $config['index_page'] = 'index.php';
 $config['uri_protocol']	= 'AUTO';
 $config['url_suffix'] = '';

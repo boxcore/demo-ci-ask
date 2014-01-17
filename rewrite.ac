@@ -1,0 +1,11 @@
+if (!-e $request_filename) {
+
+	rewrite "^/index\.html" /index.php last;
+	rewrite "^/category$" /index.php last;
+	
+	break;
+}
+
+if (!-e $request_filename) {
+    return 404;
+}
