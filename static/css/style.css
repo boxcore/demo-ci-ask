@@ -226,10 +226,13 @@ a:hover{ text-decoration:underline; color:#f74c4b;}
 #capacity .enter button:hover { background:#0088e6; }
 #capacity .no_register { margin:12px 0 10px 66px; }
 #capacity .no_register a { color:#4679b0; }
-
-
-
-
-
+/*error*/
+.error{ background:url(../images/error_bg.jpg) repeat #67ACE4; width:100%; overflow:hidden;}
+#container{width:560px; margin:0 auto; padding-top:50px; text-align:center;}
+.error .pic_404{margin-bottom:50px;}
+.error .msg{margin-bottom:65px;}
+#cloud{width:100%; height:170px; background:url(../images/error_cloud.png) repeat-x; position:absolute; bottom:0px;}
+.to_index{margin:16px; width:560px; height:84px;}
+.to_index img{margin-bottom:50px;}
 
 
