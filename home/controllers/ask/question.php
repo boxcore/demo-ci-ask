@@ -34,6 +34,9 @@ class Question extends HM_Controller
     	
     	$this->load->model('Question_model');
     	$data['info'] = $this->Question_model->get_list($pram);
+        foreach($data['info'] as &$v){
+            $v['url'] = built_detail_url('ask',$v['id']);
+        }
     	$this->load->library('layout');
         $this->layout->view('question/question_list', $data);
     }

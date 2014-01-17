@@ -3,6 +3,10 @@
 	{
 		"selected_items":
 		[
+			[
+				"ar",
+				"article_id"
+			]
 		]
 	},
 	"buffers":
@@ -40,6 +44,14 @@
 	},
 	"file_history":
 	[
+		"/Z/xinwenda/home/views/question/question_sub.php",
+		"/Z/xinwenda/home/views/item/cat.php",
+		"/Z/xinwenda/home/views/zixun/index.php",
+		"/Z/xinwenda/home/views/zixun/detail.php",
+		"/Z/xinwenda/home/views/item/index.php",
+		"/Z/xinwenda/home/views/item/detail.php",
+		"/Z/xinwenda/home/controllers/zixun/article.php",
+		"/Z/xinwenda/home/controllers/item/item.php",
 		"/Z/xinwenda/home/controllers/demo.php",
 		"/D/wamp/www/demo/tp_ateam/Adnn/Tpl/Admin/index.html",
 		"/Z/xinwenda/ask_admin/views/user/user_edit.php",
@@ -159,15 +171,7 @@
 		"/C/Users/Core/AppData/Local/Temp/Rar$DIa0.160/en_US.php",
 		"/D/Soft/axure/Axure-sn.txt",
 		"/C/Users/Core/AppData/Local/Temp/Rar$DIa0.348/uri.php",
-		"/C/Users/Core/AppData/Local/Temp/Rar$DIa0.235/aws_app.inc.php",
-		"/C/Users/Core/AppData/Local/Temp/Rar$DIa0.484/config.dist.php",
-		"/C/Users/Core/AppData/Local/Temp/Rar$DIa0.800/init.php",
-		"/C/Users/Core/Desktop/fn28-item_ad-basic.sql",
-		"/D/wamp/www/boxcore/sucai/后台/metronic.bootstrap/source.txt",
-		"/C/Users/Core/AppData/Local/Temp/Rar$DIa0.271/使用更新说明.txt",
-		"/C/Users/Core/Desktop/使用说明.txt",
-		"/C/Users/Core/AppData/Local/Temp/Rar$DIa0.828/说明.txt",
-		"/D/Program Files/Axure/Axure RP Pro 7.0/DefaultSettings/Libraries/线框图.rplib"
+		"/C/Users/Core/AppData/Local/Temp/Rar$DIa0.235/aws_app.inc.php"
 	],
 	"find":
 	{

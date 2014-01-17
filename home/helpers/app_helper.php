@@ -17,3 +17,39 @@ function src_url( $uri='' )
         return base_url().'static/'.$uri;
     }
 }
+
+/**
+ * 组装分类链接
+ *
+ * @param string $type      类型：ask|item|zixun
+ * @param string $value
+ * @return string
+ */
+function built_cat_url( $type = '', $value=''){
+    $url = '';
+    $type = trim($type);
+    $value = trim($value);
+
+    if( $type && $value){
+        $url = 'http://'.$type.'.7808.com/'.$value.'/';
+    }
+    return $url;
+}
+
+/**
+ * 组装详情链接
+ *
+ * @param string $type      类型：ask|item|zixun
+ * @param int    $value
+ * @return string
+ */
+function built_detail_url( $type = '', $value=0){
+    $url = '';
+    $type = trim($type);
+    $value = intval($value);
+
+    if( $type && $value){
+        $url = 'http://'.$type.'.7808.com/detail-'.$value.'.html';
+    }
+    return $url;
+}

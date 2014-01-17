@@ -3,7 +3,7 @@
         <h2><strong>已解决问题</strong><span><a href="javascript:void(0);">更多</a></span></h2>
         <dl>
         	<?php foreach ($info as $key => $value):?>
-            <dt><a href="<?php echo site_url('question/detail?qid='.$value['id'].'');?>"><?php echo $value['title'];?></a></dt>
+            <dt><a target="_blank" href="<?php echo $value['url'];?>"><?php echo $value['title'];?></a></dt>
             <dd><?php echo $value['answer_num'];?>个回答</dd>
             <?php endforeach;?>
         </dl>
@@ -11,7 +11,7 @@
         <h2><strong>未解决问题</strong><span><a href="javascript:void(0);">更多</a></span></h2>
         <dl>
 			<?php foreach ($info as $key => $value):?>
-            <dt><a href="<?php echo site_url('question/detail?qid='.$value['id'].'');?>"><?php echo $value['title'];?></a></dt>
+            <dt><a target="_blank" href="<?php echo $value['url'];?>"><?php echo $value['title'];?></a></dt>
             <dd><?php echo $value['answer_num'];?>个回答</dd>
             <?php endforeach;?>
         </dl>
