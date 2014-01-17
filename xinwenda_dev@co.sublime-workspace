@@ -7,38 +7,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "/D/wamp/www/demo/tp_ateam/Adnn/Tpl/Admin/index.html",
-			"settings":
-			{
-				"buffer_size": 2315,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "ask_admin/views/user/user_edit.php",
-			"settings":
-			{
-				"buffer_size": 3028,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/D/wamp/www/demo/tp_ateam/Adnn/Tpl/Casecls/index.html",
-			"settings":
-			{
-				"buffer_size": 2201,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/D/wamp/www/demo/tp_ateam/Adnn/Lib/Action/AdminAction.class.php",
-			"settings":
-			{
-				"buffer_size": 2876,
-				"line_ending": "Windows"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -72,6 +40,15 @@
 	},
 	"file_history":
 	[
+		"/Z/xinwenda/home/controllers/demo.php",
+		"/D/wamp/www/demo/tp_ateam/Adnn/Tpl/Admin/index.html",
+		"/Z/xinwenda/ask_admin/views/user/user_edit.php",
+		"/D/wamp/www/demo/tp_ateam/Adnn/Tpl/Casecls/index.html",
+		"/Z/romeo/trunk/sites/7808/conf/urls.conf.php",
+		"/Z/xinwenda/home/controllers/ask/index.php",
+		"/D/wamp/www/demo/tp_ateam/Adnn/Lib/Action/AdminAction.class.php",
+		"/Z/xinwenda/home/config/domain.php",
+		"/Z/xinwenda/home/controllers/ask.php",
 		"/D/wamp/www/boxcore/sucai/后台/dwz_jui/index.html",
 		"/Z/xinwenda/ask_admin/helpers/app_helper.php",
 		"/D/wamp/www/demo/tp_ateam/Adnn/Tpl/Teacher/add.html",
@@ -84,7 +61,6 @@
 		"/D/wamp/www/boxcore/note/linux/设置启动.txt",
 		"/C/Users/Core/Desktop/qiniu-set.txt",
 		"/D/wamp/www/ex/index.php",
-		"/D/wamp/www/demo/tp_ateam/Adnn/Lib/Action/AdminAction.class.php",
 		"/D/wamp/www/ex/readme.txt",
 		"/Z/xinwenda/ask_admin/controllers/user.php",
 		"/D/wamp/www/boxcore/note/codeigniter/ci数据库操作.txt",
@@ -191,15 +167,7 @@
 		"/C/Users/Core/AppData/Local/Temp/Rar$DIa0.271/使用更新说明.txt",
 		"/C/Users/Core/Desktop/使用说明.txt",
 		"/C/Users/Core/AppData/Local/Temp/Rar$DIa0.828/说明.txt",
-		"/D/Program Files/Axure/Axure RP Pro 7.0/DefaultSettings/Libraries/线框图.rplib",
-		"/D/Program Files/Axure/Axure RP Pro 6.5/lang/使用说明.txt",
-		"/C/Users/Core/AppData/Local/Temp/Rar$DIa0.679/使用说明.txt",
-		"/W/code/index.php",
-		"/W/code/controllers/UserController.php",
-		"/C/Users/Core/Desktop/新建文本文档.txt",
-		"/D/Portable/TeamViewerPRO/CopyRights.txt",
-		"/C/Users/Core/Downloads/cocksucker (1).sql",
-		"/C/Users/Core/Downloads/item_ad.sql"
+		"/D/Program Files/Axure/Axure RP Pro 7.0/DefaultSettings/Libraries/线框图.rplib"
 	],
 	"find":
 	{
@@ -283,123 +251,8 @@
 	"groups":
 	[
 		{
-			"selected": 2,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "/D/wamp/www/demo/tp_ateam/Adnn/Tpl/Admin/index.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2315,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2215,
-								2225
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 1228.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "ask_admin/views/user/user_edit.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3028,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "/D/wamp/www/demo/tp_ateam/Adnn/Tpl/Casecls/index.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2201,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1054,
-								1062
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 180.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "/D/wamp/www/demo/tp_ateam/Adnn/Lib/Action/AdminAction.class.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2876,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								276,
-								276
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				}
 			]
 		}
 	],

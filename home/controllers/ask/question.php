@@ -17,6 +17,12 @@ class Question extends HM_Controller
         $this->cat();
     }
 
+    public function cat($name = '')
+    {
+        echo 1222;
+        echo $name;
+    }
+
     /**
      * 
      * 显示问答列表
@@ -36,9 +42,9 @@ class Question extends HM_Controller
      * 
      * 显示问答详情
      */
-	public function detail()
+	public function detail($qid = 0)
     {
-    	$qid = $this->input->get('qid');
+    	$qid = $this->input->get('qid') ? $this->input->get('qid') : $qid;
     	$this->load->model('Question_model');
     	
     	$res = $this->Question_model->get_question_by_id($qid);          //获取详细
