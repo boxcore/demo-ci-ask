@@ -1,6 +1,3 @@
-<h1>i am 404</h1>
-<hr>
-<pre>
-    <?php print_r($GLOBALS);?>
-</pre>
-<hr>
+<link src="<?php echo src_url('css/style.css');?>" />
+
+<h1>fdfdfd</h1>

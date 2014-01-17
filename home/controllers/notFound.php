@@ -19,7 +19,7 @@ class NotFound extends HM_Controller
     	$this->load->model('Question_model');
     	$data['info'] = $this->Question_model->get_question_attention();
 //    	$this->load->library('layout');
-        $this->layout->view('404', $data);
+        $this->load->view('404', $data);
     }
 
 }
