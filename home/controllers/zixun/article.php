@@ -26,6 +26,7 @@ class Article extends HM_Controller
     public function cat($mark = '')
    	{
     	echo $mark;
+        $this->load->view('article/article_cat');
     }
 
     /**
@@ -34,6 +35,7 @@ class Article extends HM_Controller
     public function detail($article_id = 0)
     {
     	echo $article_id;
+        $this->load->view('article/article_detail');
     }
 
 }
