@@ -1,8 +1,7 @@
 if (!-e $request_filename) {
 
 	rewrite "^/index\.html" /index.php last;
-	rewrite "^/category$" /index.php last;
-	
+	rewrite ^/(.*)$ /index.php/$1 last;
 	break;
 }
 

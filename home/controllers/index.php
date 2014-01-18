@@ -18,6 +18,10 @@ class Index extends HM_Controller
     {
     	$this->load->model('Question_model');
     	$data['info'] = $this->Question_model->get_question_attention();
+
+        $this->load->model('flink_model');
+        $data['friend_links'] = $this->flink_model->getLinkByMark('index');
+
     	$this->load->library('layout');
         $this->layout->view('index', $data);
     }

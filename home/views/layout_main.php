@@ -49,9 +49,9 @@
 					<?php endforeach;?>
 				</div>
 			</li>
-			<li><a href="javascript:void(0);">首页</a></li>
-			<li><a href="javascript:void(0);">问答</a></li>
-			<li><a href="javascript:void(0);">项目</a></li>
+			<li><a href="<?php echo base_url('/') ?>">首页</a></li>
+			<li><a href="http://ask.7808.com/">问答</a></li>
+			<li><a href="http://item.7808.com/">项目</a></li>
 		</ul>
 	</div>
 	<?php echo $content_for_layout;?>
@@ -67,17 +67,18 @@
 				<li><a href="#"><img src="<?php echo src_url('images/Partners.jpg');?>" width="121" height="38"></a></li>
 				<li><a href="#"><img src="<?php echo src_url('images/Partners.jpg');?>" width="121" height="38"></a></li>
 			</ul>
-			<h4>友情连接:</h4>
-			<div class="friendship">
-				<a href="#">7808口碑创业网</a>|
-				<a href="#">致富网</a>|
-				<a href="#">渠道中国 </a>|
-				<a href="#">7808口碑创业网</a>|
-				<a href="#">致富网</a>|
-				<a href="#">渠道中国 </a>|
-				<a href="#">致富网</a>|
-				<a href="#">渠道中国 </a>
-			</div>
+
+            <?php if(isset($friend_links) && !empty($friend_links)): ?>
+            <h4>友情连接:</h4>
+            <div class="friendship">
+                <?php $i=1;$total = count($friend_links); foreach($friend_links as $v):?>
+                    <a target="_blank" href="<?php echo $v['link'] ?>"><?php echo $v['name'] ?></a>
+                    <?php if($i != $total): ?>|<?php endif; ?>
+                <?php $i++; endforeach;?>
+            </div>
+            <?php endif; ?>
+
+
 			<p class="sponsor"><strong>© 7808创业指导网 荣誉出品</strong> </p>
 			<div class="foot_nav">
 				<a href="#">关于我们</a>|
