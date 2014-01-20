@@ -10,7 +10,9 @@
 	<div id="container">
 		<img class="pic_404" src="<?php echo src_url('images/404.png');?>" width="384" height="234">
 		<img class="msg" src="<?php echo src_url('images/404_msg.png');?>" width="389" height="24">
-		<p class="to_index"><a href="#"><img src="<?php echo src_url('images/404_to_index.png');?>" width="128" height="34"></a></p>
+		<p class="to_index"><a href="<?php echo base_url(); ?>"><img src="<?php echo src_url('images/404_to_index
+		.png');?>"
+                                                     width="128" height="34"></a></p>
 	</div>	
 	<div id="cloud"></div>
 </body>
