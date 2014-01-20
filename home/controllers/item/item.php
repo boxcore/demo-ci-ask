@@ -18,7 +18,9 @@ class Item extends HM_Controller
      */
     public function index()
     {
-        $this->load->view('item/item_index');
+        $data = array();
+        $this->load->library('layout');
+        $this->layout->view('item/item_index', $data);
     }
 
     /**
