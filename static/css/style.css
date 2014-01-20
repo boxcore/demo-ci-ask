@@ -4,9 +4,9 @@ body{font-size:12px; padding:0px; margin:0px;}
 p,h1,h2,h3,h4,span,strong,a,img,table,td,tr,input,form,btn,ul,li,dl,dt,dd,em{margin:0px; padding:0px; list-style:none; border:none; font-style:normal;}
 a{text-decoration:none; color:#333;}
 a:hover{ text-decoration:underline; color:#f74c4b;}
-#top_box,.search_text,.search_btn,.food,.cloth,.education,.home,.decorate,.beautify,.new,.ask_title,.submit_btn,.praise,.praise_inner,.question_btn,.user_name,.user_mes,.phone{ background:url(../images/icon.png) no-repeat;}
+#top_box,.search_text,.search_btn,.food,.cloth,.education,.home,.decorate,.beautify,.new,.ask_title,.submit_btn,.praise,.praise_inner,.question_btn,.user_name,.user_mes,.phone,.free_tel,.free_leave_mes{ background:url(../images/icon.png) no-repeat;}
 #top_box{background:url(../images/icon.png);}
-#top_box{width:100%; height:112px; background-position:0px -190px;background-repeat:repeat-x; }
+#top_box{width:100%; height:112px; background-position:0px -190px;background-repeat:repeat-x;}
 #top_box .top_inner{width:1010px; overflow:hidden; margin:0 auto; height:82px;}
 #top_box .logo{width:242px; height :41px; margin-top:25px; float:left;}
 #top_box .search_box{width:580px; height:66px; margin:2px 0 0; float:right;}
@@ -108,13 +108,14 @@ a:hover{ text-decoration:underline; color:#f74c4b;}
 .foot .foot_box .foot_nav a{font-size:12px; color:#333; margin:0px 10px;}
 .foot .foot_box p{font-size:12px; color:#333;text-align:center; width:1010px; height:20px; line-height:20px;}
 /*问答列表*/
-.filter{width:1008px; border:1px solid #d1ccc7; margin:10px auto 20px;}
+.filter{width:1008px; border:1px solid #d1ccc7; margin:10px auto 10px; background:#fff; overflow:hidden;}
 .filter table{ border-collapse:collapse; color:#b0a59f;}
-.filter table span{ background:url(../images/icon.png) no-repeat; background-position:20px -425px;}
+.filter table td{padding-top:3px; padding-bottom:3px;}
+.filter table span{ background:url(../images/filter_arrows.jpg) no-repeat 10px 12px;display:block; width:95px; height:33px; line-height:33px; text-align:left; margin-left:12px; padding-left:22px;}
 .filter_type{background:#f7f5f5; overflow:hidden;width:118px; text-align:center; height:34px;}
 .filter_type span{width:118px; overflow:hidden;background:url(../images/icon.png) no-repeat; background-position:20px -415px; display:block;}
-.filter_inner{padding:0px 15px; width:860px; line-height:30px;}
-.filter_inner a{margin-right:30px; color:#858585;}
+.filter_inner{padding:0px 15px; width:849px; line-height:30px;}
+.filter_inner a{margin-right:30px; color:#858585; white-space:nowrap; float:left;}
 .filter_inner a:hover{color:#f74c4b;}
 .add_box td{border-bottom:1px dotted #ccc;}
 .list_content{width:1008px; overflow:hidden;border:1px solid #e2e2e2; margin:0px auto 30px;}
@@ -133,7 +134,7 @@ a:hover{ text-decoration:underline; color:#f74c4b;}
 /*回答*/
 .crumbs{width:1010px; height:32px; line-height:32px; color:#666; font-size:12px; margin:0 auto;}
 .crumbs a{color:#666;}
-.crumbs .current{color:#333;}
+.crumbs .current{color:#333; margin-left:5px;}
 .crumbs a:hover{color:#f74c4b;}
 .ask_box{width:657px; overflow:hidden; padding:0px 30px 30px;}
 .ask_list{width:657px; overflow:hidden;padding:0px 30px 20px;}
@@ -234,5 +235,34 @@ a:hover{ text-decoration:underline; color:#f74c4b;}
 #cloud{width:100%; height:170px; background:url(../images/error_cloud.png) repeat-x; position:absolute; bottom:0px;}
 .to_index{margin:16px; width:560px; height:84px;}
 .to_index img{margin-bottom:50px;}
+/*项目列表*/
+.project_list{background:#f0f1f2;}
+.project_box{width:1010px; overflow:hidden; margin:10px auto 0;}
+.item_content{width:1010px; overflow:hidden; margin:0 auto;}
+.item_content ul{width:1034px; overflow:hidden; left:-14px; position:relative; *left:-28px;*width:1038px;}
+.item_content li{width:216px; overflow:hidden; float:left; background:#fff; border:1px solid #e2e2e2;  padding:0px 12px  19px; margin-left:14px; margin-bottom:16px;}
+.item_content li h2{width:200px; height:36px; line-height:36px; font-size:14px;}
+.item_content li h2 a{color:#ff7506;}
+.item_content li .image{width:194px; overflow:hidden; background:#fff;border:1px solid #e2e2e2;padding:11px;}
+.item_content li p{font-size:12px; width:216px;overflow:hidden; line-height:20px; padding:10px 0;}
+.item_content li p a{color:#333; }
+.item_content li p a:hover{color:#FF0000;}
+.item_content li .btn{width:216px; overflow:hidden;}
+.item_content li .free_tel{width:99px; height:26px; display:block; float:left; margin-right:18px; background-position:0px -802px; display:block; float:left;}
+.item_content li .free_leave_mes{width:99px; height:26px; display:block; float:left;display:block; background-position:0px -832px; float:left;}
+.item_content li .free_tel:hover{background-position:0px -862px;}
+.item_content li .free_leave_mes:hover{background-position:0px -894px;}
+
+
+
+
+
+
+
+
+
+
+
+
 
 

@@ -108,13 +108,14 @@ a:hover{ text-decoration:underline; color:#f74c4b;}
 .foot .foot_box .foot_nav a{font-size:12px; color:#333; margin:0px 10px;}
 .foot .foot_box p{font-size:12px; color:#333;text-align:center; width:1010px; height:20px; line-height:20px;}
 /*问答列表*/
-.filter{width:1008px; border:1px solid #d1ccc7; margin:10px auto 20px;}
+.filter{width:1008px; border:1px solid #d1ccc7; margin:10px auto 10px; background:#fff; overflow:hidden;}
 .filter table{ border-collapse:collapse; color:#b0a59f;}
-.filter table span{ background:url(../images/icon.png) no-repeat; background-position:20px -425px;}
+.filter table td{padding-top:3px; padding-bottom:3px;}
+.filter table span{ background:url(../images/filter_arrows.jpg) no-repeat 10px 12px;display:block; width:95px; height:33px; line-height:33px; text-align:left; margin-left:12px; padding-left:22px;}
 .filter_type{background:#f7f5f5; overflow:hidden;width:118px; text-align:center; height:34px;}
 .filter_type span{width:118px; overflow:hidden;background:url(../images/icon.png) no-repeat; background-position:20px -415px; display:block;}
-.filter_inner{padding:0px 15px; width:860px; line-height:30px;}
-.filter_inner a{margin-right:30px; color:#858585;}
+.filter_inner{padding:0px 15px; width:849px; line-height:30px;}
+.filter_inner a{margin-right:30px; color:#858585; white-space:nowrap; float:left;}
 .filter_inner a:hover{color:#f74c4b;}
 .add_box td{border-bottom:1px dotted #ccc;}
 .list_content{width:1008px; overflow:hidden;border:1px solid #e2e2e2; margin:0px auto 30px;}
