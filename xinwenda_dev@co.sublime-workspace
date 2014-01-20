@@ -44,6 +44,7 @@
 	},
 	"file_history":
 	[
+		"/W/mysql/config.inc.php",
 		"/W/romeo/conf/database.conf.php",
 		"/C/Users/Core/Desktop/tmp/nginx-co/conf.d/web.conf",
 		"/C/Users/Core/Desktop/tmp/conf/nginx.conf",
@@ -51,7 +52,6 @@
 		"/C/Users/Core/Desktop/tmp/nginx-co/conf.d/static.conf",
 		"/W/conf/web.confbak",
 		"/W/conf/7808.com.conf",
-		"/W/mysql/config.inc.php",
 		"/C/Users/Core/Desktop/tmp/nginx-co/conf.d/a.canyin.conf",
 		"/C/Users/Core/Desktop/tmp/nginx/conf.d/ask.7808.cn.conf",
 		"/C/Users/Core/Desktop/tmp/nginx/nginx.conf",
