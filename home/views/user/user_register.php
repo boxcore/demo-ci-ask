@@ -115,6 +115,14 @@ function addUser(){
 			nickname : nickname,
 			password : password,
 			repassword : repassword
+		},
+		success:function(data){
+			if (data) {
+				alert('创建成功!');
+				window.location.href = "<?php echo site_url('user/login');?>";
+			} else {
+				alert('创建失败!');
+			}
 		}
 	});
 }

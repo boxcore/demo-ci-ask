@@ -92,6 +92,7 @@ class Question extends HM_Controller
     
     public function answer_add() 
     {
+
     	if ($_POST) {
     		$content = $this->input->post('content');
     		$qid 	 = $this->input->post('qid'); 

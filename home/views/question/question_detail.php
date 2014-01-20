@@ -46,6 +46,7 @@ if ($info['sub_id']){
                 <dt class="ask_num"><strong><?php echo $info['answer_num'];?>条回答</strong></dt>
                 <dd class="Arrange"><span class="current">按默认顺序</span> <span class="f_pipe">|</span> <a href="javascript:void(0);">按时间排序</a></span></dd>
             </dl>
+            <!-- 回答列表开始 -->
             <?php foreach ($answer as $key => $value):?>
             <div class="person_one <?php if (count($answer) == $key+1){echo 'no_border';}?>">
                 <dl class="answerer">
@@ -56,18 +57,21 @@ if ($info['sub_id']){
                 <div class="evaluate"><span>评论</span><span class="f_pipe">|</span><span class="praise"><span class="praise_inner"><?php echo $value['support'];?></span></span></div>
             </div>
             <?php endforeach;?>
+             <!-- 回答列表结束 -->
         </div>
         <?php endif;?>
         <?php if (count($relate)):?>
         <div class="interval"></div>
         <div class="ask_list">
             <h2>相关问题</h2>
+            <!-- 相关问题列表开始 -->
             <?php foreach ($relate as $key => $value):?>
             <dl class="relevant <?php if (count($relate) == $key+1){echo 'no_border';}?>">
                 <dt><a href="<?php echo site_url('question/detail?qid='.$value['id'].'');?>"><?php echo $value['title'];?></a></dt>
                 <dd><?php echo date('Y-m-d')?></dd>
             </dl>
             <?php endforeach;?>
+             <!-- 相关问题列表结束 -->
         </div>
         <?php endif;?>
     </div>
@@ -103,7 +107,7 @@ function addAnswer(){
 
 	jQuery.ajax({
 		type : "POST",
-		url : "<?php echo site_url('question/answer_add');?>",
+		url : "http://ask.7808.com/question/answer_add",
 		data : {
 			content : cont,
 			qid : qid

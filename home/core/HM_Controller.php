@@ -37,18 +37,19 @@ class HM_Controller extends CI_Controller
     {
     	$sql = "SELECT `id`,`name`,`mark`,`highlight` FROM `xwd_category` WHERE `pid` = 0 ORDER BY sort ASC";
     	$query = $this->db->query($sql);
-    	
+
     	foreach ($query->result_array() as $key => $row)
     	{
+    		$row['url'] = built_cat_url('ask', $row['id']);
     		$GLOBALS['category_info'][$key] = $row;
     		$sql = "SELECT `id`,`name`,`mark`,`highlight` FROM `xwd_category` WHERE `pid` = {$row['id']} ORDER BY sort ASC ";
     		$query = $this->db->query($sql);
     		
     		foreach ($query->result_array() as $k => $res) 
     		{
+    			$res['url'] =  built_cat_url('ask', $res['id']);
     			$GLOBALS['category_info'][$key]['sort'][$k] = $res;
     		}
     	}
     }
-
 }
