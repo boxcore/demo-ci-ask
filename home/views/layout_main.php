@@ -15,7 +15,7 @@
 				<form>
 					<input name="" type="text" class="search_text">
 					<input name="" type="button" class="search_btn" value="搜索">
-					<a href="<?php echo site_url('question/add');?>" class="edit_eara">发布信息</a>
+					<a href="<?php echo site_url('/ask/question/add');?>" class="edit_eara">发布信息</a>
 				</form>
 		    </div>
 		</div>
