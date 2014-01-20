@@ -3,8 +3,8 @@
 //if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == "on"){$ssl_set = "s";} else{$ssl_set = "";}
 //$config['base_url'] = 'http'.$ssl_set.'://'.$_SERVER['HTTP_HOST'];
 $config['base_url'] = 'http://www.7808.com/';
-$config['index_page'] = 'index.php';
-$config['uri_protocol']	= 'AUTO';
+$config['index_page'] = '';
+$config['uri_protocol']	= 'AUTO'; //PATH_INFO
 $config['url_suffix'] = '';
 $config['language']	= 'english';
 $config['charset'] = 'UTF-8';

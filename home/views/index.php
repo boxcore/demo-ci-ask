@@ -20,7 +20,7 @@
 					<dl>
 						<?php if ($info):?>
 						<?php foreach ($info as $key => $value):?>
-						<dt><a href="<?php echo site_url('question/detail?qid='.$value['id'].'');?>"><?php echo $value['title'];?></a></dt>
+						<dt><a href="<?php echo $value['url']; ?>"><?php echo $value['title'];?></a></dt>
 						<dd><?php echo $value['answer_num'];?>个回答</dd>
 						<?php endforeach;?>
 						<?php endif;?>
@@ -31,7 +31,7 @@
 					<?php if ($info):?>
 					<?php foreach ($info as $key => $value):?>
 					<dl>
-						<dt><a href="<?php echo site_url('question/detail?qid='.$value['id'].'');?>"><?php echo $value['title'];?> </a><p>flower<span> 浏览<?php echo $value['preview_num'];?>次 </span><?php echo $value['answer_num'];?>个回复</p></dt>
+						<dt><a href="<?php echo $value['url']; ?>"><?php echo $value['title']; ?> </a><p>flower<span> 浏览<?php echo $value['preview_num'];?>次 </span><?php echo $value['answer_num'];?>个回复</p></dt>
 						<dd><?php echo date('m月d日', $value['create'])?></dd>
 					</dl>
 					<?php endforeach;?>

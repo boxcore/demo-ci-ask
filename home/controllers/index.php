@@ -18,6 +18,9 @@ class Index extends HM_Controller
     {
     	$this->load->model('Question_model');
     	$data['info'] = $this->Question_model->get_question_attention();
+        foreach( $data['info'] as &$v){
+            $v['url'] = built_detail_url('ask', $v['id']);
+        }
 
         $this->load->model('flink_model');
         $data['friend_links'] = $this->flink_model->getLinkByMark('index');
