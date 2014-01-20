@@ -28,7 +28,9 @@ class Item extends HM_Controller
      */
     public function cat($mark = '')
    	{
-    	echo $mark;
+        $data = array();
+        $this->load->library('layout');
+        $this->layout->view('item/item_cat', $data);
     }
 
     /**
@@ -36,7 +38,9 @@ class Item extends HM_Controller
      */
     public function detail($item_id = 0)
     {
-    	echo $item_id;
+        $data = array();
+        $this->load->library('layout');
+        $this->layout->view('item/item_detail', $data);
     }
 
 }
