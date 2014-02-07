@@ -228,6 +228,8 @@ class User extends MY_Controller
     {
         $uid = $this->input->get('uid');
 
+        $this->check_delete_ids($uid);
+
         if ($this->db->delete('xwd_user', array('uid' => $uid)))
         {
             $this->success_ajax( '删除成功' );
@@ -236,6 +238,7 @@ class User extends MY_Controller
         {
             $this->error_ajax();
         }
+
     }
 
     public function ajax_delete(){
@@ -266,6 +269,10 @@ class User extends MY_Controller
     }
 
 
+    /**
+     * 验证删除用户ID权限
+     * @param $ids 用户ID
+     */
     private function check_delete_ids($ids){
         $ids = is_array($ids) ? $ids :array($ids);
         if(in_array(1,$ids)){
