@@ -7,8 +7,7 @@
 class User extends HM_Controller
 {
 
-    function __construct()
-    {
+    function __construct(){
         parent::__construct();
     }
 
@@ -16,8 +15,7 @@ class User extends HM_Controller
      * 
      * 用户中心
      */
-    public function center()
-    {
+    public function center(){
         $this->load->view('user/user_center');
     }
 
@@ -69,6 +67,7 @@ class User extends HM_Controller
 	 */
     public function add_user()
     {
+        $pram = array();
     	if ($_POST) {
     		$pram['username'] 	= $this->input->post('username');
     		$pram['nickname']   = $this->input->post('nickname');
