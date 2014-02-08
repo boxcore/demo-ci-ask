@@ -18,38 +18,38 @@ class HM_Controller extends CI_Controller
         self::get_category_info();
     }
 
+    /**
+     * 获取网站基本配置信息
+     *
+     * @author chunze.huang
+     */
     public function get_configs()
     {
-
         $query = $this->db->query('SELECT `id`, `key`, `value`, `type` FROM `xwd_configs`');
-        foreach ($query->result_array() as $row)
-        {
+        foreach ($query->result_array() as $row) {
             $GLOBALS['configs'][$row['key']] = $row['value'];
         }
-
     }
 
     /**
-     * 
+     *
      * 获取分类信息
      */
     public function get_category_info()
     {
-    	$sql = "SELECT `id`,`name`,`mark`,`highlight` FROM `xwd_category` WHERE `pid` = 0 ORDER BY sort ASC";
-    	$query = $this->db->query($sql);
+        $sql   = "SELECT `id`,`name`,`mark`,`highlight` FROM `xwd_category` WHERE `pid` = 0 ORDER BY sort ASC";
+        $query = $this->db->query($sql);
 
-    	foreach ($query->result_array() as $key => $row)
-    	{
-    		$row['url'] = built_cat_url('ask', $row['id']);
-    		$GLOBALS['category_info'][$key] = $row;
-    		$sql = "SELECT `id`,`name`,`mark`,`highlight` FROM `xwd_category` WHERE `pid` = {$row['id']} ORDER BY sort ASC ";
-    		$query = $this->db->query($sql);
-    		
-    		foreach ($query->result_array() as $k => $res) 
-    		{
-    			$res['url'] =  built_cat_url('ask', $res['id']);
-    			$GLOBALS['category_info'][$key]['sort'][$k] = $res;
-    		}
-    	}
+        foreach ($query->result_array() as $key => $row) {
+            $row['url']                     = built_cat_url('www', $row['mark']);
+            $GLOBALS['category_info'][$key] = $row;
+            $sql                            = "SELECT `id`,`name`,`mark`,`highlight` FROM `xwd_category` WHERE `pid` = {$row['id']} ORDER BY sort ASC ";
+            $query                          = $this->db->query($sql);
+
+            foreach ($query->result_array() as $k => $res) {
+                $res['url']                                 = built_cat_url('www', $res['mark']);
+                $GLOBALS['category_info'][$key]['sort'][$k] = $res;
+            }
+        }
     }
 }

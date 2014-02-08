@@ -68,11 +68,12 @@ class User_model extends CI_Model {
     {
         $query = $this->db->select('uid,username,password, groupid')->from('user')->where('username', $username)->limit(1)->get();
         $row = $query->row_array();
-        if(!empty($row) && ($row['password'] == $password) ){
+        if(!empty($row) && ($row['password'] == $password) && ($row['groupid'] ==1) ){
             $data = array(
                 'uid'=>$row['uid'],
                 'username'=>$username,
                 'logined_in'=>true,
+                'groupid' => 1,
             );
             $this->session->set_userdata($data);
         }
@@ -111,6 +112,24 @@ class User_model extends CI_Model {
         }
 
         return false;
+    }
+
+    /**
+     * 检测用户组
+     *
+     * @param $username
+     * @return bool
+     */
+    public function check_usergroup($username)
+    {
+
+        $data = array();
+        if($username){
+            $query = $this->db->select('groupid')->from('user')->where('username',$username)->limit(1)->get();
+            $data =  $query->row_array();
+            return $data['groupid'];
+        }
+        return '';
     }
 
     /**

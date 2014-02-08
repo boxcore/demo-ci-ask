@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <?php print_r($GLOBALS['category_info']); ?> --><!DOCTYPE html>
 <html lang="en-US">
 <head>
 <meta charset="UTF-8">
@@ -38,10 +38,10 @@
 				<div class="flotage flotage_pages" style="display:none;" id="nav_all">
 					<?php foreach ($GLOBALS['category_info'] as $key => $value):?>
 					<div class="sort_inner <?php if (count($value) != $key+1){echo 'bottom_bor';}?>">
-						<h2><a href="<?php echo site_url('question/listAll?sort='.$value['id'].'');?>" class="<?php echo $data_sort_array[$value['mark']];?>"><?php echo $value['name'];?></a></h2>
+						<h2><a href="<?php echo $value['url'];?>" class="<?php echo $data_sort_array[$value['mark']];?>"><?php echo $value['name'];?></a></h2>
 						<p><span class="menu_text">
 						<?php foreach ($value['sort'] as $k => $v):?>
-							<a href="<?php echo site_url('question/listAll?sort='.$value['id'].'&sub='.$v['id'].'');?>" <?php if ($v['highlight']){echo 'class="highlight"';}?>><?php echo $v['name'];?></a>
+							<a href="<?php echo $v['url']; ?>" <?php if ($v['highlight']){echo 'class="highlight"';}?>><?php echo $v['name'];?></a>
 						<?php endforeach;?>
 						</span>
 						</p>
@@ -54,7 +54,11 @@
 			<li><a href="http://item.7808.com/">项目</a></li>
 		</ul>
 	</div>
+
+    <!--    main content start   -->
 	<?php echo $content_for_layout;?>
+    <!--    main content end   -->
+
 	<div class="foot">
 		<div class="foot_box">
 			<h4>合作机构:</h4>

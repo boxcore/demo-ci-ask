@@ -14,7 +14,7 @@
                     <li><a href="sidebar_2.html">杭州</a></li>
                 </ul>
             </li>
-            <li><a href="#" target="_blank">##</a></li>
+            <li><a href="http://www.7808.com/" target="_blank">回到首页</a></li>
             <li><a href="<? echo site_url('user/set_password')?>" target="dialog" width="600">修改密码</a></li>
             <li><a href="#" target="_blank">##</a></li>
             <li><a href="#" target="_blank">##</a></li>

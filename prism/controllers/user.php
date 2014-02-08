@@ -31,7 +31,7 @@ class User extends MY_Controller
 
         // 设置验证规则
         $this->form_validation->set_error_delimiters('<span class="error">', '</span>');
-        $this->form_validation->set_rules('username', '用户名', 'trim|required|min_length[5]|max_length[12]|xss_clean|callback_username_check');
+        $this->form_validation->set_rules('username', '用户名', 'trim|required|min_length[5]|max_length[12]|xss_clean|callback_username_check|callback_usergroup_check');
         $this->form_validation->set_rules('password', '密码', 'trim|required|callback_password_check'); //|matches[passconf]
         //$this->form_validation->set_rules('passconf', 'Password Confirmation', 'required');
         //$this->form_validation->set_rules('email', 'Email', 'required');
@@ -115,6 +115,24 @@ class User extends MY_Controller
         $this->form_validation->set_message('username_check', '用户名不存在！');
         return false;
     }
+
+    /**
+     * 验证用户组
+     * @param $username
+     * @return bool
+     */
+    public function usergroup_check($username)
+    {
+        if ($this->user_model->check_usergroup($username) == 1 )
+        {
+            return true;
+
+        }
+        $this->form_validation->set_message('username_check', '您所在的用户组没有权限！');
+        return false;
+    }
+
+
 
 
     /**
