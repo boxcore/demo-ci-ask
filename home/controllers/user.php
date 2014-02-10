@@ -12,14 +12,6 @@ class User extends HM_Controller
     }
 
     /**
-     * 
-     * 用户中心
-     */
-    public function center(){
-        $this->load->view('user/user_center');
-    }
-
-    /**
      * 用户登陆
      */
     public function login()
@@ -79,4 +71,107 @@ class User extends HM_Controller
 			echo 1;
     	}
     }
+
+
+    /**
+     * 用户中心首页
+     */
+    public function center(){
+        $data = array();
+
+        $this->load->library('layout');
+        $this->layout->view('user/user_center',$data);
+    }
+
+    /**
+     * 用户中心 - 资料管理
+     */
+    public function info(){
+        $data = array();
+
+        $this->load->library('layout');
+        $this->layout->view('user/user_info',$data);
+    }
+
+    /**
+     * 用户中心 - 个性设置
+     */
+    public function setting(){
+        $data = array();
+
+        $this->load->library('layout');
+        $this->layout->view('user/user_setting',$data);
+    }
+
+    /**
+     * 用户中心 - 修改密码
+     */
+    public function set_password(){
+        $data = array();
+
+        $this->load->library('layout');
+        $this->layout->view('user/user_set_password',$data);
+    }
+
+    /**
+     * 用户中心 - 问答管理列表
+     */
+    public function ask_list(){
+        $data = array();
+
+        $this->load->library('layout');
+        $this->layout->view('user/user_ask_list',$data);
+    }
+
+    /**
+     * 用户中心 - 我的回答列表
+     */
+    public function answer_list(){
+        $data = array();
+
+        $this->load->library('layout');
+        $this->layout->view('user/user_answer_list',$data);
+    }
+
+    /**
+     * 用户中心 - 我的留言列表
+     */
+    public function commit_list(){
+        $data = array();
+
+        $this->load->library('layout');
+        $this->layout->view('user/user_commit_list',$data);
+    }
+
+    /**
+     * 用户中心 - 我的文章列表
+     */
+    public function article_list(){
+        $data = array();
+
+        $this->load->library('layout');
+        $this->layout->view('user/user_article_list',$data);
+    }
+
+    /**
+     * 用户中心 - 我的足迹
+     */
+    public function tracks(){
+        $data = array();
+
+        $this->load->library('layout');
+        $this->layout->view('user/user_tracks',$data);
+    }
+
+    /**
+     * 用户中心 - 头像修改
+     */
+    public function avatar(){
+        $data = array();
+
+        $this->load->library('layout');
+        $this->layout->view('user/user_avatar',$data);
+    }
+
+
 }

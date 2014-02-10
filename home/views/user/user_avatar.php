@@ -2,6 +2,7 @@
     <div class="user_left">
         <?php include('user_menu.php') ?>
     </div>
+
     <div class="user_right">
         <h1><span class=""><a href="#">用户中心</a>&gt;<a href="#">我的回答</a></span><span class="exit"><a href="#">[退出登录]</a></span></h1>
         <div class="head_portrait">
@@ -18,4 +19,5 @@
             </div>
         </div>
     </div>
+
 </div>

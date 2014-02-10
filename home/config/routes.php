@@ -27,3 +27,7 @@ $route['zixun/detail\-(\d+)\.html'] = "zixun/article/detail/$1";
 $route['zixun/([a-z]+)'] = "zixun/article/cat/$1";
 
 $route['404.html'] = "notFound";
+
+/* 地区分类 */
+require 'routes_category.php';
+
