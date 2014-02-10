@@ -31,6 +31,7 @@ class HM_Controller extends CI_Controller
         }
     }
 
+
     /**
      *
      * 获取分类信息
@@ -49,6 +50,37 @@ class HM_Controller extends CI_Controller
             foreach ($query->result_array() as $k => $res) {
                 $res['url']                                 = built_cat_url('www', $res['mark']);
                 $GLOBALS['category_info'][$key]['sort'][$k] = $res;
+            }
+        }
+    }
+
+    /**
+     * 获取当前所在城市
+     * @
+     */
+    public function cookie_city()
+    {
+        $CI = &get_instance();
+        $host = $_SERVER['HTTP_HOST'];
+        $ex = explode('.', $host);
+        $ex_tot = count($ex);
+        if( $ex_tot > 4 )
+        {
+            return false;
+        }
+        else
+        {
+            $CI->db->where('py', $ex[0]);
+            $CI->db->where('check', 1);
+            $query = $CI->db->get('region',1,0);
+
+            if($query->num_rows() <= 0)
+            {
+                return false;
+            }
+            else
+            {
+                return $query->row_array();
             }
         }
     }
