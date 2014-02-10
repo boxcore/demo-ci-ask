@@ -249,7 +249,7 @@ a:hover{ text-decoration:underline; color:#f74c4b;}
 .item_content li p a:hover{color:#FF0000;}
 .item_content li .btn{width:216px; overflow:hidden;}
 .item_content li .free_tel{width:99px; height:26px; display:block; float:left; margin-right:18px; background-position:0px -802px; display:block; float:left;}
-.item_content li .free_leave_mes{width:99px; height:26px; display:block; float:left;}
+.item_content li .free_leave_mes{width:99px; height:26px; display:block; float:left;background-position:0px -832px;}
 .item_content li .free_tel:hover{background-position:0px -862px;}
 .item_content li .free_leave_mes:hover{background-position:0px -894px;}
 /*用户中心*/
@@ -299,3 +299,75 @@ a:hover{ text-decoration:underline; color:#f74c4b;}
 .my_tracks th{ background:#f8f8f8; border-top:1px solid #ccc; border-bottom:1px solid #ccc; height:36px; line-height:36px; color:#999; text-align:left;}
 .my_tracks td{ text-align:left; height:42px; line-height:42px; color:#333; border-bottom:1px dotted #ccc;}
 .my_tracks .project{color:#004bb1;}
+/*县级页面*/
+.header{width:100%; height:27px; background:#2f3237;}
+.header .head_box{width:1010px; overflow:hidden; margin:0 auto; color:#9facbd;}
+.header .head_box .left{width:230px; height:27px; line-height:27px; font-size:12px; float:left;}
+.header .head_box .right{float:right; height:27px; line-height:27px;}
+.header .head_box .right  span{margin-right:18px;}
+.header .head_box .right a{ color:#9facbd; }
+.header .head_box .right a:hover{text-decoration:none;}
+.header .head_box .right .mobile{width:60px; height:27px; display:inline-block; background:url(../images/icon2.png) no-repeat 0px -53px; margin-right:0px; padding-left:17px;}
+.second_top{width:1010px; overflow:hidden; margin:0 auto;}
+.second_top .logo2{width:199px; height:36px; margin-top:25px; float:left;}
+.second_top .right{width:566px; overflow:hidden; float:right; margin-top:14px;}
+.second_top .right p{width:260px; height:23px; line-height:23px;}
+.second_top .right p  a{width:64px; height:22px; line-height;22px;display:block; float:left; text-align:center; color:#333; font-weight:bold;}
+.second_top .right p  .current{width:64px; height:22px; line-height;22px; border:1px solid #BBB; border-bottom:none;}
+.input_box{width:566px; height:31px;}
+.second_top .text_search{width:370px; height:30px; border-left:1px solid #ccc;border-bottom:1px solid #ccc;border-top:1px solid #ccc; float:left; background:url(../images/shadow.jpg) repeat-x; padding-left:6px;}
+.second_top .btn_search{width:85px; height:32px;background:url(../images/icon2.png) no-repeat 0px -84px; cursor:pointer; color:#fff; font-size:15px; font-family:"Microsoft Yahei";}
+.input_box .post_message a{font-size:14px; color:#f74c4b; text-decoration:underline; margin-left:10px;}
+.second_nav{width:1010px; height:41px; line-height:41px;background:url(../images/icon2.png) repeat-x 0px -125px; margin:15px auto 0;}
+.second_nav li{float:left; width:105px; height:41px; line-height:41px; text-align:center; font-size:15px; font-family:"Microsoft Yahei"; background:url(../images/nav_line.jpg) no-repeat right center;}
+.second_nav li a{color:#fff;}
+.second_nav .no_bg{ background:none;}
+.county_screen{width:968px; height:97px; margin:0 auto;background:#f3f3f3; border:1px solid #e3e3e3;padding:0px 20px;}
+.county_screen .screen_box{width:966px; height:32px;line-height:32px; border-bottom:1px solid #e3e3e3;}
+.county_screen .screen_box  dl{width:483px; height:32px; overflow:hidden; float:left;}
+.county_screen .screen_box dt{float:left; color:#74889d; margin-right:22px;}
+.county_screen .screen_box dd{float:left;}
+.county_screen .screen_box dd a{color:#1e50a2; margin-right:45px;}
+.county_screen .screen_box dd a:hover{color:#f74c4b;}
+.county_screen .no_border{border-bottom:none;}
+.center_box{width:1010px; overflow:hidden; margin:10px auto 0;}
+.center_box .county_join{width:498px; overflow:hidden; float:left; border:1px solid #dfdfdf; padding-bottom:6px; margin-right:10px; margin-bottom:10px;}
+.center_box .no_margin{margin-right:0px;}
+.center_box .county_join h1{width:472px; height:27px;background:url(../images/contry_navbg.jpg) repeat-x; line-height:27px; border-bottom:1px solid #ddd; padding:0px 16px 0 10px;}
+.center_box .county_join h1 strong{float:left; font-size:14px; }
+.center_box .county_join h1 strong a{color:#333;}
+.center_box .county_join h1 span{float:right;font-weight:normal; font-size:12px; }
+.center_box .county_join h1 span a{color:#0173ba; font-size:12px;}
+.center_box .county_join h1 span a:hover{color:#f74c4b;}
+.center_box .pic_product dl{width:458px; overflow:hidden; margin:6px 0 0 6px;}
+.center_box .pic_product dt{width:90px; height:59px; padding:2px; border:1px solid #ccc; float:left;}
+.center_box .pic_product dd{float:left; width:310px; overflow:hidden; margin-left:10px; line-height:22px;}
+.center_box .pic_product dd h2 a{color:#2261a0; font-size:14px;}
+.center_box .pic_product dd h2 a:hover{color:#f74c4b;}
+.center_box .pic_product dd span{color:333; display:block;}
+.center_box .pic_product dd strong{color:#666; font-weight:normal;}
+.join_news{width:472px;padding:5px 16px 0 10px;}
+.join_news li{height:25px; line-height:25px; width:270px; overflow:hidden; background:url(../images/squary.jpg) no-repeat left center; padding-left:8px; }
+.center_box  .more_news{width:472px; height:28px; line-height:28px; text-align:right; margin-top:4px;}
+.center_box  .more_news a{color:#555; margin-left:15px;}
+.center_box  .more_news a:hover{color:#f74c4b;}
+.hot_news{width:1010px; overflow:hidden;}
+.hot_newsinner{width:498px; overflow:hidde; float:left; margin-right:10px;}
+.hot_news .no_margin{margin-right:0px;}
+.hot_newsinner  h1{width:482px; height:38px; line-height:38px; border-bottom:2px solid #ccc; padding-right:16px; font-weight:normal;}
+.hot_newsinner h1 strong{color:#2261a0; font-size:16px; font-family:"Sim sun"; float:left;}
+.hot_newsinner h1 span{float:right; color:#888; font-size:12px; }
+.hot_newsinner ul{width:340px; overflow:hidden; margin-top:6px;}
+.hot_newsinner .no_margin{margin-right:0px;}
+.hot_newsinner ul li{height:25px; width:340px; line-height:25px; overflow:hidden;}
+
+
+
+
+
+
+
+
+
+
+
