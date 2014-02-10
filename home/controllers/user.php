@@ -16,6 +16,10 @@ class User extends HM_Controller
      */
     public function login()
     {
+        if($_POST){
+            print_r($_POST);exit;
+
+        }
         $this->load->view('user/user_login');
     }
 
