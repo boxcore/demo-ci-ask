@@ -33,4 +33,10 @@ class Index extends HM_Controller
     {
         $this->load->view('main');
     }
+
+    public function changecity()
+    {
+        $data = array();
+        $this->load->view('changecity', $data);
+    }
 }
