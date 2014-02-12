@@ -15,12 +15,12 @@ class User_model extends CI_Model {
     {
         $data = array();
     	$username = $pram['username'];
-    	$password = md5($pram['password']);
+    	$password = $pram['password'];
 
         if( $this->verify_username($username) ){
             $sql = "SELECT * FROM `xwd_user` WHERE `username` = '".$username."' AND `password` = '".$password."'";
             $query = $this->db->query($sql);
-            $data = $query->result_array();
+            $data = $query->row_array();
         }
         return $data;
 

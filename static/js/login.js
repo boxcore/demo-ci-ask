@@ -12,6 +12,8 @@ $(document).ready(function (){
         var username = $('#username').val();
         var password = $('#password').val();
         if(username == ''){
+            $('#userinfo').attr(style:'display:block');
+            $('#userinfo').text('xxxxx');
             return false;
         }
         if(password == ''){

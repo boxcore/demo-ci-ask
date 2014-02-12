@@ -63,15 +63,24 @@ class User extends HM_Controller
     public function ajax_verify_login()
     {
         header('Content-type:text/json');
+
+        if( isset($_COOKIE['login_times']) && !empty($_COOKIE['login_times']) ){
+            setcookie("login_times",$_COOKIE['login_times']+1,time()+3600*2);
+        }else{
+            setcookie("login_times",1,time()+3600*2);
+        }
+
         $msg = array(
             'flag' => 0,
             'message' => '登陆出错',
-            'area' => '',
+            'field' => '',
+            'login_times' =>  isset($_COOKIE['login_times']) ? $_COOKIE['login_times'] : 0,
         );
 
-        if($_POST){
-            $pram['username'] = $this->input->post('username');
-            $pram['password'] = md5(trim($this->input->post('password')));
+        if($_REQUEST){
+//            $pram['username'] = $this->input->post('username');
+            $pram['username'] = $_REQUEST['username'];
+            $pram['password'] = md5(trim($_REQUEST['password']));
 
             if($pram['username'] && $pram['password'])
             {
@@ -82,12 +91,13 @@ class User extends HM_Controller
                     if($row)
                     {
                         $data = array(
-                            'uid'=>$row['uid'],
-                            'username'=>$row['username'],
-                            'logined_in'=>true,
-                            'groupid' => $row['groupid'],
+                            'uid'        => $row['uid'],
+                            'username'   => $row['username'],
+                            'logined_in' => true,
+                            'groupid'    => $row['groupid'],
                         );
                         $this->session->set_userdata($data);
+                        setcookie("login_times",0,time()-1);
 
                         $msg['flag'] = 1;
                         $msg['message'] = '登陆成功';
