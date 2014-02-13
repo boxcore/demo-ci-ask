@@ -29,6 +29,7 @@ class HM_Controller extends CI_Controller
         foreach ($query->result_array() as $row) {
             $GLOBALS['configs'][$row['key']] = $row['value'];
         }
+        $GLOBALS['configs']['logined_in'] = $this->session->userdata('logined_in');
     }
 
 

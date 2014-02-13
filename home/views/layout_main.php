@@ -11,11 +11,10 @@
 		<div class="top_inner">
 		    <div class="logo"><a href="<?php echo site_url('');?>"><img src="<?php echo src_url('images/logo.jpg');?>" width="242" height="41"></a></div>
 		    <div class="search_box">
-<!--                $this->session->userdata('logined_in')-->
-                <?php if(0): ?>
-                    <p>你好，<?php echo $this->seesion->userdata('username'); ?>！<span class="loginwrap"><a href="<?php echo base_url('user/center');?>" class="top_login">用户中心</a><a href="<?php echo base_url('user/logout');?>">退出登录</a></span><span class="phone"><a href="javascript:void(0);">手机版</a></span><a href="javascript:void(0);">收藏夹</a></p>
+                <?php if($this->session->userdata('logined_in')): ?>
+                    <p>你好，<?php echo $this->session->userdata('username');  ?>！<span class="loginwrap"><a href="<?php echo base_url('user/center');?>" class="top_login">用户中心</a><a href="<?php echo base_url('user/logout');?>">退出登录</a></span><span class="phone"><a href="javascript:void(0);">手机版</a></span><a href="javascript:void(0);">收藏夹</a></p>
                 <?php else: ?>
-				    <p>你好，欢迎来到中国创业指导网！<span class="loginwrap"><a href="<?php echo base_url('login.html');?>" class="top_login">请登录</a><a href="<?php echo base_url('register.html');?>">免费注册</a></span><span class="phone"><a href="javascript:void(0);">手机版</a></span><a href="javascript:void(0);">收藏夹</a></p>
+				    <p>欢迎来到中国创业指导网！<span class="loginwrap"><a href="<?php echo base_url('login.html');?>" class="top_login">请登录</a><a href="<?php echo base_url('register.html');?>">免费注册</a></span><span class="phone"><a href="javascript:void(0);">手机版</a></span><a href="javascript:void(0);">收藏夹</a></p>
                 <?php endif; ?>
 				<form>
 					<input name="" type="text" class="search_text">
