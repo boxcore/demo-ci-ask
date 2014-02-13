@@ -31,7 +31,6 @@ class Category extends HM_Controller
             $tpl = 'category_child';
         }
 
-        // echo '<!-- ';print_r($data);echo " -->";
 
 //    	$this->load->library('layout');
 //        $this->layout->view('category/'.$tpl, $data);

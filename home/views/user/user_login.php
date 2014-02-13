@@ -19,7 +19,8 @@
                 <div class="cap_frame">
                     <label>用户名:</label>
                     <p class="cf_person"><em></em>
-                        <input name="username" id="username" placeholder="请输入账号" value="" type="text">
+                        <input name="username" id="username" placeholder="请输入账号" value="<?php if (isset($_COOKIE['remember_username'])): ?><?php echo $_COOKIE['remember_username'] ?><?php endif; ?>"
+                               type="text">
                     </p>
                     <span class="reminder" id="userinfo" style="display:none"></span>
                 </div>
@@ -66,7 +67,7 @@ $(function(){
         var remember_username = $("input[name='remember-username']:checked").val();
         console.log(remember_username);
         if(remember_username){
-            document.cookie  = 'username='+username;
+            document.cookie  = 'remember_username='+username;
         }
 
         if(username == ''){
@@ -93,7 +94,7 @@ $(function(){
                 console.log(data);console.log(data['message']);
                 if(data['flag']==1){
 //                    window.location.href=site_url+"user/center?ref="+window.location.href;
-//                    window.location.reload(); //重新加载页面
+                    window.location.reload(); //重新加载页面
                 }else{
                     if(data['field'] == 'username'){
                         $('#userinfo').attr({style:'display:block'})

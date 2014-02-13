@@ -26,7 +26,10 @@ class User extends HM_Controller
      */
     public function login()
     {
-        //print_r($_COOKIE); //debug
+//        print_r($_COOKIE); //debug
+        if($this->session->userdata('logined_in')){
+            redirect('user/center', 'refresh');
+        }
         $this->load->view('user/user_login');
     }
 
@@ -154,8 +157,10 @@ class User extends HM_Controller
      * 用户中心首页
      */
     public function center(){
-        $data = array();print_r($_COOKIE);// debug
+        $data = array();
+//        print_r($_COOKIE);// debug
 
+//        echo $this->session->userdata('logined_in');
         $this->load->library('layout');
         $this->layout->view('user/user_center',$data);
     }
