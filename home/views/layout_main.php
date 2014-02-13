@@ -62,7 +62,7 @@
     <!--    main content start   -->
 	<?php echo $content_for_layout;?>
     <!--    main content end   -->
-
+s
 	<div class="foot">
 		<div class="foot_box">
 			<h4>合作机构:</h4>
