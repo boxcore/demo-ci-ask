@@ -58,11 +58,9 @@
 			<li><a href="http://item.7808.com/">项目</a></li>
 		</ul>
 	</div>
-
     <!--    main content start   -->
 	<?php echo $content_for_layout; ?>
     <!--    main content end   -->
-s
 	<div class="foot">
 		<div class="foot_box">
 			<h4>合作机构:</h4>
@@ -85,8 +83,6 @@ s
                 <?php $i++; endforeach;?>
             </div>
             <?php endif; ?>
-
-
 			<p class="sponsor"><strong>© 7808创业指导网 荣誉出品</strong> </p>
 			<div class="foot_nav">
 				<a href="#">关于我们</a>|
