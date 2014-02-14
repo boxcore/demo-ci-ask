@@ -45,4 +45,16 @@ class Index extends HM_Controller
         $data = array();
         $this->load->view('city_index', $data);
     }
+
+    public function city_list()
+    {
+        $data = array();
+        $this->load->view('city_list', $data);
+    }
+
+    public function city_zixun()
+    {
+        $data = array();
+        $this->load->view('city_zixun', $data);
+    }
 }

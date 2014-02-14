@@ -60,7 +60,7 @@
 	</div>
 
     <!--    main content start   -->
-	<?php echo $content_for_layout;?>
+	<?php echo $content_for_layout; ?>
     <!--    main content end   -->
 s
 	<div class="foot">
