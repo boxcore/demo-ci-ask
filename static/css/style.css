@@ -315,7 +315,7 @@ a:hover{ text-decoration:underline; color:#f74c4b;}
 .second_top .right p  a{width:64px; height:22px; line-height;22px;display:block; float:left; text-align:center; color:#333; font-weight:bold;}
 .second_top .right p  .current{width:64px; height:22px; line-height;22px; border:1px solid #BBB; border-bottom:none;}
 .input_box{width:566px; height:31px;}
-.second_top .text_search{width:370px; height:30px; border-left:1px solid #ccc;border-bottom:1px solid #ccc;border-top:1px solid #ccc; float:left; background:url(../images/shadow.jpg) repeat-x; padding-left:6px;}
+.second_top .text_search{width:370px; height:29px; border-left:1px solid #ccc;border-bottom:1px solid #ccc;border-top:1px solid #ccc; float:left; background:url(../images/shadow.jpg) #fff repeat-x; padding-left:6px;}
 .second_top .btn_search{width:85px; height:32px;background:url(../images/icon2.png) no-repeat 0px -84px; cursor:pointer; color:#fff; font-size:15px; font-family:"Microsoft Yahei";}
 .input_box .post_message a{font-size:14px; color:#f74c4b; text-decoration:underline; margin-left:10px;}
 .second_nav{width:1010px; height:41px; line-height:41px;background:url(../images/icon2.png) repeat-x 0px -125px; margin:15px auto 0;}
