@@ -1,6 +1,6 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 /**
- * CodeIgniter
+ * CodeIgniterd
  *
  * An open source application development framework for PHP 5.1.6 or newer
  *
@@ -162,20 +162,6 @@ class CI_URI {
 
 		// If the URI contains only a slash we'll kill it
 		$this->uri_string = ($str == '/') ? '' : $str;
-
-        /* 添加二级域名访问类支持 by chunze.huang
-         *  apache下用：$_SERVER['SERVER_NAME']
-         *  nginx 下用： $_SERVER['HTTP_HOST']
-         */
-        if(APPPATH == 'home/'){
-            @include(APPPATH .'config/domain'.EXT);
-            $serverName = explode('.', $_SERVER['HTTP_HOST']);
-            if (in_array($serverName[0], $domain)) {
-                $this->uri_string = '/' . $serverName[0]."/" . $this->uri_string;
-            }
-            //echo $this->uri_string;
-        }
-
 	}
 
 	// --------------------------------------------------------------------
