@@ -93,8 +93,8 @@ $(function(){
             function (data) { //回调函数
                 console.log(data);console.log(data['message']);
                 if(data['flag']==1){
-//                    window.location.href=site_url+"user/center?ref="+window.location.href;
-                    window.location.reload(); //重新加载页面
+                    window.location.href=site_url+"user/center?ref="+window.location.href;
+                    //window.location.reload(); //重新加载页面
                 }else{
                     if(data['field'] == 'username'){
                         $('#userinfo').attr({style:'display:block'})

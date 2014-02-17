@@ -1,0 +1,1 @@
+<h1>这是搜索"<?php echo $keyword; ?>"的页面: </h1>
