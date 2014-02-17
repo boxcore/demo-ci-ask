@@ -2,24 +2,26 @@
 <html lang="en-US">
 <head>
 <meta charset="UTF-8">
-<title>中国创业指导网</title>
+    <title><?php if(isset($meta['title'])): ?><?php echo $meta['title']; ?><?php endif; ?></title>
+    <meta name="keywords" content="<?php if(isset($meta['title'])): ?><?php echo $meta['keywords']; ?><?php endif; ?>" />
+    <meta name="description" content="<?php if(isset($meta['title'])): ?><?php echo $meta['description']; ?><?php endif; ?>" />
 <link rel="stylesheet" type="text/css" href="<?php echo src_url('css/style.css');?>"/>
 <script src="<?php echo src_url('js/jquery-1.7.1.min.js');?>"></script>
 </head>
 <body>
 	<div id="top_box">
 		<div class="top_inner">
-		    <div class="logo"><a href="<?php echo app_url('ask/question/add');?>"><img src="<?php echo src_url('images/logo.jpg');?>" width="242" height="41"></a></div>
+		    <div class="logo"><a href="<?php echo base_url('');?>"><img src="<?php echo src_url('images/logo.jpg');?>" width="242" height="41"></a></div>
 		    <div class="search_box">
                 <?php if($this->session->userdata('logined_in')): ?>
                     <p>你好，<?php echo $this->session->userdata('username');  ?>！<span class="loginwrap"><a href="<?php echo base_url('user/center');?>" class="top_login">用户中心</a><a href="<?php echo base_url('user/logout');?>">退出登录</a></span><span class="phone"><a href="javascript:void(0);">手机版</a></span><a href="javascript:void(0);">收藏夹</a></p>
                 <?php else: ?>
-				    <p>欢迎来到中国创业指导网！<span class="loginwrap"><a href="<?php echo base_url('login.html');?>" class="top_login">请登录</a><a href="<?php echo base_url('register.html');?>">免费注册</a></span><span class="phone"><a href="javascript:void(0);">手机版</a></span><a href="javascript:void(0);">收藏夹</a></p>
+				    <p>欢迎来到中国创业指导网！<span class="loginwrap"><a href="<?php echo base_url('user/login');?>" class="top_login">请登录</a><a href="<?php echo base_url('user/register');?>">免费注册</a></span><span class="phone"><a href="javascript:void(0);">手机版</a></span><a href="javascript:void(0);">收藏夹</a></p>
                 <?php endif; ?>
-				<form>
-					<input name="" type="text" class="search_text">
-					<input name="" type="button" class="search_btn" value="搜索">
-					<a href="http://ask.7808.com/question/add" class="edit_eara">发布信息</a>
+				<form action="<?php echo site_url('s'); ?>" method="get" target="_blank" id="form-search">
+					<input name="k" type="text" placeholder="有疑问？试试问答搜索！" class="search_text" value="<?php if(isset($_REQUEST['k'])): ?><?php echo $_REQUEST['k']; ?><?php endif; ?>">
+					<input name="" type="submit" class="search_btn" value="搜索">
+					<a href="<?php echo site_url('question/add'); ?>" class="edit_eara">提问</a>
 				</form>
 		    </div>
 		</div>
@@ -54,7 +56,7 @@
 				</div>
 			</li>
 			<li><a href="<?php echo base_url('/') ?>">首页</a></li>
-			<li><a href="http://ask.7808.com/">问答</a></li>
+			<li><a href="<?php echo base_url('/') ?>">问答</a></li>
 			<li><a href="http://item.7808.com/">项目</a></li>
 		</ul>
 	</div>

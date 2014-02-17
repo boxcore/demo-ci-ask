@@ -18,6 +18,15 @@ class Demo extends HM_Controller
         //$this->load->view('ad/index');
     }
 
+    public function show(){
+        $data = array();
+
+        $data['test'] = 124114;
+
+        $this->load->library('layout');
+        $this->layout->view('demo/show', $data);
+    }
+
     public function cat(){
         header("Content-Type: text/html; charset=UTF-8") ;
         $this->db->select('mark,name')->from('category');

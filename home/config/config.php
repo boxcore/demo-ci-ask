@@ -2,7 +2,7 @@
 
 //if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == "on"){$ssl_set = "s";} else{$ssl_set = "";}
 //$config['base_url'] = 'http'.$ssl_set.'://'.$_SERVER['HTTP_HOST'];
-$config['base_url'] = 'http://www.7808.com/';
+$config['base_url'] = 'http://ask.7808.com/';
 $config['index_page'] = '';
 $config['uri_protocol']	= 'AUTO'; //PATH_INFO
 $config['url_suffix'] = '';
@@ -46,4 +46,5 @@ $config['rewrite_short_tags'] = FALSE;
 $config['proxy_ips'] = '';
 
 /* 全局变量 */
-$GLOBALS['app']['src_url'] = 'http://www.7808.com/static/';
+$GLOBALS['app']['src_url'] = 'http://s1.7808.com/';
+$GLOBALS['app']['version'] = '0.2';
