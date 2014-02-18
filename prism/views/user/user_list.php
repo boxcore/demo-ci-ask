@@ -1,14 +1,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <?php //print_r($param) ?>
-<form id="pagerForm" method="post" action="<? echo site_url('user/user_list') ?>">
+<form id="pagerForm" method="post" action="<?php echo site_url('user/user_list') ?>">
     <input type="hidden" name="pageNum" value="1" />
-    <input type="hidden" name="numPerPage" value="<? echo $page_info['per_page'] ?>" />
+    <input type="hidden" name="numPerPage" value="<?php echo $page_info['per_page'] ?>" />
     <input type="hidden" name="groupid" value="<?php echo $param['groupid'] ?>" />
     <input type="hidden" name="usernname" value="<?php echo $param['username'] ?>" />
 </form>
 
 <div class="pageHeader">
-    <form rel="pagerForm" onsubmit="return navTabSearch(this);" action="<? echo site_url('user/user_list') ?>" method="post">
+    <form rel="pagerForm" onsubmit="return navTabSearch(this);" action="<?php echo site_url('user/user_list') ?>" method="post">
         <div class="searchBar">
             <ul class="searchContent">
                 <li>
@@ -64,8 +64,8 @@
 </tr>
 </thead>
 <tbody>
-<? foreach($user_list as $v): ?>
-<tr target="sid_user" rel="<? echo $v['uid']; ?>">
+<?php foreach($user_list as $v): ?>
+<tr target="sid_user" rel="<?php echo $v['uid']; ?>">
     <td><input name="ids" value="<?php echo $v['uid']; ?>" type="checkbox"></td>
     <td><?php echo $v['uid']; ?></td>
     <td><?php echo $v['username']; ?></td>
@@ -75,28 +75,28 @@
     <td><?php echo $v['lastlogin'] ?></td>
     <td><?php echo $v['created_time']; ?></td>
     <td>
-        <a title="删除" target="ajaxTodo" href="<? echo site_url('user/user_delete?uid='.$v['uid'])?>" class="btnDel">删除</a>
-        <a title="编辑" target="navTab" href="<? echo site_url('user/user_edit?uid='.$v['uid'])?>" class="btnEdit">编辑</a>
-        <a title="修改密码" target="navTab" href="<? echo site_url('user/user_change_password?uid='.$v['uid'])?>" class="">修改密码</a>
+        <a title="删除" target="ajaxTodo" href="<?php echo site_url('user/user_delete?uid='.$v['uid'])?>" class="btnDel">删除</a>
+        <a title="编辑" target="navTab" href="<?php echo site_url('user/user_edit?uid='.$v['uid'])?>" class="btnEdit">编辑</a>
+        <a title="修改密码" target="navTab" href="<?php echo site_url('user/user_change_password?uid='.$v['uid'])?>" class="">修改密码</a>
     </td>
 </tr>
-<? endforeach; ?>
+<?php endforeach; ?>
 </tbody>
 </table>
 <div class="panelBar">
     <div class="pages">
         <span>显示</span>
         <select class="combox" name="numPerPage" onchange="navTabPageBreak({numPerPage:this.value})">
-            <option value="5" <? if($page_info['per_page'] == 5): ?>selected="selected" <? endif ?>>5</option>
-            <option value="10" <? if($page_info['per_page'] == 10): ?>selected="selected" <? endif ?>>10</option>
-            <option value="20" <? if($page_info['per_page'] == 20): ?>selected="selected" <? endif ?>>20</option>
-            <option value="50" <? if($page_info['per_page'] == 50): ?>selected="selected" <? endif ?>>50</option>
-            <option value="100" <? if($page_info['per_page'] == 100): ?>selected="selected" <? endif ?>>100</option>
+            <option value="5" <?php if($page_info['per_page'] == 5): ?>selected="selected" <?php endif ?>>5</option>
+            <option value="10" <?php if($page_info['per_page'] == 10): ?>selected="selected" <?php endif ?>>10</option>
+            <option value="20" <?php if($page_info['per_page'] == 20): ?>selected="selected" <?php endif ?>>20</option>
+            <option value="50" <?php if($page_info['per_page'] == 50): ?>selected="selected" <?php endif ?>>50</option>
+            <option value="100" <?php if($page_info['per_page'] == 100): ?>selected="selected" <?php endif ?>>100</option>
         </select>
-        <span>条，共<? echo $page_info['total_rows'] ?>条</span>
+        <span>条，共<?php echo $page_info['total_rows'] ?>条</span>
     </div>
 
-    <div class="pagination" targetType="navTab" totalCount="<? echo $page_info['total_rows'] ?>" numPerPage="<? echo $page_info['per_page'] ?>" pageNumShown="10" currentPage="<? echo $page_info['pageNum'] ?>"></div>
+    <div class="pagination" targetType="navTab" totalCount="<?php echo $page_info['total_rows'] ?>" numPerPage="<?php echo $page_info['per_page'] ?>" pageNumShown="10" currentPage="<?php echo $page_info['pageNum'] ?>"></div>
 
 </div>
 </div>
