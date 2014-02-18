@@ -180,7 +180,7 @@
 			</dl>
 		</div>
 		<div class="page_up"><a href="#" class="current">1</a><a href="#">2</a><a href="#">3</a><a href="#">4</a><a href="#">5</a><a href="#">下一页</a></div>
-		<div class="city_share"><p class="left">共<span>738</span>条凉茶代理加盟报价信息，<a href="#">马上发布一条凉茶代理加盟报价信息》</a></p><p class="right"><span>分享到</span><a href="#" class="space"></a><a href="#" class="weibo"></a><a href="#" class="tenxun"></a><a href="#" class="ren"></a></p></div>
+		<div class="city_share"><p class="left">共<span>738</span>条凉茶代理加盟报价信息，<a href="#">马上发布一条凉茶代理加盟报价信息》</a></p><p class="right"><span class="share_to">分享到</span><a href="#" class="space"></a><a href="#" class="weibo"></a><a href="#" class="tenxun"></a><a href="#" class="ren"></a></p></div>
 	    <p class="last_text">满口香法式脆皮蛋糕以其产品独特的风味，脆而不燥，口香法式脆皮蛋糕以其产品独特的风味，脆口香法式脆皮蛋糕以其产品独特的风味，脆甜而不腻，又香又甜，法国风味，现烤现卖，远离添加剂</p>
 		<div class="city_search">
 			<form>

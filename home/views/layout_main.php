@@ -12,7 +12,7 @@
 <body>
 	<div id="top_box">
 		<div class="top_inner">
-		    <div class="logo"><a href="<?php echo base_url('');?>"><img src="<?php echo src_url('images/logo.jpg');?>" width="242" height="41"></a></div>
+		    <div class="logo"><a href="<?php echo base_url('');?>"><img src="<?php echo src_url('images/logo.jpg');?>" width="200" height="38"></a></div>
 		    <div class="search_box">
                 <?php if($this->session->userdata('logined_in')): ?>
                     <p>你好，<?php echo $this->session->userdata('username');  ?>！<span class="loginwrap"><a href="<?php echo base_url('user/center');?>" class="top_login">用户中心</a><a href="<?php echo base_url('user/logout');?>">退出登录</a></span><span class="phone"><a href="javascript:void(0);">手机版</a></span><a href="javascript:void(0);">收藏夹</a></p>
