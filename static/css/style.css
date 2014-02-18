@@ -604,4 +604,12 @@ font-style:normal;
 .city_item .city_t{width:240px; overflow:hidden; line-height:20px;}
 .city_item .city_t a{color:#000;}
 .city_item  span a{color:green; height:25px; display:block; line-height:25px;}
+/*消息提示*/
+.string_message{width:1010px; height:40px; line-height:40px; text-align:center; font-size:16px; margin:40px auto; color:#333;font-family:Microsoft Yahei;background:#fafafa; border:1px solid #ccc; border-radius:5px;}
+.string_message a{color:#4679B0; }
+
+
+
+
+
 
