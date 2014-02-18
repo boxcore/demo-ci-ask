@@ -5,8 +5,9 @@
     <title><?php if(isset($meta['title'])): ?><?php echo $meta['title']; ?><?php endif; ?></title>
     <meta name="keywords" content="<?php if(isset($meta['title'])): ?><?php echo $meta['keywords']; ?><?php endif; ?>" />
     <meta name="description" content="<?php if(isset($meta['title'])): ?><?php echo $meta['description']; ?><?php endif; ?>" />
-<link rel="stylesheet" type="text/css" href="<?php echo src_url('css/style.css');?>"/>
-<script src="<?php echo src_url('js/jquery-1.7.1.min.js');?>"></script>
+    <link rel="stylesheet" type="text/css" href="<?php echo src_url('css/style.css');?>"/>
+    <script src="<?php echo src_url('js/jquery-1.7.1.min.js');?>"></script>
+    <script src="<?php echo src_url('js/common.js');?>"></script>
 </head>
 <body>
 	<div id="top_box">
@@ -20,7 +21,7 @@
                 <?php endif; ?>
 				<form action="<?php echo site_url('s'); ?>" method="get" target="_blank" id="form-search">
 					<input name="k" type="text" placeholder="有疑问？试试问答搜索！" class="search_text" value="<?php if(isset($_REQUEST['k'])): ?><?php echo $_REQUEST['k']; ?><?php endif; ?>">
-					<input name="" type="submit" class="search_btn" value="搜索">
+					<input type="submit" class="search_btn" value="搜索">
 					<a href="<?php echo site_url('question/add'); ?>" class="edit_eara">提问</a>
 				</form>
 		    </div>

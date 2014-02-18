@@ -2,6 +2,8 @@
 
 /**
  * 用户中心、用户登陆注册
+ *
+ * @author chunze.huang
  * 
  */
 class User extends HM_Controller
@@ -31,6 +33,17 @@ class User extends HM_Controller
             redirect('user/center', 'refresh');
         }
         $this->load->view('user/user_login');
+    }
+
+    /**
+     * 用户窗口
+     */
+    public function login_frame()
+    {
+        if($this->session->userdata('logined_in')){
+
+        }
+        $this->load->view('user/user_login_frame');
     }
 
     /**
@@ -100,7 +113,7 @@ class User extends HM_Controller
                             'groupid'    => $row['groupid'],
                         );
                         $this->session->set_userdata($data);
-                        setcookie("login_times",0,time()-1);
+                        setcookie("login_times",0,time()-1);//登陆成功，删除登陆次数的记录
 
                         $msg['flag'] = 1;
                         $msg['message'] = '登陆成功';

@@ -16,6 +16,10 @@
 		{
 			"follow_symlinks": true,
 			"path": "D:\\wamp\\www\\demo\\tp_ateam"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "W:\\demo\\ci_rbac"
 		}
 	]
 }

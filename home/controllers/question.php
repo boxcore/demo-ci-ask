@@ -36,7 +36,6 @@ class Question extends HM_Controller
             $this->load->library('layout');
             $this->layout->view('question/question_list', $data);
         }
-
     }
 
     /**
