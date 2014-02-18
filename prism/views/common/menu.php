@@ -83,6 +83,16 @@
                     <li><a href="<?php echo site_url('configs/configs_list'); ?>" target="navTab"
                            rel="configs_list">常用设置</a></li>
                     <li><a href="<?php echo site_url('configs/configs_add'); ?>" target="navTab" rel="configs_add">添加新配置</a></li>
+
+                    <li><a href="<?php echo site_url('city/city_list'); ?>" target="navTab">城市管理</a>
+                        <ul>
+                            <li><a href="<?php echo site_url('city/city_list'); ?>" target="navTab" rel="city_list"
+                                   fresh="false">城市列表</a></li>
+                            <li><a href="<?php echo site_url('city/city_add'); ?>" target="navTab" rel="city_add"
+                                   fresh="false">添加地区</a></li>
+                            <li><a href="<?php echo site_url('city/city_cat'); ?>" target="navTab" rel="city_cat" fresh="false">地区分类</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
 
