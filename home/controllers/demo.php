@@ -40,4 +40,18 @@ class Demo extends HM_Controller
         }
     }
 
+    public function city(){
+        header("Content-Type: text/html; charset=UTF-8") ;
+        $this->db->select('city_id,name')->from('city')->where('pid', 0)->order_by('sort desc, city_id asc');
+        $query = $this->db->get();
+        $data = $query->result_array();
+
+        foreach($data as $v){
+            //echo '//'. $v['city_id']."\n";
+            //echo '$route[\''. $v['city_id'] .'\'] = "category/index/'. $v['name'] .'";';
+            echo '<option value="' . $v['city_id'] . '">' . $v['name'] . '</option>';
+            echo "\n";
+        }
+    }
+
 }

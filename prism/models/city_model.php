@@ -10,7 +10,7 @@ class City_model extends CI_Model {
     {
         $sql =  'select `a`.* from `xwd_city` as `a` '.
                 $this->_where($where).
-                ' order by id asc lIMIT '.$offset.', '.$limit;
+                ' order by city_id asc lIMIT '.$offset.', '.$limit;
 
         $query = $this->db->query($sql );
         return $query->result_array();
@@ -37,9 +37,9 @@ class City_model extends CI_Model {
         if (empty($configs)) return '';
 
         $where = array();
-        if(!empty($configs['id']))
+        if(!empty($configs['city_id']))
         {
-            $where[] = 'a.`id` = '.$configs['id'];
+            $where[] = 'a.`city_id` = '.$configs['id'];
         }
         if(!empty($configs['pid']))
         {
