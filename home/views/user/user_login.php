@@ -43,6 +43,8 @@
             </div>
         </div>
 
+        <input name="rel" type="hidden" value="<?php if( isset($_REQUEST['rel']) ) echo $_REQUEST['rel']; ?>"/>
+
 
     </form>
 </div>
@@ -63,6 +65,12 @@ $(function(){
     $('#login-form').submit(function(){
         var username = $('#username').val();
         var password = $('#password').val();
+        var form_rel = $('input[name=rel]').val();
+        if(form_rel == ''){
+            form_rel = site_url+"user/center?ref="+window.location.href;
+        }
+
+        //alert(form_rel);return false;
 
         var remember_username = $("input[name='remember-username']:checked").val();
         console.log(remember_username);
@@ -93,7 +101,7 @@ $(function(){
             function (data) { //回调函数
                 console.log(data);console.log(data['message']);
                 if(data['flag']==1){
-                    window.location.href=site_url+"user/center?ref="+window.location.href;
+                    window.location.href=form_rel;
                     //window.location.reload(); //重新加载页面
                 }else{
                     if(data['field'] == 'username'){

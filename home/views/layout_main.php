@@ -10,14 +10,15 @@
     <script src="<?php echo src_url('js/common.js');?>"></script>
 </head>
 <body>
+<!-- $cookie  <?php print_r($_COOKIE); ?> -->
 	<div id="top_box">
 		<div class="top_inner">
-		    <div class="logo"><a href="<?php echo base_url('');?>"><img src="<?php echo src_url('images/logo.jpg');?>" width="200" height="38"></a></div>
+		    <div class="logo"><a href="<?php echo base_url('');?>"><img src="<?php echo src_url('images/logo.jpg');?>" width="200" height="38" ></a></div>
 		    <div class="search_box">
                 <?php if($this->session->userdata('logined_in')): ?>
-                    <p>你好，<?php echo $this->session->userdata('username');  ?>！<span class="loginwrap"><a href="<?php echo base_url('user/center');?>" class="top_login">用户中心</a><a href="<?php echo base_url('user/logout');?>">退出登录</a></span><span class="phone"><a href="javascript:void(0);">手机版</a></span><a href="javascript:void(0);">收藏夹</a></p>
+                    <p>你好，<?php echo $this->session->userdata('username');  ?>！<span class="loginwrap"><a href="<?php echo base_url('user/center');?>" class="top_login">用户中心</a><a href="<?php echo base_url('user/logout');?>" rel="">退出登录</a></span><span class="phone"><a href="javascript:void(0);">手机版</a></span><a href="javascript:void(0);">收藏夹</a></p>
                 <?php else: ?>
-				    <p>欢迎来到中国创业指导网！<span class="loginwrap"><a href="<?php echo base_url('user/login');?>" class="top_login">请登录</a><a href="<?php echo base_url('user/register');?>">免费注册</a></span><span class="phone"><a href="javascript:void(0);">手机版</a></span><a href="javascript:void(0);">收藏夹</a></p>
+				    <p>欢迎来到中国创业指导网！<span class="loginwrap"><a href="<?php echo base_url('user/login');?>" rel="" class="top_login">请登录</a><a href="<?php echo base_url('user/register');?>">免费注册</a></span><span class="phone"><a href="javascript:void(0);">手机版</a></span><a href="javascript:void(0);">收藏夹</a></p>
                 <?php endif; ?>
 				<form action="<?php echo site_url('s'); ?>" method="get" target="_blank" id="form-search">
 					<input name="k" type="text" placeholder="有疑问？试试问答搜索！" class="search_text" value="<?php if(isset($_REQUEST['k'])): ?><?php echo $_REQUEST['k']; ?><?php endif; ?>">
@@ -97,5 +98,29 @@
 			<p>Copyright 2007-2013 zqn.cn All rights reserved 京ICP证074442号 京ICP备00678450号-3 京公海网安备110456980742号 </p>
 		</div>
 	</div>
+
+<?php if( empty($GLOBALS['app']['is_logined']) ): ?>
+<!--弹出登陆框 start-->
+<div id="dialog-login" class="hide">
+    <form action="<?php echo site_url() ?>" method="" id="dialog-login-form">
+        <h1>登录</h1>
+        <div class="cap_frame">
+            <label>用户名:</label>
+            <p class="cf_person"><span></span><input type="text" name="user" class="user" placeholder="邮箱/手机号" value=""/></p>
+        </div>
+        <div class="cap_frame">
+            <label>密码:</label>
+            <p class="cf_lock"><span></span><input type="password"  name="password" class="password" placeholder="请输入密码" value=""/></p>
+        </div>
+        <div class="cap_enter">
+            <label>　</label>
+            <p><span class="automatic"><input type="checkbox" class="remember" name="remember" value="1" />下次自动登录</span></p>
+        </div>
+        <span class="enter"><button type="button" class="submit">登 录</button></span>
+        <p class="no_register">还不是7808的会员? <a target="_blank" href="<?php echo member_site_url('register') . "?r=" . get_current_url(); ?>">马上免费注册</a></p>
+    </form>
+</div>
+<!--弹出登陆框 end-->
+<?php endif; ?>
 </body>
 </html>

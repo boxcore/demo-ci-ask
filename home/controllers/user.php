@@ -18,9 +18,15 @@ class User extends HM_Controller
      */
     public function logout()
     {
-        $data = array('username' => '', 'logined_in' =>false);
-        $this->session->unset_userdata($data);
-        redirect('user/login', 'refresh');
+        $ses = array('username' => '', 'logined_in' =>false);
+        $this->session->unset_userdata($ses);
+        // redirect('user/login', 'refresh'); // 系统默认跳转方法
+
+        // 跳转方法二
+        $data = array();
+        $data['url'] = isset($_REQUEST['rel']) ? $_REQUEST['rel'] : base_url('');
+        $this->load->view('refresh', $data);
+
     }
 
     /**

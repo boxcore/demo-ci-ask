@@ -13,6 +13,12 @@ class City extends MY_Controller
         $this->load->model('city_model');
     }
 
+
+    /**
+     * 城市列表页面
+     *
+     * @author chunze.huang
+     */
     public function city_list()
     {
         $data = array();
@@ -60,6 +66,27 @@ class City extends MY_Controller
         $this->pagination->initialize($config);
 
         $this->load->view('city/city_list', $data);
+    }
+
+    public function city_add()
+    {
+        $data = array();
+
+        $this->load->view('city/city_add', $data);
+    }
+
+    public function city_add_act()
+    {
+        $data = array();
+
+        $this->load->view('city/city_add', $data);
+    }
+
+    public function city_cat()
+    {
+        $data = array();
+
+        $this->load->view('city/city_cat', $data);
     }
 
 }

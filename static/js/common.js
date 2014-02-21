@@ -48,6 +48,9 @@ $(function() {
 
         }
     });
+
+
+
 });
 
 
@@ -74,3 +77,18 @@ function trim(str){
 //function rtrim(str){
 //    return str.replace(/(\s*$)/g,"");
 //}
+
+
+// 跟踪来路链接
+$(function(){
+    $("a[rel]").click(function(){
+        var url = $(this).attr("href");
+        var rel = $(this).attr("rel");
+        if(rel == ''){
+            rel = window.location.href;
+        }
+        $(this).attr({href: url+"?rel="+encodeURIComponent(rel)});
+
+    });
+});
+

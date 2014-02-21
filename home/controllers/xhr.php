@@ -81,6 +81,33 @@ class Xhr extends HM_Controller
         echo json_encode($msg, true);
     }
 
+    public function city()
+    {
+        $rs = array();
+        $type = isset($_GET['type']) ? $_GET['type'] : 'province';
+        $city_id = isset($_GET['id']) ? $_GET['id'] : 0;
+        $city_info = array();
+
+        $this->load->model('city_model');
+
+        if($city_id){
+            $city_info = $this->city_model->getChildById($city_id);
+        }else{
+            $city_info = $this->city_model->getProvince();
+        }
+
+        if($city_info){
+            foreach($city_info as $v){
+                $rs[$v['city_id']] = $v['name'];
+            }
+        }
+
+        echo json_encode($rs);
+
+    }
+
+
+
 
 
 }

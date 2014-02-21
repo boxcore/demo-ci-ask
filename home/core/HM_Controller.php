@@ -19,7 +19,7 @@ class HM_Controller extends CI_Controller
     }
 
     /**
-     * 获取网站基本配置信息
+     * 获取网站基本配置信息 & 用户信息
      *
      * @author chunze.huang
      */
@@ -30,6 +30,13 @@ class HM_Controller extends CI_Controller
             $GLOBALS['configs'][$row['key']] = $row['value'];
         }
         $GLOBALS['configs']['logined_in'] = $this->session->userdata('logined_in');
+
+        // 判断用户登陆状态 设置默认session
+        $login_stat = $this->session->userdata('logined_in') ? $this->session->userdata('logined_in') : false;
+        if(!$login_stat){
+            $this->session->set_userdata('role', 'guest');
+            $this->session->set_userdata('groupid', 1);
+        }
     }
 
 
