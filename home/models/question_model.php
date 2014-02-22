@@ -26,6 +26,7 @@ class Question_model extends CI_Model
         return $id;
     }
 
+
     /**
      * 获取单条字段中内容
      *
@@ -133,7 +134,7 @@ class Question_model extends CI_Model
 
     public function get_question_attention()
     {
-        $sql   = "SELECT `id`, `title`, `create`, `answer_num`, `preview_num` FROM `xwd_question` LIMIT 5";
+        $sql   = "SELECT `id`, `title`, `created_time`, `answer_num`, `preview_num` FROM `xwd_question` LIMIT 5";
         $query = $this->db->query($sql);
         return $query->result_array();
     }
@@ -168,8 +169,8 @@ class Question_model extends CI_Model
                 $where .= ' and `city_id` = ' . $data['city_id'];
             }
 
-            if ($data['region_id']) {
-                $where .= ' and `region_id` = ' . $data['region_id'];
+            if ($data['area_id']) {
+                $where .= ' and `area_id` = ' . $data['area_id'];
             }
 
             if ($data['sort_id']) {

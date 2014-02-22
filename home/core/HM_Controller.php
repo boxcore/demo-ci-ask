@@ -46,13 +46,13 @@ class HM_Controller extends CI_Controller
      */
     public function get_category_info()
     {
-        $sql   = "SELECT `id`,`name`,`mark`,`highlight` FROM `xwd_category` WHERE `pid` = 0 ORDER BY sort ASC";
+        $sql   = "SELECT `cat_id`,`cat_name`,`mark`,`highlight` FROM `xwd_category` WHERE `pid` = 0 ORDER BY sort ASC";
         $query = $this->db->query($sql);
 
         foreach ($query->result_array() as $key => $row) {
             $row['url']                     = app_url('ask/cat/'.$row['mark']);
             $GLOBALS['category_info'][$key] = $row;
-            $sql                            = "SELECT `id`,`name`,`mark`,`highlight` FROM `xwd_category` WHERE `pid` = {$row['id']} ORDER BY sort ASC ";
+            $sql                            = "SELECT `cat_id`,`cat_name`,`mark`,`highlight` FROM `xwd_category` WHERE `pid` = {$row['cat_id']} ORDER BY sort ASC ";
             $query                          = $this->db->query($sql);
 
             foreach ($query->result_array() as $k => $res) {

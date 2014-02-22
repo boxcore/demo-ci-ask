@@ -58,17 +58,18 @@ class Question extends MY_Controller
         $config['total_rows'] = $this->question_model->getQuestionListCount($where);
 
         $data['question_list'] = $this->question_model->getQuestionList($where, $offset,$config['per_page']);
-//        foreach( $data['question_list'] as &$v ){
-//            if($v['lastlogin']){
-//                $v['lastlogin'] = date('Y-m-d H:i:s', $v['lastlogin']);
-//            }else{
-//                $v['lastlogin'] = '未登录过';
-//            }
-//        }
+        foreach( $data['question_list'] as &$v ){
+            $v['cat_name'] = $this->question_model->getCatNameById($v['id']);
+            if(empty($v['cat_name'])) {
+                $v['cat_name'] = '未选择分类';
+            }
+            $v['region_name'] = $this->common_model->getCityNameById($v['region_id']);
+        }
 
         $data['param'] = $where;
         $data['page_info'] = $config;
         $data['page_info']['pageNum'] = $pageNum;
+
         // 配置分页
         $this->pagination->initialize($config);
 

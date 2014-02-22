@@ -25,6 +25,29 @@ class Question_model extends CI_Model {
     }
 
     /**
+     * 获取分类的名称
+     *
+     * @param int $cat_id
+     * @return string
+     */
+    public function getCatNameById($cat_id = 0){
+
+        $cat_id = intval($cat_id);
+        $data = array();
+
+        if($cat_id){
+            $this->db->select('cat_name')->from('category')->where('cat_id', $cat_id);
+            $query = $this->db->get();
+            if ($query->num_rows() > 0) {
+                $data = $query->row_array();
+                return $data['cat_name'];
+            }
+        }
+        return '';
+    }
+
+
+    /**
      * 组装where条件
      *
      * @param array $configs

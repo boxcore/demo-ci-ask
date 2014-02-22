@@ -13,6 +13,7 @@ class MY_Controller extends CI_Controller
         $this->load->database();
         self::get_configs();
         $this->check_login();
+        $this->load->model('common_model');
 
     }
 

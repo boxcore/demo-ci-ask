@@ -11,7 +11,7 @@ class User extends MY_Controller
     function __construct()
     {
         parent::__construct();
-        $this->load->model('user_model');
+        $this->load->model('common_model');
     }
 
     /**

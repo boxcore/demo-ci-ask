@@ -59,10 +59,11 @@
             <th width="22"><input type="checkbox" group="ids" class="checkboxCtrl"></th>
             <th width="40" orderField="accountNo" class="asc">问题ID</th>
             <th width="60" orderField="accountName">标题</th>
+            <th width="25" orderField="accountType">分类</th>
             <th width="25" orderField="accountType">回答次数</th>
             <th width="80" orderField="accountCert">提问者</th>
             <th width="60" align="center" orderField="accountLevel">所属地区</th>
-            <th width="70">最后登陆时间</th>
+            <th width="70">修改时间</th>
             <th width="70">提问时间</th>
             <th width="70">操作</th>
         </tr>
@@ -73,10 +74,11 @@
                 <td><input name="ids" value="<?php echo $v['id']; ?>" type="checkbox"></td>
                 <td><?php echo $v['id']; ?></td>
                 <td><?php echo $v['title']; ?></td>
+                <td><?php echo $v['cat_name']; ?></td>
                 <td>111</td>
                 <td><?php echo $v['author']; ?></td>
-                <td><?php echo $v['province_id']; ?></td>
-                <td>111</td>
+                <td><?php echo $v['region_name']; ?></td>
+                <td><?php echo $v['modified_time']; ?></td>
                 <td><?php echo $v['created_time']; ?></td>
                 <td>
                     <a title="删除" target="ajaxTodo" href="<? echo site_url('user/user_delete?uid='.$v['id'])?>" class="btnDel">删除</a>

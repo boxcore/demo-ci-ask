@@ -1,19 +1,13 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <div class="pageContent">
-    <form method="post" action="<? echo  site_url('user/user_add_act?navTabId=user_list&callbackType=closeCurrent')?>" class="pageForm required-validate" onsubmit="return iframeCallback(this, dialogAjaxDone)" enctype="multipart/form-data">
+    <form method="post" action="<? echo  site_url('question/question_add_act?navTabId=question_list&callbackType=closeCurrent')?>" class="pageForm required-validate" onsubmit="return iframeCallback(this, dialogAjaxDone)" enctype="multipart/form-data">
         <div class="pageFormContent" layoutH="56">
             <div class="unit">
-                <label>用户名:</label>
-                <input name="username" id="username" class="required" usernamevalid="check_username()" type="text" size="30" value="" alt="请输入用户的名字" minlength="5"  maxlength="12"/>
+                <label>问题名称:</label>
+                <input type="text" name="title" id="title" class="required" size="50" value="" alt="问题标题"
+                       minlength="5"  maxlength="150"/>
             </div>
-            <div class="unit">
-                <label>密码：</label>
-                <input type="password" id="cp_newPassword" name="password" size="30" minlength="6" maxlength="20" class="required alphanumeric"/>
-            </div>
-            <div class="unit">
-                <label>再次密码：</label>
-                <input type="password" name="re_password" size="30" equalTo="#cp_newPassword" class="required alphanumeric"/>
-            </div>
+
             <div class="unit">
                 <label>邮箱：</label>
                 <input type="text" id="email" alt="请输入电子邮件" emailvalid="check_email()" name="email" size="30"
