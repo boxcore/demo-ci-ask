@@ -16,8 +16,8 @@ class NotFound extends HM_Controller
 
     public function index()
     {
-    	$this->load->model('Question_model');
-    	$data['info'] = $this->Question_model->get_question_attention();
+    	$this->load->model('QuestionModel');
+    	$data['info'] = $this->QuestionModel->get_question_attention();
 //    	$this->load->library('layout');
         $this->load->view('404', $data);
     }

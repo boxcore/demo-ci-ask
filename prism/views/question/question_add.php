@@ -15,10 +15,10 @@
             </div>
             <div class="unit">
                 <label>用户组：</label>
-                <input type="radio" name="groupid" value="1" />管理员
-                <input type="radio" name="groupid" value="2" />编辑
-                <input type="radio" name="groupid" value="3" />vip会员
-                <input type="radio" name="groupid" value="4" checked="checked" />普通会员
+                <input type="radio" name="group_id" value="1" />管理员
+                <input type="radio" name="group_id" value="2" />编辑
+                <input type="radio" name="group_id" value="3" />vip会员
+                <input type="radio" name="group_id" value="4" checked="checked" />普通会员
             </div>
 
         </div>

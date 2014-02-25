@@ -17,8 +17,8 @@ class Category extends HM_Controller
         $data = array();
         $tpl = '';
 
-    	$this->load->model('Category_model');
-        $data['cat_info'] = $this->Category_model->getCatInfo($mark);
+    	$this->load->model('CatModel');
+        $data['cat_info'] = $this->CatModel->getCatInfo($mark);
 
         // 判断是否有分类
         if(!$data['cat_info']){
@@ -44,7 +44,7 @@ class Category extends HM_Controller
     public function child($mark)
     {
         $this->load->model('Cat_model');
-        $data['info'] = $this->Question_model->get_question_attention();
+        $data['info'] = $this->QuestionModel->get_question_attention();
         foreach( $data['info'] as &$v){
             $v['url'] = built_detail_url('ask', $v['id']);
         }

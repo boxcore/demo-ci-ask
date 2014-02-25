@@ -3,7 +3,7 @@
 <form id="pagerForm" method="post" action="<?php echo site_url('user/user_list') ?>">
     <input type="hidden" name="pageNum" value="1" />
     <input type="hidden" name="numPerPage" value="<?php echo $page_info['per_page'] ?>" />
-    <input type="hidden" name="groupid" value="<?php echo $param['groupid'] ?>" />
+    <input type="hidden" name="group_id" value="<?php echo $param['group_id'] ?>" />
     <input type="hidden" name="usernname" value="<?php echo $param['username'] ?>" />
 </form>
 
@@ -17,12 +17,12 @@
                 </li>
                 <li>
                     <label>用户组：</label>
-                    <select class="combox" name="groupid">
+                    <select class="combox" name="group_id">
                         <option value="0">所有用户</option>
-                        <option value="1" <?php if($param['groupid']=='1'):?>selected="selected" <?php endif; ?>>管理员</option>
-                        <option value="2" <?php if($param['groupid']=='2'):?>selected="selected" <?php endif; ?>>编辑</option>
-                        <option value="3" <?php if($param['groupid']=='3'):?>selected="selected" <?php endif; ?>>vip会员</option>
-                        <option value="4" <?php if($param['groupid']=='4'):?>selected="selected" <?php endif; ?>>普通会员</option>
+                        <option value="1" <?php if($param['group_id']=='1'):?>selected="selected" <?php endif; ?>>管理员</option>
+                        <option value="2" <?php if($param['group_id']=='2'):?>selected="selected" <?php endif; ?>>编辑</option>
+                        <option value="3" <?php if($param['group_id']=='3'):?>selected="selected" <?php endif; ?>>vip会员</option>
+                        <option value="4" <?php if($param['group_id']=='4'):?>selected="selected" <?php endif; ?>>普通会员</option>
                     </select>
                 </li>
                 <li><div class="buttonActive"><div class="buttonContent"><button type="submit">检索</button></div></div></li>

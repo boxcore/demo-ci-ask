@@ -3,7 +3,6 @@
 /**
  * 用户管理控制类
  * User: chunze.huang
- * Date: 14-1-6 上午10:49
  */
 class User extends MY_Controller
 {
@@ -11,7 +10,7 @@ class User extends MY_Controller
     function __construct()
     {
         parent::__construct();
-        $this->load->model('common_model');
+        $this->load->model('user_model');
     }
 
     /**
@@ -75,7 +74,7 @@ class User extends MY_Controller
         $where = array(
             'uid'      => $this->input->post('uid'),
             'username' => $this->input->post('username'),
-            'groupid'  => $this->input->post('groupid'),
+            'group_id'  => $this->input->post('group_id'),
         );
 
         // 总条数
@@ -198,7 +197,7 @@ class User extends MY_Controller
                 $data = array(
                     'username' => trim($this->input->post('username')),
                     'password' => $password,
-                    'groupid' => intval($this->input->post('groupid')),
+                    'group_id' => intval($this->input->post('group_id')),
                     'email' => trim($this->input->post('email')),
                     'regtime' => time(),
                 );
@@ -229,7 +228,7 @@ class User extends MY_Controller
         if ( !empty($_POST) )
         {
             $data = array(
-                'groupid' => intval($this->input->post('groupid')),
+                'group_id' => intval($this->input->post('group_id')),
                 'email' => trim($this->input->post('email')),
             );
             $this->db->where('uid', $this->input->post('uid'));

@@ -3,33 +3,10 @@ var site_url = 'http://ask.7808.com/';
 var src_url = 'http://ask.7808.com/static/';
 
 
-/**
- * 公共Cookie操作
- *
- * @author chunze.huang
- */
-
-
-//function setCookie(name, value, days = 7){// 设置COOKIE
-//    var exp  = new Date();
-//    exp.setTime(exp.getTime() + days*24*3600*1000 );
-//    document.cookie = name + "=" + escape(value) + ";expires=" + exp.toGMTString();
-//}
-//
-//function getCookie(name){// 获取COOKIE
-//    var arr = document.cookie.match( new RegExp("(^|)" + name + "=([^;]*)(;|$)") );
-//    if( arr != null ) return unescape(arr[2]); return null;
-//}
-//
-//function delCookie(name){// 删除cookie
-//    var exp = new Date();
-//    exp.setTime(exp.getTime() - 1);
-//    var cval=getCookie(name);
-//    if(cval!=null) document.cookie= name + "="+cval+";expires="+exp.toGMTString();
-//}
+// 全局跟参函数
 
 $(function() {
-    //search
+    //搜索框
     $("#form-search").submit(function(){
         var keywordInput = $(this).find("input[name='k']");
         if(keywordInput.val() === ''){
@@ -50,6 +27,36 @@ $(function() {
     });
 
 
+    // 弹出登陆框
+    var $dialogForm = $("#dialog-login-form");
+    $dialogForm.find('.submit').click(function() {
+        var form = $(this).closest("form");
+        var $username = form.find(".username");
+        var $password = form.find(".password");
+        var username = $username.val();
+        var password = $password.val();
+        var $autologin = form.find('.autologin');
+        if (!username) {
+            alert("请输入用户名");
+            return false;
+        }
+        if (!password) {
+            alert("请输入密码");
+            return false;
+        }
+        $.getJSON(site_url+'user/ajax_verify_login?', {ajax: true, username: username, password: password, autologin: $autologin.attr('checked')}, function(data) {
+            if (data.flag !== 1) {
+                alert(data.message);
+            } else {
+                //layer.closeAll();
+
+                window.location.reload();
+            }
+        });
+
+        return false;
+
+    });
 
 });
 
@@ -68,15 +75,6 @@ function clearString(s) {
 function trim(str){
     return str.replace(/(^\s*)|(\s*$)/g, "");
 }
-
-//删除左边的空格
-//function ltrim(str){
-//    return str.replace(/(^\s*)/g,"");
-//}
-////删除右边的空格
-//function rtrim(str){
-//    return str.replace(/(\s*$)/g,"");
-//}
 
 
 // 跟踪来路链接

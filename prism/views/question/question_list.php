@@ -7,8 +7,8 @@
     <input type="hidden" name="province_id" value="<?php echo $param['province_id'] ?>" />
     <input type="hidden" name="city_id" value="<?php echo $param['city_id'] ?>" />
     <input type="hidden" name="region_id" value="<?php echo $param['region_id'] ?>" />
-    <input type="hidden" name="sort_id" value="<?php echo $param['sort_id'] ?>" />
-    <input type="hidden" name="sub_id" value="<?php echo $param['sub_id'] ?>" />
+    <input type="hidden" name="cat_id" value="<?php echo $param['cat_id'] ?>" />
+    <input type="hidden" name="cat_sub" value="<?php echo $param['cat_sub'] ?>" />
     <input type="hidden" name="author_id" value="<?php echo $param['author_id'] ?>" />
     <input type="hidden" name="status" value="<?php echo $param['status'] ?>" />
     <input type="hidden" name="title" value="<?php echo $param['title'] ?>" />

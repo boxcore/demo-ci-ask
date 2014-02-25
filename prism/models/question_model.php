@@ -80,14 +80,14 @@ class Question_model extends CI_Model {
             $where[] = 'a.region_id = '.$configs['region_id'];
         }
 
-        if(!empty($configs['sort_id']))
+        if(!empty($configs['cat_id']))
         {
-            $where[] = 'a.sort_id = '.$configs['sort_id'];
+            $where[] = 'a.cat_id = '.$configs['cat_id'];
         }
 
-        if(!empty($configs['sub_id']))
+        if(!empty($configs['cat_sub']))
         {
-            $where[] = 'a.sub_id = '.$configs['sub_id'];
+            $where[] = 'a.cat_sub = '.$configs['cat_sub'];
         }
 
         if(!empty($configs['author_id']))

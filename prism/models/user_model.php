@@ -9,7 +9,7 @@ class User_model extends CI_Model {
     public function get_user_list($where = array(), $offset=0, $limit = 10 )
     {
         $sql =  'select `a`.*,`b`.`grouptitle` from `xwd_user` as `a` '.
-                'left join `xwd_usergroup` as `b` on `a`.`groupid` =`b`.`groupid` '.
+                'left join `xwd_usergroup` as `b` on `a`.`group_id` =`b`.`group_id` '.
                 $this->_where($where).
                 ' order by uid desc lIMIT '.$offset.', '.$limit;
 
@@ -42,9 +42,9 @@ class User_model extends CI_Model {
         {
             $where[] = 'a.uid = '.$configs['uid'];
         }
-        if(!empty($configs['groupid']))
+        if(!empty($configs['group_id']))
         {
-            $where[] = 'a.groupid = '.$configs['groupid'];
+            $where[] = 'a.group_id = '.$configs['group_id'];
         }
         if(!empty($configs['status']))
         {
@@ -66,14 +66,14 @@ class User_model extends CI_Model {
      */
     public function login($username = '', $password = '')
     {
-        $query = $this->db->select('uid,username,password, groupid')->from('user')->where('username', $username)->limit(1)->get();
+        $query = $this->db->select('uid,username,password, group_id')->from('user')->where('username', $username)->limit(1)->get();
         $row = $query->row_array();
-        if(!empty($row) && ($row['password'] == $password) && ($row['groupid'] ==1) ){
+        if(!empty($row) && ($row['password'] == $password) && ($row['group_id'] ==1) ){
             $data = array(
                 'uid'=>$row['uid'],
                 'username'=>$username,
                 'logined_in'=>true,
-                'groupid' => 1,
+                'group_id' => 1,
             );
             $this->session->set_userdata($data);
         }
@@ -125,9 +125,9 @@ class User_model extends CI_Model {
 
         $data = array();
         if($username){
-            $query = $this->db->select('groupid')->from('user')->where('username',$username)->limit(1)->get();
+            $query = $this->db->select('group_id')->from('user')->where('username',$username)->limit(1)->get();
             $data =  $query->row_array();
-            return $data['groupid'];
+            return $data['group_id'];
         }
         return '';
     }

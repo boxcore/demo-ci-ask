@@ -8,6 +8,8 @@
     <link rel="stylesheet" type="text/css" href="<?php echo src_url('css/style.css');?>"/>
     <script src="<?php echo src_url('js/jquery-1.7.1.min.js');?>"></script>
     <script src="<?php echo src_url('js/common.js');?>"></script>
+    <script src="<?php echo src_url('js/jquery.cookie.js');?>"></script>
+    <script src="<?php echo src_url('js/layer/layer.js');?>"></script>
 </head>
 <body>
 <!-- $cookie  <?php print_r($_COOKIE); ?> -->
@@ -18,7 +20,7 @@
                 <?php if($this->session->userdata('logined_in')): ?>
                     <p>你好，<?php echo $this->session->userdata('username');  ?>！<span class="loginwrap"><a href="<?php echo base_url('user/center');?>" class="top_login">用户中心</a><a href="<?php echo base_url('user/logout');?>" rel="">退出登录</a></span><span class="phone"><a href="javascript:void(0);">手机版</a></span><a href="javascript:void(0);">收藏夹</a></p>
                 <?php else: ?>
-				    <p>欢迎来到中国创业指导网！<span class="loginwrap"><a href="<?php echo base_url('user/login');?>" rel="" class="top_login">请登录</a><a href="<?php echo base_url('user/register');?>">免费注册</a></span><span class="phone"><a href="javascript:void(0);">手机版</a></span><a href="javascript:void(0);">收藏夹</a></p>
+				    <p>欢迎来到中国创业指导网！<span class="loginwrap"><a href="<?php echo base_url('user/login');?>" rel="" class="top_login">请登录</a><a href="<?php echo base_url('user/register');?>" rel="">免费注册</a></span><span class="phone"><a href="javascript:void(0);">手机版</a></span><a href="javascript:void(0);">收藏夹</a></p>
                 <?php endif; ?>
 				<form action="<?php echo site_url('s'); ?>" method="get" target="_blank" id="form-search">
 					<input name="k" type="text" placeholder="有疑问？试试问答搜索！" class="search_text" value="<?php if(isset($_REQUEST['k'])): ?><?php echo $_REQUEST['k']; ?><?php endif; ?>">
@@ -46,10 +48,10 @@
 				<div class="flotage flotage_pages" style="display:none;" id="nav_all">
 					<?php foreach ($GLOBALS['category_info'] as $key => $value):?>
 					<div class="sort_inner <?php if (count($value) != $key+1){echo 'bottom_bor';}?>">
-						<h2><a href="<?php echo $value['url'];?>" class="<?php echo $data_sort_array[$value['mark']];?>"><?php echo $value['name'];?></a></h2>
+						<h2><a href="<?php echo $value['url'];?>" class="<?php echo $data_sort_array[$value['mark']];?>"><?php echo $value['cat_name'];?></a></h2>
 						<p><span class="menu_text">
 						<?php foreach ($value['sort'] as $k => $v):?>
-							<a href="<?php echo $v['url']; ?>" <?php if ($v['highlight']){echo 'class="highlight"';}?>><?php echo $v['name'];?></a>
+							<a href="<?php echo $v['url']; ?>" <?php if ($v['highlight']){echo 'class="highlight"';}?>><?php echo $v['cat_name'];?></a>
 						<?php endforeach;?>
 						</span>
 						</p>
@@ -99,14 +101,15 @@
 		</div>
 	</div>
 
-<?php if( empty($GLOBALS['app']['is_logined']) ): ?>
+<?php if(!$this->session->userdata('logined_in')): ?>
 <!--弹出登陆框 start-->
 <div id="dialog-login" class="hide">
-    <form action="<?php echo site_url() ?>" method="" id="dialog-login-form">
+    <form action="<?php echo site_url() ?>" method="" id="dialog-login-form" autocomplete="off" >
         <h1>登录</h1>
         <div class="cap_frame">
             <label>用户名:</label>
-            <p class="cf_person"><span></span><input type="text" name="user" class="user" placeholder="邮箱/手机号" value=""/></p>
+            <p class="cf_person"><span></span><input type="text" name="username" class="username" placeholder="用户名"
+                                                     value="<?php if (isset($_COOKIE['remember_username'])): ?><?php echo $_COOKIE['remember_username'] ?><?php endif; ?>"/></p>
         </div>
         <div class="cap_frame">
             <label>密码:</label>
@@ -114,10 +117,11 @@
         </div>
         <div class="cap_enter">
             <label>　</label>
-            <p><span class="automatic"><input type="checkbox" class="remember" name="remember" value="1" />下次自动登录</span></p>
+            <p><span class="automatic"><input type="checkbox" class="autologin" name="autologin" value="1" />下次自动登录</span></p>
         </div>
         <span class="enter"><button type="button" class="submit">登 录</button></span>
-        <p class="no_register">还不是7808的会员? <a target="_blank" href="<?php echo member_site_url('register') . "?r=" . get_current_url(); ?>">马上免费注册</a></p>
+        <p class="no_register">还不是会员? <a target="_blank" href="<?php echo site_url("register.html"); ?>" rel=""
+                >马上免费注册</a></p>
     </form>
 </div>
 <!--弹出登陆框 end-->

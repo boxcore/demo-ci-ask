@@ -7,6 +7,7 @@
 class HM_Controller extends CI_Controller
 {
 
+
     public function __construct()
     {
         parent::__construct();
@@ -17,6 +18,7 @@ class HM_Controller extends CI_Controller
         self::get_configs();
         self::get_category_info();
     }
+
 
     /**
      * 获取网站基本配置信息 & 用户信息
@@ -35,7 +37,7 @@ class HM_Controller extends CI_Controller
         $login_stat = $this->session->userdata('logined_in') ? $this->session->userdata('logined_in') : false;
         if(!$login_stat){
             $this->session->set_userdata('role', 'guest');
-            $this->session->set_userdata('groupid', 1);
+            $this->session->set_userdata('group_id', 1);
         }
     }
 
@@ -61,6 +63,7 @@ class HM_Controller extends CI_Controller
             }
         }
     }
+
 
     /**
      * 获取当前所在城市
@@ -92,4 +95,31 @@ class HM_Controller extends CI_Controller
             }
         }
     }
+
+
+    /**
+     * 登陆后执行存入session操作
+     *
+     * @param array $row
+     * @param int   $autologin 2:退出登录； 1：记录7天； 0：浏览器进程
+     */
+    public function set_logined_cookie( $autologin = 0,$row = array()){
+        if($autologin == 1){
+            $cookie_time = time()+(3600*24*7);
+        }else{
+            $cookie_time = 0;
+        }
+
+        if($autologin ===2){
+            $cookie_time = time()-3600;
+        }
+
+        $this->load->library('session');
+        setcookie('logined_in', $this->session->userdata('logined_in'), $cookie_time, '/', '7808.com');
+        setcookie('username', $this->session->userdata('username'), $cookie_time, '/', '7808.com');
+        setcookie('uid', $this->session->userdata('uid'), $cookie_time, '/', '7808.com');
+        setcookie('group_id', $this->session->userdata('group_id'), $cookie_time, '/', '7808.com');
+    }
+
+
 }

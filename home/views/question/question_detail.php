@@ -6,49 +6,61 @@
 <script>
 var editor;
 KindEditor.ready(function(K) {
-	editor = K.create('textarea[name="content"]');
+	editor = K.create('textarea[name="content"]', {
+        resizeType : 1,
+        allowPreviewEmoticons : false,
+        allowImageUpload : false,
+        items : [
+            'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline',
+            'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist',
+            'insertunorderedlist', '|', 'emoticons', 'image', 'link']
+    });
 });
 </script>
-<?php $info = $info[0];?>
 <?php 
 $string = '';
-if ($info['sort_id']){
-	$string .= '?sort='.$info['sort_id'];
+if ($question_info['cat_id']){
+	$string .= '?sort='.$question_info['cat_id'];
 }
-if ($info['sub_id']){
-	$string .= '&sub='.$info['sub_id'];
+if ($question_info['cat_sub']){
+	$string .= '&sub='.$question_info['cat_sub'];
 }
 ?>
-<p class="crumbs"> 当前位置：<a href="<?php echo site_url('');?>">首页</a> > <a href="<?php echo site_url('question/listAll'.$string.'');?>">问答列表</a> > <a href="javascript:void(0);" class="current">回答 </a> </p>
+
+<p class="crumbs"> 当前位置：<a href="<?php echo site_url('');?>">首页</a> > <a href="<?php echo $question_info['cat_info']['cat_url']; ?>">问答列表</a> > <a href="javascript:void(0);" class="current">回答 </a> </p>
+
 <div class="list_content">
     <div class="list_conL">
         <div class="ask_box">
-            <h1 class="ask_title"><?php echo $info['title'];?></h1>
+            <h1 class="ask_title"><?php echo $question_info['title'];?></h1>
             <div class="ask-info">
-				<span>提问者: <?php echo $info['author'];?></span>| 
-				<span>分类：<a href="<?php echo site_url('question/listAll?sort='.$info['sort_id'].'');?>"><?php echo $static[$info['sort_id']]["name"];?></a></span>| <span>浏览<?php echo $info['preview_num'];?>次</span> | <span><?php echo $info['created_time'];?></span>
+				<span>提问者: <?php echo $question_info['author'];?></span>| 
+				<span>分类：<a href="<?php echo $question_info['cat_info']['cat_url']; ?>"><?php echo
+                        $question_info['cat_info']['cat_name'];?></a></span>| <span>浏览<?php echo $question_info['preview_num'];?>次</span> | <span><?php echo $question_info['created_time'];?></span>
 			</div>
-			<div class="ask_info"><?php echo $info['description'];?></div>
+			<div class="ask_info"><?php echo $question_info['description'];?></div>
 			<h2>我来回答</h2>
 			<div class="app-and-share">
 				<textarea id="content" name="content" style="width:650px;height:200px;visibility:hidden;"></textarea>
 			</div>
 			<div class="subbox">
-				<span><input name="" type="checkbox" value=""><em>匿名</em></span>
+				<span><input name="is_anonymous" type="checkbox" value="1" ><em>匿名</em></span>
 				<input name="button" type="submit" class="submit_btn" value="提交回答" onclick="addAnswer()">
-				<input name="qid" id="qid" type="hidden" value="<?php echo $info['id']?>">
+				<input name="qid" id="qid" type="hidden" value="<?php echo $question_info['id']?>">
 			</div>
         </div>
-        <?php if($info['answer_num']):?>
+        <?php if($question_info['answer_num']):?>
         <div class="interval"></div>
         <div class="ask_list">
             <dl>
-                <dt class="ask_num"><strong><?php echo $info['answer_num'];?>条回答</strong></dt>
+                <dt class="ask_num"><strong><?php echo $question_info['answer_num'];?>条回答</strong></dt>
                 <dd class="Arrange"><span class="current">按默认顺序</span> <span class="f_pipe">|</span> <a href="javascript:void(0);">按时间排序</a></span></dd>
             </dl>
             <!-- 回答列表开始 -->
-            <?php foreach ($answer as $key => $value):?>
-            <div class="person_one <?php if (count($answer) == $key+1){echo 'no_border';}?>">
+            <?php foreach ($answer_list as $key => $value):?>
+            <div id="comment-<?php echo $value['id']; ?>" class="person_one <?php if (count($answer_list) == $key+1)
+            {echo
+            'no_border';}?>">
                 <dl class="answerer">
                     <dt><?php echo $value['author'];?></dt>
                     <dd><?php echo date('Y年m月d日  h:i')?></dd>
@@ -95,31 +107,55 @@ $(function(){
 });
 
 function addAnswer(){
-	editor.sync();
-	var cont = $("#content").val();
-	var qid  = $("#qid").val();
-	
-	if (editor.isEmpty()) {
-		alert('请输入内容!');
-		editor.focus();
-		return false;
-	}
 
-	jQuery.ajax({
-		type : "POST",
-		url : "http://ask.7808.com/question/answer_add",
-		data : {
-			content : cont,
-			qid : qid
-		},
-		success:function(data){
-			if (data) {
-				alert('提问成功!');
-				location.reload();
-			} else {
-				alert('提问失败!');
-			}
-		}
-	});
+    if($.cookie("logined_in")){
+        editor.sync();
+        var comment = $("#content").val();
+        var qid  = $("#qid").val();
+        var is_anonymous = $("input[name='is_anonymous']:checked").val();
+
+        if (editor.isEmpty()) {
+            alert('请输入内容!');
+            editor.focus();
+            return false;
+        }
+
+        jQuery.ajax({
+            type : "POST",
+            url : "http://ask.7808.com/question/answer_add",
+            dataType:"json",
+            data : {
+                content : comment,
+                qid : qid,
+                is_anonymous:is_anonymous
+            },
+            success:function(data){
+                console.log(data);
+                if (data.flag) {
+                    alert('提问成功!');
+                    window.location.href = window.location.href + '?#comment-' + data.answer_id;
+
+                } else {
+                    alert(data.message);
+                    return false;
+                }
+            }
+        });
+    }else{
+        $.layer({
+            type : 1,
+            shade : [0.5 , '#000' , true],
+            fix : true,
+            title : false,
+            area : ['380px' , '267px'],
+            offset : ['150px', ''],
+            page : {dom : '#dialog-login'},
+            close : function(index){
+                layer.close(index);
+            }
+        });
+        $("#dialog-login h1").html("您还没有登陆，请先<strong>登陆</strong>!");
+    }
+
 }
 </script>

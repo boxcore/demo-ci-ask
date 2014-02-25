@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="<?php echo src_url('css/style.css');?>"/>
     <script src="<?php echo src_url('js/jquery-1.7.2.min.js');?>"></script>
     <script src="<?php echo src_url('js/common.js');?>"></script>
+    <script src="<?php echo src_url('js/jquery.cookie.js');?>"></script>
 </head>
 <body class="have_bg">
 
@@ -48,6 +49,9 @@
 
     </form>
 </div>
+<?php
+echo $_SESSION['logined_in'];
+?>
 <script type="text/javascript">
 $(function(){
 	$("#username").focus(function(){
@@ -65,17 +69,17 @@ $(function(){
     $('#login-form').submit(function(){
         var username = $('#username').val();
         var password = $('#password').val();
+        var autologin = $("input[name='autologin']:checked").val();
         var form_rel = $('input[name=rel]').val();
         if(form_rel == ''){
             form_rel = site_url+"user/center?ref="+window.location.href;
         }
 
-        //alert(form_rel);return false;
-
         var remember_username = $("input[name='remember-username']:checked").val();
         console.log(remember_username);
         if(remember_username){
-            document.cookie  = 'remember_username='+username;
+//            document.cookie  = 'remember_username='+username;
+            $.cookie('remember_username', username, { expires: 7 ,  path: '/', domain:'7808.com'});
         }
 
         if(username == ''){
@@ -96,10 +100,11 @@ $(function(){
             site_url+'user/ajax_verify_login',
             {
                 username:username,
-                password:password
+                password:password,
+                autologin:autologin
             },
             function (data) { //回调函数
-                console.log(data);console.log(data['message']);
+                //console.log(data);console.log(data['message']);
                 if(data['flag']==1){
                     window.location.href=form_rel;
                     //window.location.reload(); //重新加载页面

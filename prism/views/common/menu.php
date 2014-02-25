@@ -11,6 +11,12 @@
             <ul class="tree treeFolder">
                 <li><a href="<?php echo site_url('question/question_list'); ?>" target="navTab">问题管理</a>
                     <ul>
+                        <li><a href="<?php echo site_url('question/cat_list'); ?>" target="navTab" rel="page4"
+                               fresh="false">权限列表</a></li>
+                        <li><a href="<?php echo site_url('question/cat_add'); ?>" target="navTab" rel="page4"
+                               fresh="false">添加资源</a></li>
+
+                        <hr/>
                         <li><a href="<?php echo site_url('question/question_list'); ?>" target="navTab"
                                rel="main">问题管理</a></li>
                         <li><a href="<?php echo site_url('question/question_add'); ?>" target="navTab" rel="page4"

@@ -3,6 +3,7 @@
 /**
  * 问答控制类
  *
+ * @author chunze.huang
  */
 class Question extends HM_Controller
 {
@@ -10,94 +11,66 @@ class Question extends HM_Controller
     function __construct()
     {
         parent::__construct();
+        $this->load->model('QuestionModel');
     }
 
-    public function index()
-    {
-        $this->cat();
-    }
 
+    /**
+     * 问题分类显示
+     *
+     * @param string $mark 分类标记
+     */
     public function cat($mark = '')
     {
         $data = array();
+        $cat_id = $this->QuestionModel->getIdByMark($mark);
 
-        $this->load->model('Question_model');
-        $id = $this->Question_model->getIdByMark($mark);
-
-        if (!$id) {
+        if (!$cat_id) {
             show_404();
             exit;
         } else {
-            $data['info'] = $this->Question_model->get_list_by_id($id);
+            $data['info'] = $this->QuestionModel->get_list_by_id($cat_id);
             foreach ($data['info'] as &$v) {
                 $v['url'] = built_detail_url('ask', $v['id']);
             }
-
 
             $this->load->library('layout');
             $this->layout->view('question/question_list', $data);
         }
     }
 
-    /**
-     *
-     * 显示问答列表
-     */
-    public function listAll()
-    {
-        $pram['sort'] = $this->input->get('sort');
-        $pram['sub']  = $this->input->get('sub');
-
-        $this->load->model('Question_model');
-        $data['info'] = $this->Question_model->get_list($pram);
-        foreach ($data['info'] as &$v) {
-            $v['url'] = built_detail_url('ask', $v['id']);
-        }
-        $this->load->library('layout');
-        $this->layout->view('question/question_list', $data);
-    }
 
     /**
-     *
-     * 显示问答详情
+     * 问题详情页面
      */
     public function detail($qid = 0)
     {
+        $data = array();
         $qid = $this->input->get('qid') ? $this->input->get('qid') : $qid;
-        $this->load->model('Question_model');
 
-        $res = $this->Question_model->get_question_by_id($qid); //获取详细
-        if (!$res) {
-            show_404();
-            exit;
+        //更新问题总数
+        $this->QuestionModel->syncAnswerNum($qid);
+
+        $question_info = $this->QuestionModel->getQuestionById($qid); //问题详细
+        if (!$question_info) {
+            show_404();exit;
+        }else{
+            $this->load->model('CatModel');
+
+            $question_info['cat_info'] = $this->CatModel->getCatURL($question_info['cat_id']);
+            $question_info['sub_info'] = $this->CatModel->getCatURL($question_info['cat_sub']);
+
         }
 
-        $data['info']   = $res;
-        $data['answer'] = $this->Question_model->get_answer_by_id($qid); //回答列表
-        $data['relate'] = $this->Question_model->relative_question($res); //相关问题
-        $data['static'] = $this->sort_static();
+        $data['question_info'] = $question_info;
+        $data['answer_list'] = $this->QuestionModel->getAnswerList($qid); //回答列表
+        $data['relate'] = $this->QuestionModel->relative_question($question_info); //相关问题
+
+        echo '<!--'; print_r($data); echo '-->';
         $this->load->library('layout');
         $this->layout->view('question/question_detail', $data);
     }
 
-    function sort_static()
-    {
-        $sort = array(
-            '2'  => array('id' => '2', 'name' => '服饰鞋包', 'mark' => 'fushixiebao'),
-            '3'  => array('id' => '3', 'name' => '餐饮美食', 'mark' => 'canyinyule'),
-            '58' => array('id' => '58', 'name' => '饰品玩具', 'mark' => 'shipinwanju'),
-            '10' => array('id' => '10', 'name' => '母婴用品', 'mark' => 'muyingyongpin'),
-            '4'  => array('id' => '4', 'name' => '美容养生', 'mark' => 'meirongyangsheng'),
-            '56' => array('id' => '56', 'name' => '教育培训', 'mark' => 'jiaoyupeixun'),
-            '9'  => array('id' => '9', 'name' => '网络创业', 'mark' => 'wangluochuangye'),
-            '12' => array('id' => '12', 'name' => '家居建材', 'mark' => 'jiajijiancai'),
-            '5'  => array('id' => '5', 'name' => '机械环保', 'mark' => 'jixiehuanbao'),
-            '96' => array('id' => '96', 'name' => '汽车服务', 'mark' => 'qichefuwu'),
-            '15' => array('id' => '15', 'name' => '其它项目', 'mark' => 'qitaxiangmu')
-        );
-
-        return $sort;
-    }
 
     /**
      *
@@ -105,23 +78,65 @@ class Question extends HM_Controller
      */
     public function add()
     {
-        $this->load->model('Question_model');
-        $data['sort'] = $this->Question_model->get_sort_info();
+        $this->load->model('QuestionModel');
+        $data['sort'] = $this->QuestionModel->get_sort_info();
         $this->load->library('layout');
         $this->layout->view('question/question_add', $data);
     }
 
+    /**
+     * 执行添加答案的ajax
+     *
+     *
+     */
     public function answer_add()
     {
+        $data = array();
+        $msg = array(
+            'flag' => 0, // 通信成功标志
+            'message' => '登陆出错', //提醒信息
+            'field' => '', // 报错字段或区域
+        );
 
-        if ($_POST) {
-            $content = $this->input->post('content');
-            $qid     = $this->input->post('qid');
-            $this->load->model('Question_model');
-            $this->Question_model->insert_answer($content, $qid);
-            echo 1;
+        $data['author'] = $this->session->userdata('username');
+        $data['author_id'] = $this->session->userdata('uid');
+
+        if ($this->session->userdata('logined_in') && $_POST) {
+            $data['content'] = $this->input->post('content');
+            $data['is_anonymous'] = $this->input->post('is_anonymous') ? $this->input->post('is_anonymous') : 0;
+            $data['qid']     = $this->input->post('qid');
+            $data['modified_time'] = time();
+
+
+
+            // 判断是否用户是否已经回答过该问题
+            if( $this->QuestionModel->checkHaveAnswer($data['qid'], $data['author_id']) ){
+                $msg['message'] = '你已经答过该问题，不能重复回答！';
+                echo json_encode($msg);exit;
+            }
+
+            // 判断问题状态
+            $question =  $this->QuestionModel->getQuestionByQid($data['qid']);
+            if( $question ){
+                if(!$question['status']){
+                    $msg['message'] = '该问题已经被关闭，不能进行回答！';
+                    echo json_encode($msg);exit;
+                }
+            }
+
+            $answer_id = $this->QuestionModel->insertAnswer($data, $data['qid']);
+            if( $answer_id ){
+                $msg['flag'] = 1;
+                $msg['answer_id']=$answer_id;
+                $msg['message']='评论成功！';
+                echo json_encode($msg);exit;
+            }
+
         }
+
+        echo json_encode($msg);exit;
     }
+
 
     public function check_add()
     {
@@ -143,8 +158,8 @@ class Question extends HM_Controller
         $arr['question'] = $question;
         $arr['content']  = $content;
 
-        $this->load->model('Question_model');
-        $res = $this->Question_model->insert_question($arr);
+        $this->load->model('QuestionModel');
+        $res = $this->QuestionModel->insert_question($arr);
 
         echo $res;
     }
@@ -153,8 +168,8 @@ class Question extends HM_Controller
     {
         if ($_POST) {
             $id = $this->input->post('id');
-            $this->load->model('Question_model');
-            $data['sub'] = $this->Question_model->get_sub_info($id);
+            $this->load->model('QuestionModel');
+            $data['sub'] = $this->QuestionModel->get_sub_info($id);
             $this->load->view('question/question_sub', $data);
         }
     }

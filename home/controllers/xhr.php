@@ -45,17 +45,17 @@ class Xhr extends HM_Controller
 
             if($pram['username'] && $pram['password'])
             {
-                $this->load->model('User_model');
-                if( $this->User_model->verify_username($pram['username']) )
+                $this->load->model('UserModel');
+                if( $this->UserModel->verify_username($pram['username']) )
                 {
-                    $row = $this->User_model->verify_login($pram);
+                    $row = $this->UserModel->verify_login($pram);
                     if($row)
                     {
                         $data = array(
                             'uid'        => $row['uid'],
                             'username'   => $row['username'],
                             'logined_in' => true,
-                            'groupid'    => $row['groupid'],
+                            'group_id'    => $row['group_id'],
                         );
                         $this->session->set_userdata($data);
                         setcookie("login_times",0,time()-1);

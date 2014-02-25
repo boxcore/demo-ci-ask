@@ -42,6 +42,7 @@
 			<label></label>
 			<p class="automatic"><a href="javascript:void(0);">《创业指导网用户注册协议》</a></p>
 		</div>
+        <input name="rel" type="hidden" value="<?php if( isset($_REQUEST['rel']) ) echo $_REQUEST['rel']; ?>"/>
 		<span class="enter"><button type="submit" onclick="addUser()">注 册</button></span>
 	</div>
 	<div class="mrbc_right">
@@ -81,6 +82,11 @@ function addUser(){
 	var nickname   = $.trim($("#nickname").val());
 	var password   = $.trim($("#password").val());
 	var repassword = $.trim($("#repassword").val());
+
+    var form_rel = $('input[name=rel]').val();
+    if(form_rel == ''){
+        form_rel = site_url+"user/center?ref="+window.location.href;
+    }
 	
 	if(username == ''){
 		$("#userinfo").show().html('用户名不能为空');
@@ -109,7 +115,8 @@ function addUser(){
 
 	jQuery.ajax({
 		type : "POST",
-		url : "<?php echo site_url('user/add_user');?>",
+		url : "<?php echo site_url('user/ajax_add_user');?>",
+        dataType:"json",
 		data : {
 			username : username,
 			nickname : nickname,
@@ -117,11 +124,12 @@ function addUser(){
 			repassword : repassword
 		},
 		success:function(data){
-			if (data) {
-				alert('创建成功!');
-				window.location.href = "<?php echo site_url('user/login');?>";
+            if (data['flag']) {
+				alert(data['message']);
+				window.location.href = form_rel;
 			} else {
-				alert('创建失败!');
+				alert(data['message']);
+                return false;
 			}
 		}
 	});

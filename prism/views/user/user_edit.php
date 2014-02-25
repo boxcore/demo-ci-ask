@@ -20,10 +20,10 @@
             </div>
             <div class="unit">
                 <label>用户组：</label>
-                <input type="radio" name="groupid" value="1" <?php if($user_info['groupid']=='1'):?>checked="checked" <?php endif; ?> />管理员
-                <input type="radio" name="groupid" value="2" <?php if($user_info['groupid']=='2'):?>checked="checked" <?php endif; ?> />编辑
-                <input type="radio" name="groupid" value="3" <?php if($user_info['groupid']=='3'):?>checked="checked" <?php endif; ?> />vip会员
-                <input type="radio" name="groupid" value="4" <?php if($user_info['groupid']=='4'):?>checked="checked" <?php endif; ?> />普通会员
+                <input type="radio" name="group_id" value="1" <?php if($user_info['group_id']=='1'):?>checked="checked" <?php endif; ?> />管理员
+                <input type="radio" name="group_id" value="2" <?php if($user_info['group_id']=='2'):?>checked="checked" <?php endif; ?> />编辑
+                <input type="radio" name="group_id" value="3" <?php if($user_info['group_id']=='3'):?>checked="checked" <?php endif; ?> />vip会员
+                <input type="radio" name="group_id" value="4" <?php if($user_info['group_id']=='4'):?>checked="checked" <?php endif; ?> />普通会员
             </div>
 
         </div>
