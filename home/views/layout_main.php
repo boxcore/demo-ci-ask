@@ -43,13 +43,13 @@
 					'qichefuwu' => 'home'
 		);?>
 		<ul class="nav">
-			<li class="sort">
-				<a href="javascript:void(0);" id="sort_all_content">所有内容分类</a>
+			<li class="sort <?php if( isset($page_name) && ($page_name == 'index') ):?>is_index<?php endif; ?>" id="sort_all_content" >
+				<a href="javascript:void(0);" >所有内容分类</a>
 				<div class="flotage flotage_pages" style="display:none;" id="nav_all">
 					<?php foreach ($GLOBALS['category_info'] as $key => $value):?>
-					<div class="sort_inner <?php if (count($value) != $key+1){echo 'bottom_bor';}?>">
+					<div class="sort_inner <?php if (count($value) != $key+1){echo 'bottom_bor';}?> <?php if( isset($page_name) && ($page_name == 'index') ):?>is_index<?php endif; ?>">
 						<h2><a href="<?php echo $value['url'];?>" class="<?php echo $data_sort_array[$value['mark']];?>"><?php echo $value['cat_name'];?></a></h2>
-						<p><span class="menu_text">
+						<p style="display: none;"><span class="menu_text">
 						<?php foreach ($value['sort'] as $k => $v):?>
 							<a href="<?php echo $v['url']; ?>" <?php if ($v['highlight']){echo 'class="highlight"';}?>><?php echo $v['cat_name'];?></a>
 						<?php endforeach;?>
@@ -117,7 +117,10 @@
         </div>
         <div class="cap_enter">
             <label>　</label>
-            <p><span class="automatic"><input type="checkbox" class="autologin" name="autologin" value="1" />下次自动登录</span></p>
+            <p>
+                <span class="automatic"><input name="remember-username" class="remember-username" value="1" type="checkbox" <?php if (isset($_COOKIE['remember_username_check'])): ?>checked="checked"<?php endif; ?>>记住账户名</span>
+                <span class="automatic"><input name="autologin" type="checkbox" class="autologin" value="1"<?php if (isset($_COOKIE['autologin'])): ?>checked="checked"<?php endif; ?>/>下次自动登录</span>
+            </p>
         </div>
         <span class="enter"><button type="button" class="submit">登 录</button></span>
         <p class="no_register">还不是会员? <a target="_blank" href="<?php echo site_url("register.html"); ?>" rel=""

@@ -50,6 +50,7 @@ class Question extends HM_Controller
 
         //更新问题总数
         $this->QuestionModel->syncAnswerNum($qid);
+        $this->QuestionModel->addPreviewNum($qid); // 流量数量递增1
 
         $question_info = $this->QuestionModel->getQuestionById($qid); //问题详细
         if (!$question_info) {
@@ -73,8 +74,9 @@ class Question extends HM_Controller
 
 
     /**
+     * 添加问题页面
      *
-     * 添加
+     * @author chunze.huang
      */
     public function add()
     {
@@ -85,11 +87,11 @@ class Question extends HM_Controller
     }
 
     /**
-     * 执行添加答案的ajax
+     * 添加问题的答案
      *
      *
      */
-    public function answer_add()
+    public function check_add_answer()
     {
         $data = array();
         $msg = array(
@@ -102,11 +104,18 @@ class Question extends HM_Controller
         $data['author_id'] = $this->session->userdata('uid');
 
         if ($this->session->userdata('logined_in') && $_POST) {
+
+
             $data['content'] = $this->input->post('content');
             $data['is_anonymous'] = $this->input->post('is_anonymous') ? $this->input->post('is_anonymous') : 0;
             $data['qid']     = $this->input->post('qid');
             $data['modified_time'] = time();
 
+            $question_info = $this->QuestionModel->getQuestionById($data['qid']);
+            if($question_info['author_id'] == $data['author_id']){
+                $msg['message'] = '您不能回答自己的提问！';
+                echo json_encode($msg);exit;
+            }
 
 
             // 判断是否用户是否已经回答过该问题
@@ -138,30 +147,102 @@ class Question extends HM_Controller
     }
 
 
-    public function check_add()
+    /**
+     * AJAX修改问题
+     *
+     *
+     */
+    public function ajax_update_question()
     {
-        $sort     = $this->input->post('sort') ? $this->input->post('sort') : '';
-        $sub      = $this->input->post('sub') ? $this->input->post('sub') : '';
-        $question = $this->input->post('question');
-        $content  = $this->input->post('content');
+        $data = array();
+        $msg = array(
+            'flag' => 0, // 通信成功标志
+            'message' => '修改失败！', //提醒信息
+        );
 
-        if (empty($question)) {
-            $res = 0;
+        $data['author'] = $this->session->userdata('username');
+        $data['author_id'] = $this->session->userdata('uid');
+
+        if ($this->session->userdata('logined_in') && $_POST) {
+
+
+            $data['content'] = $this->input->post('content');
+            $data['is_anonymous'] = $this->input->post('is_anonymous') ? $this->input->post('is_anonymous') : 0;
+            $data['qid']     = $this->input->post('qid');
+            $data['modified_time'] = time();
+
+            $question_info = $this->QuestionModel->getQuestionById($data['qid']);
+            if($question_info['author_id'] == $data['author_id']){
+                $msg['message'] = '您不能回答自己的提问！';
+                echo json_encode($msg);exit;
+            }
+
+
+            // 判断是否用户是否已经回答过该问题
+            if( $this->QuestionModel->checkHaveAnswer($data['qid'], $data['author_id']) ){
+                $msg['message'] = '你已经答过该问题，不能重复回答！';
+                echo json_encode($msg);exit;
+            }
+
+            // 判断问题状态
+            $question =  $this->QuestionModel->getQuestionByQid($data['qid']);
+            if( $question ){
+                if(!$question['status']){
+                    $msg['message'] = '该问题已经被关闭，不能进行回答！';
+                    echo json_encode($msg);exit;
+                }
+            }
+
+            $answer_id = $this->QuestionModel->insertAnswer($data, $data['qid']);
+            if( $answer_id ){
+                $msg['flag'] = 1;
+                $msg['answer_id']=$answer_id;
+                $msg['message']='评论成功！';
+                echo json_encode($msg);exit;
+            }
+
         }
 
-        if (empty($content)) {
-            $res = 0;
+        echo json_encode($msg);exit;
+    }
+
+
+    /**
+     * 执行添加问题操作
+     *
+     * @author chunze.huang
+     */
+    public function check_add_question()
+    {
+        $msg = array(
+            'flag' => 0, // 通信成功标志
+            'message' => '添加问题失败！', //提醒信息
+            'field' => '', // 报错字段或区域
+            'last_id' => 0,
+        );
+
+        if($this->session->userdata('logined_in')){
+            $data = array();
+            $data['cat_id']     = $this->input->post('cat_id') ? $this->input->post('cat_id') : '';
+            $data['cat_sub']     = $this->input->post('cat_sub') ? $this->input->post('cat_sub') : '';
+            $data['question'] = $this->input->post('question');
+            $data['content']  = $this->input->post('content');
+
+            if($data['cat_id'] && $data['question'] && $data['content'] ){
+                $insert_id = $this->QuestionModel->insertQuestion($data);
+                if($insert_id){
+                    $msg['flag'] = 1;
+                    $msg['last_id'] = $insert_id;
+                    $msg['message'] = '恭喜！问题发布成功，请点“确认”回到问题页面。';
+                    echo json_encode($msg);exit;
+                }
+            }
+        }else{
+            $msg['message'] = '未登录，请登录后再回答问题';exit;
         }
 
-        $arr['sort']     = $sort;
-        $arr['sub']      = $sub;
-        $arr['question'] = $question;
-        $arr['content']  = $content;
+        echo json_encode($msg);
 
-        $this->load->model('QuestionModel');
-        $res = $this->QuestionModel->insert_question($arr);
-
-        echo $res;
     }
 
     public function get_sub_info()

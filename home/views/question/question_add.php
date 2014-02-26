@@ -6,7 +6,16 @@
 <script>
 var editor1;
 KindEditor.ready(function(K) {
-	editor1 = K.create('textarea[name="content"]');
+	//editor1 = K.create('textarea[name="content"]');
+    editor1 = K.create('textarea[name="content"]', {
+        resizeType : 1,
+        allowPreviewEmoticons : false,
+        allowImageUpload : false,
+        items : [
+            'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline',
+            'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist',
+            'insertunorderedlist', '|', 'emoticons', 'image', 'link']
+    });
 });
 </script>
 <div class="content">
@@ -14,13 +23,13 @@ KindEditor.ready(function(K) {
         <h1 class="issue">发布一个新问题</h1>
         <div class="selection_sort">
             <h3>分类</h3>
-			<select name="sort" onchange="changeSub()" id="sort">
+			<select name="cat_id" onchange="changeSub()" id="sort">
 				<option value="0">请选择大类</option>
 				<?php foreach ($sort as $key => $value):?>
-				<option value="<?php echo $value['id'];?>"><?php echo $value['name'];?></option>
+				<option value="<?php echo $value['cat_id'];?>"><?php echo $value['cat_name'];?></option>
 				<?php endforeach;?>
 			</select>
-			<select name="sub" id="sub">
+			<select name="cat_sub" id="sub">
 				<option value="0">请选择小类</option>
         	</select>
         </div>
@@ -40,25 +49,15 @@ KindEditor.ready(function(K) {
     </div>
 </div>
 <script type="text/javascript">
-$(function(){
-	$('#sort_all_content').bind('click', function() {
-		if ($("#nav_all").css('display') == 'none') {
-			$("#nav_all").show();
-		} else {
-			$("#nav_all").hide();
-		}
-	});
-});
 
 function saveQuestion(){
 	editor1.sync();
-	var sort = $("#sort").val();
-    console.log(sort);
-	var sub  = $("#sub").val();
+	var cat_id = $("#sort").val();
+	var cat_sub  = $("#sub").val();
 	var ques = $("#question").val();
 	var cont = $("#content").val();
 
-	if (sort == '') {
+	if (cat_id == '') {
 		alert('请选择分类!');
 		return false;
 	}
@@ -77,19 +76,20 @@ function saveQuestion(){
 
 	jQuery.ajax({
 		type : "POST",
-		url : "http://ask.7808.com/question/check_add",
+		url : site_url+'question/check_add_question',
+        dataType:'json',
 		data : {
-			sort : sort,
-			sub : sub,
+			cat_id : cat_id,
+			cat_sub : cat_sub,
 			question : ques,
 			content : cont
 		},
 		success:function(data){
-			if (data) {
-				alert('提问成功!');
-				window.location.href = "http://ask.7808.com/";
+			if (data.flag) {
+				alert(data.message);
+				window.location.href = site_url+'detail-'+data.last_id+'.html';
 			} else {
-				alert('提问失败!');
+                alert(data.message);
 			}
 		}
 	});

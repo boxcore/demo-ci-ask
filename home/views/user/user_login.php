@@ -5,14 +5,15 @@
     <title><?php echo $GLOBALS['configs']['site_name'] ?> - 用户登录</title>
     <link rel="stylesheet" type="text/css" href="<?php echo src_url('css/style.css');?>"/>
     <script src="<?php echo src_url('js/jquery-1.7.2.min.js');?>"></script>
-    <script src="<?php echo src_url('js/common.js');?>"></script>
     <script src="<?php echo src_url('js/jquery.cookie.js');?>"></script>
+    <script src="<?php echo src_url('js/common.js');?>"></script>
+
 </head>
 <body class="have_bg">
 
 <div class="me_box">
 	<div class="meb_left"><img src="<?php echo src_url('images/enter_banner.jpg');?>" height="338" width="494"> </div>
-    <form method="post" id="login-form" autocomplete="off">
+    <form action="nofollow" method="post" id="login-form" autocomplete="off">
         <div class="enter_capacity">
             <div id="capacity">
                 <h1>登录</h1>
@@ -35,8 +36,8 @@
                 <div class="cap_enter">
                     <label></label>
                     <p>
-                        <span class="automatic"><input name="remember-username" value="1" type="checkbox" checked="checked">记住账户名</span>
-                        <span class="automatic"><input name="autologin" value="1" type="checkbox" >下次自动登录</span>
+                        <span class="automatic"><input name="remember-username" class="remember-username" value="1" type="checkbox" <?php if (isset($_COOKIE['remember_username_check'])): ?>checked="checked"<?php endif; ?>>记住账户名</span>
+                <span class="automatic"><input name="autologin" type="checkbox" class="autologin" value="1" <?php if (isset($_COOKIE['autologin'])): ?>checked="checked"<?php endif; ?>/>下次自动登录</span>
                     </p>
                 </div>
                 <span class="enter"><button type="submit" name="send_ajax" id="send_ajax">登 录</button></span>
@@ -49,9 +50,7 @@
 
     </form>
 </div>
-<?php
-echo $_SESSION['logined_in'];
-?>
+
 <script type="text/javascript">
 $(function(){
 	$("#username").focus(function(){
@@ -75,12 +74,8 @@ $(function(){
             form_rel = site_url+"user/center?ref="+window.location.href;
         }
 
-        var remember_username = $("input[name='remember-username']:checked").val();
-        console.log(remember_username);
-        if(remember_username){
-//            document.cookie  = 'remember_username='+username;
-            $.cookie('remember_username', username, { expires: 7 ,  path: '/', domain:'7808.com'});
-        }
+
+        setRemember();
 
         if(username == ''){
             $('#userinfo').attr({style:'display:block'})
@@ -94,7 +89,6 @@ $(function(){
         }
 
         var params = $('input').serialize();
-        console.log(params);
 
         $.post(
             site_url+'user/ajax_verify_login',

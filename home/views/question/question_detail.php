@@ -16,6 +16,20 @@ KindEditor.ready(function(K) {
             'insertunorderedlist', '|', 'emoticons', 'image', 'link']
     });
 });
+
+
+var editor_question;
+KindEditor.ready(function(K) {
+    editor_question = K.create('textarea[name="edit_question"]', {
+        resizeType : 1,
+        allowPreviewEmoticons : false,
+        allowImageUpload : false,
+        items : [
+            'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline',
+            'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist',
+            'insertunorderedlist', '|', 'emoticons', 'image', 'link']
+    });
+});
 </script>
 <?php 
 $string = '';
@@ -38,7 +52,24 @@ if ($question_info['cat_sub']){
 				<span>分类：<a href="<?php echo $question_info['cat_info']['cat_url']; ?>"><?php echo
                         $question_info['cat_info']['cat_name'];?></a></span>| <span>浏览<?php echo $question_info['preview_num'];?>次</span> | <span><?php echo $question_info['created_time'];?></span>
 			</div>
-			<div class="ask_info"><?php echo $question_info['description'];?></div>
+            <div id="question_content">
+                <div class="ask_info" >
+                    <?php echo $question_info['description'];?>
+                </div>
+                <?php if( $_COOKIE['uid'] == $question_info['author_id'] ): ?><a id="edit_question_link" href="javascirpt:;" style="display: none;">编辑</a><?php endif; ?>
+            </div>
+
+            <div id="edit-question-area" style="display:none;">
+                <textarea name="edit_question" style="width:650px;height:200px;visibility:hidden;">
+                    <?php echo $question_info['description'];?>
+                </textarea>
+                <div id="edit-question-button" style="float: right;text-align: right;">
+                    <button type="submit" name="submit" style=" padding: 5px; margin: 5px 10px;">提交</button>
+                    <button type="reset" name="close" style=" padding: 5px; margin: 5px 10px;">取消</button>
+                </div>
+                
+            </div>
+
 			<h2>我来回答</h2>
 			<div class="app-and-share">
 				<textarea id="content" name="content" style="width:650px;height:200px;visibility:hidden;"></textarea>
@@ -122,7 +153,7 @@ function addAnswer(){
 
         jQuery.ajax({
             type : "POST",
-            url : "http://ask.7808.com/question/answer_add",
+            url : site_url+"question/check_add_answer",
             dataType:"json",
             data : {
                 content : comment,

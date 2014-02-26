@@ -105,32 +105,42 @@ class QuestionModel extends CI_Model
 
     public function get_sort_info()
     {
-        $sql   = "SELECT `cat_id`,`name`,`mark` FROM `xwd_category` WHERE `pid` =0 ORDER BY `sort` ASC";
+        $sql   = "SELECT `cat_id`,`cat_name`,`mark` FROM `xwd_category` WHERE `pid` =0 ORDER BY `sort` ASC";
         $query = $this->db->query($sql);
         return $query->result_array();
     }
 
     public function get_sub_info($id)
     {
-        $sql   = "SELECT `cat_id`,`name`,`mark` FROM `xwd_category` WHERE `pid` ={$id} ORDER BY `sort` ASC";
+        $sql   = "SELECT `cat_id`,`cat_name`,`mark` FROM `xwd_category` WHERE `pid` ={$id} ORDER BY `sort` ASC";
         $query = $this->db->query($sql);
         return $query->result_array();
     }
 
-    public function insert_question($arr)
+    /**
+     * 插入问题
+     *
+     * @param $arr
+     * @return int 插入问题的ID
+     */
+    public function insertQuestion($data)
     {
         $data = array(
-            'cat_id'     => $arr['sort'],
-            'cat_sub'      => $arr['sub'],
-            'title'       => $arr['question'],
-            'description' => $arr['content'],
-            'author_id'   => 11,
-            'author'      => '张三',
-            'create'      => time()
+            'cat_id'     => $data['cat_id'],
+            'cat_sub'      => $data['cat_sub'],
+            'title'       => $data['question'],
+            'description' => $data['content'],
+            'author_id'   => $this->session->userdata('uid'),
+            'author'      => $this->session->userdata('username'),
+            'modified_time'      => time(),
         );
 
-        $this->db->insert('xwd_question', $data);
-        return 1;
+        if(!empty($data) && $data['title'] && $data['description'] && $data['cat_id']){
+            if($this->db->insert('question', $data)){
+                return $this->db->insert_id();
+            }
+        }
+        return 0;
     }
 
     public function get_question_attention()
@@ -148,14 +158,17 @@ class QuestionModel extends CI_Model
      */
     public function getQuestionById($question_id)
     {
-        // 问题浏览数量自增1
-        $this->db->where('id', $question_id);
-        $this->db->set('preview_num', 'preview_num+1', false);
-        $this->db->update('question');
-
         $this->db->select()->from('question')->where('id', $question_id);
         $query = $this->db->get();
         return $query->row_array();
+    }
+
+
+    //问题流量量递增
+    public function addPreviewNum($question_id){
+        $this->db->where('id', $question_id);
+        $this->db->set('preview_num', 'preview_num+1', false);
+        $this->db->update('question');
     }
 
     /**
@@ -207,21 +220,6 @@ class QuestionModel extends CI_Model
 
     }
 
-    public function insert_answer($content, $qid)
-    {
-        $sql = "UPDATE `xwd_question` SET `answer_num` = `answer_num` + 1 WHERE `id` ={$qid}";
-        $this->db->query($sql);
-
-        $data = array(
-            'qid'      => $qid,
-            'content'  => $content,
-            'author'   => '张三',
-            'authorid' => 1,
-            'time'     => time()
-        );
-
-        $this->db->insert('xwd_answer', $data);
-    }
 
     /**
      * 判断用户是否回答过该问题
@@ -284,7 +282,7 @@ class QuestionModel extends CI_Model
             $this->db->set('answer_num', 'answer_num+1', false);
             if($this->db->update('question')){
 
-                if( $this->db->insert('xwd_answer', $data) ){
+                if( $this->db->insert('answer', $data) ){
                     return $this->db->insert_id();
                 }
             }
