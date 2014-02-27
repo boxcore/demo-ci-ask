@@ -56,7 +56,8 @@ if ($question_info['cat_sub']){
                 <div class="ask_info" >
                     <?php echo $question_info['description'];?>
                 </div>
-                <?php if( $_COOKIE['uid'] == $question_info['author_id'] ): ?><a id="edit_question_link" href="javascirpt:;" style="display: none;">编辑</a><?php endif; ?>
+                <?php if( isset($_COOKIE['uid']) && ($_COOKIE['uid'] == $question_info['author_id']) ): ?><a id="edit_question_link" href="javascirpt:;" style="display: none;">编辑</a><?php
+                endif; ?>
             </div>
 
             <div id="edit-question-area" style="display:none;">
@@ -77,7 +78,7 @@ if ($question_info['cat_sub']){
 			<div class="subbox">
 				<span><input name="is_anonymous" type="checkbox" value="1" ><em>匿名</em></span>
 				<input name="button" type="submit" class="submit_btn" value="提交回答" onclick="addAnswer()">
-				<input name="qid" id="qid" type="hidden" value="<?php echo $question_info['id']?>">
+				<input name="question_id" id="question_id" type="hidden" value="<?php echo $question_info['question_id']?>">
 			</div>
         </div>
         <?php if($question_info['answer_num']):?>
@@ -89,7 +90,8 @@ if ($question_info['cat_sub']){
             </dl>
             <!-- 回答列表开始 -->
             <?php foreach ($answer_list as $key => $value):?>
-            <div id="comment-<?php echo $value['id']; ?>" class="person_one <?php if (count($answer_list) == $key+1)
+            <div id="comment-<?php echo $value['answer_id']; ?>" class="person_one <?php if (count($answer_list) ==
+                $key+1)
             {echo
             'no_border';}?>">
                 <dl class="answerer">
@@ -110,7 +112,8 @@ if ($question_info['cat_sub']){
             <!-- 相关问题列表开始 -->
             <?php foreach ($relate as $key => $value):?>
             <dl class="relevant <?php if (count($relate) == $key+1){echo 'no_border';}?>">
-                <dt><a href="<?php echo site_url('question/detail?qid='.$value['id'].'');?>"><?php echo $value['title'];?></a></dt>
+                <dt><a href="<?php echo site_url('detail-'.$value['question_id'].'');?>"><?php echo $value['title'];
+                        ?></a></dt>
                 <dd><?php echo date('Y-m-d')?></dd>
             </dl>
             <?php endforeach;?>
@@ -142,7 +145,7 @@ function addAnswer(){
     if($.cookie("logined_in")){
         editor.sync();
         var comment = $("#content").val();
-        var qid  = $("#qid").val();
+        var question_id  = $("#question_id").val();
         var is_anonymous = $("input[name='is_anonymous']:checked").val();
 
         if (editor.isEmpty()) {
@@ -157,7 +160,7 @@ function addAnswer(){
             dataType:"json",
             data : {
                 content : comment,
-                qid : qid,
+                question_id : question_id,
                 is_anonymous:is_anonymous
             },
             success:function(data){

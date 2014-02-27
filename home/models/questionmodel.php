@@ -145,8 +145,11 @@ class QuestionModel extends CI_Model
 
     public function get_question_attention()
     {
-        $sql   = "SELECT `id`, `title`, `created_time`, `answer_num`, `preview_num` FROM `xwd_question` LIMIT 5";
-        $query = $this->db->query($sql);
+//        $sql   = "SELECT `question_id`, `title`, `created_time`, `answer_num`, `preview_num` FROM `xwd_question` LIMIT 5";
+//        $query = $this->db->query($sql);
+        $this->db->select('question_id, title, created_time, answer_num, preview_num')->from('question')->limit('0,
+        5');
+        $query = $this->db->get();
         return $query->result_array();
     }
 
@@ -158,17 +161,34 @@ class QuestionModel extends CI_Model
      */
     public function getQuestionById($question_id)
     {
-        $this->db->select()->from('question')->where('id', $question_id);
+        $this->db->select()->from('question')->where('question_id', $question_id);
         $query = $this->db->get();
         return $query->row_array();
     }
 
 
-    //问题流量量递增
+    /**
+     * 问题流量量递增
+     *
+     * @param $question_id
+     */
     public function addPreviewNum($question_id){
-        $this->db->where('id', $question_id);
+        $this->db->where('question_id', $question_id);
         $this->db->set('preview_num', 'preview_num+1', false);
         $this->db->update('question');
+    }
+
+    /**
+     * 修改问题详情
+     *
+     * @param $question_id
+     */
+    public function updateQusetion($data=array(), $question_id=0){
+        if(!empty($data)){
+            $this->db->update('question', $data, array('question_id', $question_id));
+        }
+        return false;
+
     }
 
     /**
@@ -179,7 +199,7 @@ class QuestionModel extends CI_Model
      */
     public function getAnswerList($question_id)
     {
-        $this->db->select()->from('answer')->where('qid', $question_id);
+        $this->db->select()->from('answer')->where('question_id', $question_id);
         $query = $this->db->get();
         return $query->result_array();
     }
@@ -228,13 +248,13 @@ class QuestionModel extends CI_Model
      * @param int $uid
      * @return bool
      */
-    public function checkHaveAnswer($qid=0, $uid = 0)
+    public function checkHaveAnswer($question_id=0, $uid = 0)
     {
-        $data['qid'] = intval($qid);
+        $data['question_id'] = intval($question_id);
         $data['author_id'] = intval($uid);
 
-        if($qid && $uid){
-            $this->db->select("id")->from('answer')->where($data);
+        if($question_id && $uid){
+            $this->db->select("answer_id")->from('answer')->where($data);
             $query = $this->db->get();
             if($query->num_rows() > 0){
                 return true;
@@ -252,12 +272,12 @@ class QuestionModel extends CI_Model
      * @param int $qid
      * @return array
      */
-    public function getQuestionByQid($qid = 0)
+    public function getQuestionByQid($question_id = 0)
     {
         $data = array();
-        $qid = intval($qid);
-        if($qid){
-            $this->db->select('*')->from('question')->where('id', $qid);
+        $question_id = intval($question_id);
+        if($question_id){
+            $this->db->select('*')->from('question')->where('question_id', $question_id);
             $query = $this->db->get();
             if( $query->num_rows() > 0 ){
                 $data = $query->row_array();
@@ -275,10 +295,10 @@ class QuestionModel extends CI_Model
      * @param int   $qid
      * @return mixed
      */
-    public function insertAnswer( $data = array(), $qid = 0 )
+    public function insertAnswer( $data = array(), $question_id = 0 )
     {
-        if($data && $qid){
-            $this->db->where('id', $qid);
+        if($data && $question_id){
+            $this->db->where('question_id', $question_id);
             $this->db->set('answer_num', 'answer_num+1', false);
             if($this->db->update('question')){
 
@@ -294,12 +314,12 @@ class QuestionModel extends CI_Model
 
     public function syncAnswerNum($quetion_id)
     {
-        $this->db->select('COUNT(*) as count')->from('answer')->where('qid', $quetion_id);
+        $this->db->select('COUNT(*) as count')->from('answer')->where('question_id', $quetion_id);
         $query = $this->db->get();
         $res = $query->row_array();
 
 
-        $this->db->where('id', $quetion_id);
+        $this->db->where('question_id', $quetion_id);
         $this->db->set('answer_num', $res['count'], false);
         return $this->db->update('question');
     }

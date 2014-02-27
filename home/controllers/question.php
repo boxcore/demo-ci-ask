@@ -31,7 +31,7 @@ class Question extends HM_Controller
         } else {
             $data['info'] = $this->QuestionModel->get_list_by_id($cat_id);
             foreach ($data['info'] as &$v) {
-                $v['url'] = built_detail_url('ask', $v['id']);
+                $v['url'] = built_detail_url('ask', $v['question_id']);
             }
 
             $this->load->library('layout');
@@ -43,16 +43,16 @@ class Question extends HM_Controller
     /**
      * 问题详情页面
      */
-    public function detail($qid = 0)
+    public function detail($question_id = 0)
     {
         $data = array();
-        $qid = $this->input->get('qid') ? $this->input->get('qid') : $qid;
+        $question_id  = intval($question_id);
 
         //更新问题总数
-        $this->QuestionModel->syncAnswerNum($qid);
-        $this->QuestionModel->addPreviewNum($qid); // 流量数量递增1
+        $this->QuestionModel->syncAnswerNum($question_id);
+        $this->QuestionModel->addPreviewNum($question_id); // 流量数量递增1
 
-        $question_info = $this->QuestionModel->getQuestionById($qid); //问题详细
+        $question_info = $this->QuestionModel->getQuestionById($question_id); //问题详细
         if (!$question_info) {
             show_404();exit;
         }else{
@@ -64,10 +64,9 @@ class Question extends HM_Controller
         }
 
         $data['question_info'] = $question_info;
-        $data['answer_list'] = $this->QuestionModel->getAnswerList($qid); //回答列表
+        $data['answer_list'] = $this->QuestionModel->getAnswerList($question_id); //回答列表
         $data['relate'] = $this->QuestionModel->relative_question($question_info); //相关问题
 
-        echo '<!--'; print_r($data); echo '-->';
         $this->load->library('layout');
         $this->layout->view('question/question_detail', $data);
     }
@@ -87,11 +86,11 @@ class Question extends HM_Controller
     }
 
     /**
-     * 添加问题的答案
+     * AJAX修改问题
      *
      *
      */
-    public function check_add_answer()
+    public function ajax_update_question()
     {
         $data = array();
         $msg = array(
@@ -100,41 +99,25 @@ class Question extends HM_Controller
             'field' => '', // 报错字段或区域
         );
 
-        $data['author'] = $this->session->userdata('username');
-        $data['author_id'] = $this->session->userdata('uid');
+        $uid = $this->session->userdata('uid');
 
         if ($this->session->userdata('logined_in') && $_POST) {
-
-
             $data['content'] = $this->input->post('content');
-            $data['is_anonymous'] = $this->input->post('is_anonymous') ? $this->input->post('is_anonymous') : 0;
-            $data['qid']     = $this->input->post('qid');
+            $question_id     = $this->input->post('question_id');
             $data['modified_time'] = time();
 
-            $question_info = $this->QuestionModel->getQuestionById($data['qid']);
-            if($question_info['author_id'] == $data['author_id']){
-                $msg['message'] = '您不能回答自己的提问！';
+            $question_info = $this->QuestionModel->getQuestionById($question_id);
+
+            if($question_info['author_id'] != $uid){
+                $msg['message'] = '您没有权限编辑该问题！';
+                echo json_encode($msg);exit;
+            }
+            if(!$question_info['status']){
+                $msg['message'] = '该问题已经被关闭，不能进行修改！';
                 echo json_encode($msg);exit;
             }
 
-
-            // 判断是否用户是否已经回答过该问题
-            if( $this->QuestionModel->checkHaveAnswer($data['qid'], $data['author_id']) ){
-                $msg['message'] = '你已经答过该问题，不能重复回答！';
-                echo json_encode($msg);exit;
-            }
-
-            // 判断问题状态
-            $question =  $this->QuestionModel->getQuestionByQid($data['qid']);
-            if( $question ){
-                if(!$question['status']){
-                    $msg['message'] = '该问题已经被关闭，不能进行回答！';
-                    echo json_encode($msg);exit;
-                }
-            }
-
-            $answer_id = $this->QuestionModel->insertAnswer($data, $data['qid']);
-            if( $answer_id ){
+            if( $this->QuestionModel->updateQuestion($date, $question_id) ){
                 $msg['flag'] = 1;
                 $msg['answer_id']=$answer_id;
                 $msg['message']='评论成功！';
@@ -147,12 +130,14 @@ class Question extends HM_Controller
     }
 
 
+
+
     /**
-     * AJAX修改问题
+     * 添加问题的答案
      *
      *
      */
-    public function ajax_update_question()
+    public function check_add_answer()
     {
         $data = array();
         $msg = array(
@@ -164,14 +149,12 @@ class Question extends HM_Controller
         $data['author_id'] = $this->session->userdata('uid');
 
         if ($this->session->userdata('logined_in') && $_POST) {
-
-
             $data['content'] = $this->input->post('content');
             $data['is_anonymous'] = $this->input->post('is_anonymous') ? $this->input->post('is_anonymous') : 0;
-            $data['qid']     = $this->input->post('qid');
+            $data['question_id']     = $this->input->post('question_id');
             $data['modified_time'] = time();
 
-            $question_info = $this->QuestionModel->getQuestionById($data['qid']);
+            $question_info = $this->QuestionModel->getQuestionById($data['question_id']);
             if($question_info['author_id'] == $data['author_id']){
                 $msg['message'] = '您不能回答自己的提问！';
                 echo json_encode($msg);exit;
@@ -179,13 +162,13 @@ class Question extends HM_Controller
 
 
             // 判断是否用户是否已经回答过该问题
-            if( $this->QuestionModel->checkHaveAnswer($data['qid'], $data['author_id']) ){
+            if( $this->QuestionModel->checkHaveAnswer($data['question_id'], $data['author_id']) ){
                 $msg['message'] = '你已经答过该问题，不能重复回答！';
                 echo json_encode($msg);exit;
             }
 
             // 判断问题状态
-            $question =  $this->QuestionModel->getQuestionByQid($data['qid']);
+            $question =  $this->QuestionModel->getQuestionByQid($data['question_id']);
             if( $question ){
                 if(!$question['status']){
                     $msg['message'] = '该问题已经被关闭，不能进行回答！';
@@ -193,7 +176,7 @@ class Question extends HM_Controller
                 }
             }
 
-            $answer_id = $this->QuestionModel->insertAnswer($data, $data['qid']);
+            $answer_id = $this->QuestionModel->insertAnswer($data, $data['question_id']);
             if( $answer_id ){
                 $msg['flag'] = 1;
                 $msg['answer_id']=$answer_id;

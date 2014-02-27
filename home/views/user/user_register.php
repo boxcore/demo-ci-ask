@@ -4,7 +4,8 @@
 <meta charset="UTF-8">
 <title>中国创业指导网-用户注册</title>
 <link rel="stylesheet" type="text/css" href="<?php echo src_url('css/style.css');?>"/>
-<script src="<?php echo src_url('js/jquery-1.7.1.min.js');?>"></script>
+    <script src="<?php echo src_url('js/jquery-1.7.1.min.js');?>"></script>
+    <script src="<?php echo src_url('js/common.js');?>"></script>
 </head>
 <body>
 <div class="login_box">

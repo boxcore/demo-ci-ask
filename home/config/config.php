@@ -48,3 +48,4 @@ $config['proxy_ips'] = '';
 /* 全局变量 */
 $GLOBALS['app']['src_url'] = 'http://ask.7808.com/static/';
 $GLOBALS['app']['version'] = '0.2';
+$GLOBALS['app']['avatar_url'] = "http://ask.7808.com/data/avatar/";

@@ -24,7 +24,8 @@ class Flink_model extends CI_Model {
         }
 
         if(!empty($config)){
-            $query = $this->db->select('name,link')->from('flink')->where($config)->order_by('sort desc')->get();
+            $query = $this->db->select('link_name,link_url')->from('flink')->where($config)->order_by('sort desc')->get
+                ();
             $data = $query->result_array();
         }
         //echo $this->db->last_query();

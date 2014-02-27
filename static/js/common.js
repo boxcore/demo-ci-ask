@@ -190,7 +190,7 @@ $(document).ready(function(){
         editor_question.sync();
         $content = $(":input[name='edit_question']");
         var content = $content.val();
-        var question_id = $(":input[name='qid']").val();
+        var question_id = $(":input[name='question_id']").val();
 
         jQuery.ajax({
             type : "POST",

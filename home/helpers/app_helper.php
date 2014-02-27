@@ -19,6 +19,25 @@ function src_url( $uri='' )
 }
 
 /**
+ * 头像资源链接
+ *
+ * @param string $uri
+ * @return string
+ */
+function avatar_url( $uri='' )
+{
+    $uri = $uri ? trim($uri) : 'default-avatar.jpg';
+    if ( isset($GLOBALS['app']['avatar_url']) && !empty($GLOBALS['app']['avatar_url']) )
+    {
+        return $GLOBALS['app']['avatar_url'].$uri;
+    }
+    else
+    {
+        return base_url().'data/avatar/'.$uri;
+    }
+}
+
+/**
  * 二级域名链接生成
  *
  * @param string $uri

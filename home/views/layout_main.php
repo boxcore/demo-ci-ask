@@ -84,7 +84,7 @@
             <h4>友情连接:</h4>
             <div class="friendship">
                 <?php $i=1;$total = count($friend_links); foreach($friend_links as $v):?>
-                    <a target="_blank" href="<?php echo $v['link'] ?>"><?php echo $v['name'] ?></a>
+                    <a target="_blank" href="<?php echo $v['link_url'] ?>"><?php echo $v['link_name'] ?></a>
                     <?php if($i != $total): ?>|<?php endif; ?>
                 <?php $i++; endforeach;?>
             </div>
@@ -98,6 +98,7 @@
 				<a href="#">站长统计</a>
 			</div>
 			<p>Copyright 2007-2013 zqn.cn All rights reserved 京ICP证074442号 京ICP备00678450号-3 京公海网安备110456980742号 </p>
+            <p>time {elapsed_time} memory {memory_usage}</p>
 		</div>
 	</div>
 
