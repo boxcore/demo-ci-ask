@@ -1,5 +1,5 @@
 <?php
-#Vars - written at 2014-02-25
+#Vars - written at 2014-03-01
 $dbhost="localhost";
 $dbname="xinwenda";
 $dbuser="root";
