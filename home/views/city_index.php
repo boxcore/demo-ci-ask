@@ -15,7 +15,7 @@
 		</div>
 </div>
 <div class="second_top">
-	<div class="logo2"><a href="#"><img width="199" height="36" src="http://www.7808.com/static/images/logo_two.jpg"></a></div>
+	<div class="logo2"><a href="#"><img width="199" height="36" src="http://www.966069.com/static/images/logo_two.jpg"></a></div>
 	<div class="right">
 		<p><a href="#" class="current">找产品</a><a href="#">找求购</a><a href="#">找公司</a></P>
 		<div class="input_box">
@@ -351,7 +351,7 @@
 					<dd><a href="#">剥线机</a></dd><dd><a href="#">超声波清洗机</a></dd><dd><a href="#">洗衣机</a></dd><dd><a href="#">洗衣</a></dd>
 				</dl>				
 			</div>
-			<div class="city_banner"><a href="#"><img width="770" height="89" src="http://www.7808.com/static/images/city_banner.jpg"></a></div>
+			<div class="city_banner"><a href="#"><img width="770" height="89" src="http://www.966069.com/static/images/city_banner.jpg"></a></div>
 			<h1><a href="#">原材料</a></h1>
 			<div class="l_inner">
 				<dl>
@@ -511,7 +511,7 @@
 					<dd><a href="#">剥线机</a></dd><dd><a href="#">超声机</a></dd><dd><a href="#">洗衣机</a></dd><dd><a href="#">洗衣</a></dd>
 				</dl>				
 			</div>
-			<div class="city_banner"><a href="#"><img width="770" height="89" src="http://www.7808.com/static/images/city_banner.jpg"></a></div>
+			<div class="city_banner"><a href="#"><img width="770" height="89" src="http://www.966069.com/static/images/city_banner.jpg"></a></div>
 			<h1><a href="#">消费品</a></h1>
 			<div class="l_inner">
 				<dl>
@@ -671,7 +671,7 @@
 					<dd><a href="#">剥线机</a></dd><dd><a href="#">超声洗机</a></dd><dd><a href="#">洗衣机</a></dd><dd><a href="#">洗衣</a></dd>
 				</dl>				
 			</div>
-			<div class="city_banner"><a href="#"><img width="770" height="89" src="http://www.7808.com/static/images/city_banner.jpg"></a></div>
+			<div class="city_banner"><a href="#"><img width="770" height="89" src="http://www.966069.com/static/images/city_banner.jpg"></a></div>
 		</div>
 		<div class="right">
 			<div class="week_hot">
@@ -688,7 +688,7 @@
 					<li><span>9</span><a href="#">性格内向能做好销售工作吗</a><strong>2053</strong></li>
 					<li><span>10</span><a href="#">性格内向能做好销售工作吗</a><strong>2053</strong></li>
 				</ul>
-				<div class="pic"><img width="230" height="70" src="http://www.7808.com/static/images/cityt_pic.jpg"></div>
+				<div class="pic"><img width="230" height="70" src="http://www.966069.com/static/images/cityt_pic.jpg"></div>
 			</div>
 			<div class="news_box">
 				<h2><a href="#">最新注册公司</a></h2>

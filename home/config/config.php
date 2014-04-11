@@ -2,7 +2,7 @@
 
 //if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == "on"){$ssl_set = "s";} else{$ssl_set = "";}
 //$config['base_url'] = 'http'.$ssl_set.'://'.$_SERVER['HTTP_HOST'];
-$config['base_url'] = 'http://ask.7808.com/';
+$config['base_url'] = 'http://ask.966069.com/';
 $config['index_page'] = '';
 $config['uri_protocol']	= 'AUTO'; //PATH_INFO
 $config['url_suffix'] = '';
@@ -20,9 +20,9 @@ $config['log_threshold'] = 0;
 $config['log_path'] = '';
 $config['log_date_format'] = 'Y-m-d H:i:s';
 $config['cache_path'] = '';
-$config['encryption_key'] = '7808';
+$config['encryption_key'] = '966069';
 
-$config['sess_cookie_name']		= '7808_session';
+$config['sess_cookie_name']		= '966069_session';
 $config['sess_expiration']		= 7200;
 $config['sess_expire_on_close']	= FALSE;
 $config['sess_encrypt_cookie']	= FALSE;
@@ -46,6 +46,6 @@ $config['rewrite_short_tags'] = FALSE;
 $config['proxy_ips'] = '';
 
 /* 全局变量 */
-$GLOBALS['app']['src_url'] = 'http://ask.7808.com/static/';
+$GLOBALS['app']['src_url'] = 'http://ask.966069.com/static/';
 $GLOBALS['app']['version'] = '0.2';
-$GLOBALS['app']['avatar_url'] = "http://ask.7808.com/data/avatar/";
+$GLOBALS['app']['avatar_url'] = "http://ask.966069.com/data/avatar/";

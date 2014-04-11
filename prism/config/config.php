@@ -152,9 +152,9 @@ $config['cache_path'] = '';
 | MUST set an encryption key.  See the user guide for info.
 |
 */
-$config['encryption_key'] = '7808';
+$config['encryption_key'] = '966069';
 
-$config['sess_cookie_name']		= '7808_session';
+$config['sess_cookie_name']		= '966069_session';
 $config['sess_expiration']		= 7200; //7200:2小时 604800：一周
 $config['sess_expire_on_close']	= FALSE;
 $config['sess_encrypt_cookie']	= FALSE;

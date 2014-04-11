@@ -50,7 +50,7 @@ function app_url( $uri='' )
     $dm = array('ask','item','zixun');
     if(in_array($params[0],$dm)){
         $ex = array_shift($params);
-        $url = 'http://' . $ex . '.7808.com/' . implode('/',$params);
+        $url = 'http://' . $ex . '.966069.com/' . implode('/',$params);
     } else {
         $url = base_url($uri);
     }
@@ -71,7 +71,7 @@ function built_cat_url( $type = '', $value=''){
     $value = trim($value);
 
     if( $type && $value){
-        $url = 'http://'.$type.'.7808.com/'.$value.'/';
+        $url = 'http://'.$type.'.966069.com/'.$value.'/';
     }
     return $url;
 }
@@ -89,7 +89,7 @@ function built_detail_url( $type = '', $value=0){
     $value = intval($value);
 
     if( $type && $value){
-        $url = 'http://'.$type.'.7808.com/detail-'.$value.'.html';
+        $url = 'http://'.$type.'.966069.com/detail-'.$value.'.html';
     }
     return $url;
 }

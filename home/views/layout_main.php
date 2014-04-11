@@ -61,7 +61,7 @@
 			</li>
 			<li><a href="<?php echo base_url('/') ?>">首页</a></li>
 			<li><a href="<?php echo base_url('/') ?>">问答</a></li>
-			<li><a href="http://item.7808.com/">项目</a></li>
+			<li><a href="http://item.966069.com/">项目</a></li>
 		</ul>
 	</div>
     <!--    main content start   -->
@@ -89,7 +89,7 @@
                 <?php $i++; endforeach;?>
             </div>
             <?php endif; ?>
-			<p class="sponsor"><strong>© 7808创业指导网 荣誉出品</strong> </p>
+			<p class="sponsor"><strong>© 966069创业指导网 荣誉出品</strong> </p>
 			<div class="foot_nav">
 				<a href="#">关于我们</a>|
 				<a href="#">广告合作</a>|

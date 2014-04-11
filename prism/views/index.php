@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>7808问答站 - 后台管理</title>
+    <title>966069问答站 - 后台管理</title>
 
     <link href="<?php echo src_url('admin/themes/default/style.css'); ?>" rel="stylesheet" type="text/css" media="screen"/>
     <link href="<?php echo src_url('admin/themes/css/core.css'); ?>"  rel="stylesheet" type="text/css" media="screen"/>

@@ -7,7 +7,7 @@ if($flag){
 }else{
     $info = isset($msg['info']) ? $msg['info'] : '操作失败';
 }
-$refer_url = isset($msg['refer_url']) ? $msg['refer_url'] : 'http://ask.7808.com/';
+$refer_url = isset($msg['refer_url']) ? $msg['refer_url'] : 'http://ask.966069.com/';
 $refer_name = isset($msg['refer_name']) ? $msg['refer_name'] : '首页';
 ?>
 <!DOCTYPE html>
@@ -43,7 +43,7 @@ $refer_name = isset($msg['refer_name']) ? $msg['refer_name'] : '首页';
 //            document.getElementById('jump_time').innerHTML = parseInt(document.getElementById('jump_time')) - 1;
 //            if(document.getElementById('jump_time').innerHTML < 0){
 //                window.clearInterval(timer);
-//                window.localtion = "http://ask.7808.com";
+//                window.localtion = "http://ask.966069.com";
 //            }
 //        }, 1000);
     </script>

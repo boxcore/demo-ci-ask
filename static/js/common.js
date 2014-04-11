@@ -1,5 +1,5 @@
 // 预设常用变量
-var site_url = 'http://ask.7808.com/';var src_url = 'http://ask.7808.com/static/';var base_domain = '7808.com';var site_domain = 'ask.7808.com';
+var site_url = 'http://ask.966069.com/';var src_url = 'http://ask.966069.com/static/';var base_domain = '966069.com';var site_domain = 'ask.966069.com';
 
 
 /**

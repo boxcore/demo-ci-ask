@@ -45,6 +45,6 @@ function src_url( $uri='' )
     }
     else
     {
-        return 'http://ask.7808.com/static/'.$uri;
+        return 'http://ask.966069.com/static/'.$uri;
     }
 }

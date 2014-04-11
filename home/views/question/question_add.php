@@ -99,7 +99,7 @@ function changeSub(){
 	var sortId = $("#sort").val();
 	var response = jQuery.ajax({
 		type: "POST",
-		url: 'http://ask.7808.com/question/get_sub_info',
+		url: 'http://ask.966069.com/question/get_sub_info',
 		data: {
 			id:sortId,
 			timestamp:new Date().getTime()

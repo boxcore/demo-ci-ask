@@ -203,7 +203,7 @@
                             <li><a href="demo/common/ajaxTimeout.html" target="navTab">navTab会话超时</a></li>
                             <li><a href="demo/common/ajaxTimeout.html" target="dialog">dialog会话超时</a></li>
                             <li><a href="index_menu.html" target="_blank">横向导航条</a></li>
-                            <li><a href="http://www.7808.cn" target="navTab" rel="page1">7808.cn站点</a></li>
+                            <li><a href="http://www.966069.cn" target="navTab" rel="page1">966069.cn站点</a></li>
                         </ul>
                     </li>
 

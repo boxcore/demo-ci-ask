@@ -15,7 +15,7 @@
 		</div>
 </div>
 <div class="second_top">
-	<div class="logo2"><a href="#"><img width="199" height="36" src="http://www.7808.com/static/images/logo_two.jpg"></a></div>
+	<div class="logo2"><a href="#"><img width="199" height="36" src="http://www.966069.com/static/images/logo_two.jpg"></a></div>
 	<div class="right">
 		<p><a href="#" class="current">找产品</a><a href="#">找求购</a><a href="#">找公司</a></P>
 		<div class="input_box">
@@ -75,7 +75,7 @@
 		<h1><strong><a href="#">甘孜州餐饮加盟</a></strong><span><a href="#">更多</a></span></h1>
 		<div class="pic_product">
 			<dl>
-				<dt><a href="#"><img width="90 height="59 src="http://www.7808.com/static/images/pic.jpg"></a></dt>
+				<dt><a href="#"><img width="90 height="59 src="http://www.966069.com/static/images/pic.jpg"></a></dt>
 				<dd>
 					<h2><a href="#">我国特色小吃格外出色</a></h2>
 					<span>四川-甘孜州</span>
@@ -96,7 +96,7 @@
 		<h1><strong><a href="#">甘孜州餐饮加盟</a></strong><span><a href="#">更多</a></span></h1>
 		<div class="pic_product">
 			<dl>
-				<dt><a href="#"><img width="90 height="59 src="http://www.7808.com/static/images/pic.jpg"></a></dt>
+				<dt><a href="#"><img width="90 height="59 src="http://www.966069.com/static/images/pic.jpg"></a></dt>
 				<dd>
 					<h2><a href="#">我国特色小吃格外出色</a></h2>
 					<span>四川-甘孜州</span>
@@ -117,7 +117,7 @@
 		<h1><strong><a href="#">甘孜州餐饮加盟</a></strong><span><a href="#">更多</a></span></h1>
 		<div class="pic_product">
 			<dl>
-				<dt><a href="#"><img width="90 height="59 src="http://www.7808.com/static/images/pic.jpg"></a></dt>
+				<dt><a href="#"><img width="90 height="59 src="http://www.966069.com/static/images/pic.jpg"></a></dt>
 				<dd>
 					<h2><a href="#">我国特色小吃格外出色</a></h2>
 					<span>四川-甘孜州</span>
@@ -138,7 +138,7 @@
 		<h1><strong><a href="#">甘孜州餐饮加盟</a></strong><span><a href="#">更多</a></span></h1>
 		<div class="pic_product">
 			<dl>
-				<dt><a href="#"><img width="90 height="59 src="http://www.7808.com/static/images/pic.jpg"></a></dt>
+				<dt><a href="#"><img width="90 height="59 src="http://www.966069.com/static/images/pic.jpg"></a></dt>
 				<dd>
 					<h2><a href="#">我国特色小吃格外出色</a></h2>
 					<span>四川-甘孜州</span>

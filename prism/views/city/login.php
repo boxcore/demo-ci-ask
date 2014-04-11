@@ -65,7 +65,7 @@
         </div>
     </div>
     <div id="login_footer">
-        Copyright &copy; 2014 www.7808.com Inc. All Rights Reserved.
+        Copyright &copy; 2014 www.966069.com Inc. All Rights Reserved.
     </div>
 </div>
 </body>

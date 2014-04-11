@@ -27,25 +27,25 @@
   <ul>
     <li>
       <h2><a href="#">营养快线</a></h2>
-      <div class="image"><a href="#"><img src="http://www.7808.com/static/images/item_pic.jpg" width="196" height="160"></a></div>
+      <div class="image"><a href="#"><img src="http://www.966069.com/static/images/item_pic.jpg" width="196" height="160"></a></div>
       <p><a href="#">必登高鞋业加盟项目是对顾客追求品质生活的责任承担。必登高鞋必登高鞋业加盟项目是对顾客追求品质生活的责任承担必登高鞋业加盟客追求品质生活的责任承担加盟</a></p>
       <div class="btn"><a href="#" class="free_tel"></a><a href="#" class="free_leave_mes"></a></div>
     </li>
     <li>
       <h2><a href="#">营养快线</a></h2>
-      <div class="image"><a href="#"><img src="http://www.7808.com/static/images/item_pic.jpg" width="196" height="160"></a></div>
+      <div class="image"><a href="#"><img src="http://www.966069.com/static/images/item_pic.jpg" width="196" height="160"></a></div>
       <p><a href="#">必登高鞋业加盟项目是对顾客追求品质生活的责任活的责任承担必登高鞋业加盟项目是对顾客追求品质生活的责任承担加盟承担。必登高鞋必登高鞋业加盟项目是对顾客追求品质生活的责任承担必登高鞋业加盟项目是对顾客追求品质生活的责任承担加盟</a></p>
       <div class="btn"><a href="#" class="free_tel"></a><a href="#" class="free_leave_mes"></a></div>
     </li>
     <li>
       <h2><a href="#">营养快线</a></h2>
-      <div class="image"><a href="#"><img src="http://www.7808.com/static/images/item_pic.jpg" width="196" height="160"></a></div>
+      <div class="image"><a href="#"><img src="http://www.966069.com/static/images/item_pic.jpg" width="196" height="160"></a></div>
       <p><a href="#">必登高鞋业加盟项目是对顾客追求品质生活的责任承担。必登高鞋必登高鞋业加盟项目是对顾客追求品质生活的责任承担必登高鞋业责任承担加盟</a></p>
       <div class="btn"><a href="#" class="free_tel"></a><a href="#" class="free_leave_mes"></a></div>
     </li>
     <li>
       <h2><a href="#">营养快线</a></h2>
-      <div class="image"><a href="#"><img src="http://www.7808.com/static/images/item_pic.jpg" width="196" height="160"></a></div>
+      <div class="image"><a href="#"><img src="http://www.966069.com/static/images/item_pic.jpg" width="196" height="160"></a></div>
       <p><a href="#">必登高鞋业加盟项目是对顾客追求品质生活的责任承担。必登高鞋必登高鞋业加盟项目是对顾客追求品质生活的责任承担必登高鞋业加盟项目是对顾客追求品质生活的责任承担加盟</a></p>
       <div class="btn"><a href="#" class="free_tel"></a><a href="#" class="free_leave_mes"></a></div>
     </li>   

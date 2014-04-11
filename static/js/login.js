@@ -4,8 +4,8 @@
 //}
 
 // 用户登陆
-var site_url = 'http://www.7808.com/';
-var src_url = 'http://www.7808.com/static/';
+var site_url = 'http://www.966069.com/';
+var src_url = 'http://www.966069.com/static/';
 
 $(document).ready(function (){
     $('#send_ajax').click(function(){

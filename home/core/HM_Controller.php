@@ -115,10 +115,10 @@ class HM_Controller extends CI_Controller
         }
 
         $this->load->library('session');
-        setcookie('logined_in', $this->session->userdata('logined_in'), $cookie_time, '/', '7808.com');
-        setcookie('username', $this->session->userdata('username'), $cookie_time, '/', '7808.com');
-        setcookie('uid', $this->session->userdata('uid'), $cookie_time, '/', '7808.com');
-        setcookie('group_id', $this->session->userdata('group_id'), $cookie_time, '/', '7808.com');
+        setcookie('logined_in', $this->session->userdata('logined_in'), $cookie_time, '/', '966069.com');
+        setcookie('username', $this->session->userdata('username'), $cookie_time, '/', '966069.com');
+        setcookie('uid', $this->session->userdata('uid'), $cookie_time, '/', '966069.com');
+        setcookie('group_id', $this->session->userdata('group_id'), $cookie_time, '/', '966069.com');
     }
 
 

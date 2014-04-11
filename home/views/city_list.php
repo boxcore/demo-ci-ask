@@ -16,7 +16,7 @@
     </div>
 </div>
 <div class="second_top">
-    <div class="logo2"><a href="#"><img width="199" height="36" src="http://www.7808.com/static/images/logo_two.jpg"></a></div>
+    <div class="logo2"><a href="#"><img width="199" height="36" src="http://www.966069.com/static/images/logo_two.jpg"></a></div>
     <div class="right">
         <p><a href="#" class="current">找产品</a><a href="#">找求购</a><a href="#">找公司</a></P>
         <div class="input_box">
@@ -155,7 +155,7 @@
 		</div>
 		<div class="cpro">
 			<dl>
-				<dt><a href="#"><img width="60" height="60" src="http://www.7808.com/static/images/P_1.jpg"></a></dt>
+				<dt><a href="#"><img width="60" height="60" src="http://www.966069.com/static/images/P_1.jpg"></a></dt>
 				<dd>
 					<P class="cp_title"><a href="#">2014打工不如自己创业</a></P>
 					<P class="cp_text">满口香法式脆皮蛋糕以其产品独特的风味</P>
@@ -163,7 +163,7 @@
 				</dd>
 			</dl>
 			<dl>
-				<dt><a href="#"><img width="60" height="60" src="http://www.7808.com/static/images/P_1.jpg"></a></dt>
+				<dt><a href="#"><img width="60" height="60" src="http://www.966069.com/static/images/P_1.jpg"></a></dt>
 				<dd>
 					<P class="cp_title"><a href="#">2014打工不如自己创业</a></P>
 					<P class="cp_text">满口香法式脆皮蛋糕以其产品独特的风味</P>
@@ -171,7 +171,7 @@
 				</dd>
 			</dl>
 			<dl>
-				<dt><a href="#"><img width="60" height="60" src="http://www.7808.com/static/images/P_1.jpg"></a></dt>
+				<dt><a href="#"><img width="60" height="60" src="http://www.966069.com/static/images/P_1.jpg"></a></dt>
 				<dd>
 					<P class="cp_title"><a href="#">2014打工不如自己创业</a></P>
 					<P class="cp_text">满口香法式脆皮蛋糕以其产品独特的风味</P>

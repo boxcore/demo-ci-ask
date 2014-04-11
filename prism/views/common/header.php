@@ -1,7 +1,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <div id="header">
     <div class="headerNav">
-        <a href="http://www.7808.com/ask_admin/" style="font-size: 30px; color: #fff; font-weight: bold; line-height: 30px; display: inline-block; height: 50px; padding: 8px 20px; text-decoration: none; "><?php echo $GLOBALS['configs']['site_name']; ?>管理系统</a>
+        <a href="http://www.966069.com/ask_admin/" style="font-size: 30px; color: #fff; font-weight: bold; line-height: 30px; display: inline-block; height: 50px; padding: 8px 20px; text-decoration: none; "><?php echo $GLOBALS['configs']['site_name']; ?>管理系统</a>
         <ul class="nav">
             <li id="switchEnvBox"><a href="javascript:">（<span>北京</span>）切换城市</a>
                 <ul>
@@ -14,7 +14,7 @@
                     <li><a href="sidebar_2.html">杭州</a></li>
                 </ul>
             </li>
-            <li><a href="http://www.7808.com/" target="_blank">回到首页</a></li>
+            <li><a href="http://www.966069.com/" target="_blank">回到首页</a></li>
             <li><a href="<? echo site_url('user/set_password')?>" target="dialog" width="600">修改密码</a></li>
             <li><a href="#" target="_blank">##</a></li>
             <li><a href="#" target="_blank">##</a></li>
